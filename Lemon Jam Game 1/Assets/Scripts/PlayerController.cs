@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+
+    PlayerControlls controls;
+    Vector2 move;
 
     public float moveSpeed;
     public float maxSpeed;
@@ -15,6 +19,16 @@ public class PlayerController : MonoBehaviour
     private float V_input;
 
     public LayerMask canJumpOn;
+
+    private void Awake()
+    {
+        controls = new PlayerControlls();
+
+        controls.Gameplay.MoveRight.performed += ctx => MoveRight();
+        controls.Gameplay.MoveLeft.performed += ctx => MoveLeft();
+
+        controls.Gameplay.Jump.performed += ctx => Jump();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +47,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        /*
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
             {
@@ -46,6 +61,7 @@ public class PlayerController : MonoBehaviour
                 canDoubleJump = false;
             }
         }
+        */
 
         H_Input = Input.GetAxisRaw("Horizontal");
         V_input = Input.GetAxisRaw("Vertical");
@@ -55,8 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
+        /*
         if (H_Input > 0 && rb.velocity.x < maxSpeed)
         {
             rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
@@ -64,6 +79,38 @@ public class PlayerController : MonoBehaviour
         if (H_Input < 0 && rb.velocity.x > -maxSpeed)
         {
             rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
+        }
+        */
+
+    }
+
+    private void MoveRight()
+    {
+        if (rb.velocity.x < maxSpeed)
+        {
+            rb.AddForce(new Vector2(moveSpeed, 0f), ForceMode2D.Impulse);
+        }
+    }
+
+    private void MoveLeft()
+    {
+        if (rb.velocity.x > -maxSpeed)
+        {
+            rb.AddForce(new Vector2(-moveSpeed, 0f), ForceMode2D.Impulse);
+        }
+    }
+
+    private void Jump()
+    {
+        if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
+        {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            canDoubleJump = true;
+        }
+        else if (canDoubleJump)
+        {
+            rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
+            canDoubleJump = false;
         }
     }
 }
