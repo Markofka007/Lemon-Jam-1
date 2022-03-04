@@ -2,7 +2,7 @@
     "name": "PlayerControlls",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Player1",
             "id": "6e98cff8-4243-4348-9445-22ea82294f8f",
             "actions": [
                 {
@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "H_Movement",
+                    "type": "Value",
+                    "id": "db27aa21-c9cf-4a22-aa7f-7056094d669a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -141,6 +150,39 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "H_Axis",
+                    "id": "ff110228-6d30-4ef1-b6cb-c82d750a2226",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "H_Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "b6b8eb90-1eaa-4c5e-aaf3-ecae90088e0a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "H_Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "66d5f485-7398-41fe-a19c-f0be2fb4270b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "H_Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

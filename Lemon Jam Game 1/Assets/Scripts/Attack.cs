@@ -21,7 +21,7 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -40,5 +40,10 @@ public class Attack : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void Fire()
+    {
+
     }
 }
