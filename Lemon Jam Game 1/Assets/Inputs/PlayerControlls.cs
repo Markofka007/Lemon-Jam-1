@@ -24,7 +24,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     ""name"": ""PlayerControlls"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""Player1"",
             ""id"": ""6e98cff8-4243-4348-9445-22ea82294f8f"",
             ""actions"": [
                 {
@@ -62,6 +62,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""H_Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""db27aa21-c9cf-4a22-aa7f-7056094d669a"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -163,18 +172,52 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""H_Axis"",
+                    ""id"": ""ff110228-6d30-4ef1-b6cb-c82d750a2226"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""H_Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""b6b8eb90-1eaa-4c5e-aaf3-ecae90088e0a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""H_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""66d5f485-7398-41fe-a19c-f0be2fb4270b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""H_Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_MoveRight = m_Gameplay.FindAction("MoveRight", throwIfNotFound: true);
-        m_Gameplay_MoveLeft = m_Gameplay.FindAction("MoveLeft", throwIfNotFound: true);
-        m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
+        // Player1
+        m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
+        m_Player1_MoveRight = m_Player1.FindAction("MoveRight", throwIfNotFound: true);
+        m_Player1_MoveLeft = m_Player1.FindAction("MoveLeft", throwIfNotFound: true);
+        m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
+        m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
+        m_Player1_H_Movement = m_Player1.FindAction("H_Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -231,44 +274,49 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_MoveRight;
-    private readonly InputAction m_Gameplay_MoveLeft;
-    private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Fire;
-    public struct GameplayActions
+    // Player1
+    private readonly InputActionMap m_Player1;
+    private IPlayer1Actions m_Player1ActionsCallbackInterface;
+    private readonly InputAction m_Player1_MoveRight;
+    private readonly InputAction m_Player1_MoveLeft;
+    private readonly InputAction m_Player1_Jump;
+    private readonly InputAction m_Player1_Fire;
+    private readonly InputAction m_Player1_H_Movement;
+    public struct Player1Actions
     {
         private @PlayerControlls m_Wrapper;
-        public GameplayActions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveRight => m_Wrapper.m_Gameplay_MoveRight;
-        public InputAction @MoveLeft => m_Wrapper.m_Gameplay_MoveLeft;
-        public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Fire => m_Wrapper.m_Gameplay_Fire;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public Player1Actions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveRight => m_Wrapper.m_Player1_MoveRight;
+        public InputAction @MoveLeft => m_Wrapper.m_Player1_MoveLeft;
+        public InputAction @Jump => m_Wrapper.m_Player1_Jump;
+        public InputAction @Fire => m_Wrapper.m_Player1_Fire;
+        public InputAction @H_Movement => m_Wrapper.m_Player1_H_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void SetCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(Player1Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer1Actions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
+            if (m_Wrapper.m_Player1ActionsCallbackInterface != null)
             {
-                @MoveRight.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveRight;
-                @MoveRight.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveRight;
-                @MoveRight.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveRight;
-                @MoveLeft.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveLeft;
-                @MoveLeft.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveLeft;
-                @MoveLeft.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveLeft;
-                @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Fire.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
+                @MoveRight.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
+                @MoveRight.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
+                @MoveRight.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
+                @MoveLeft.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
+                @Jump.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
+                @Fire.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @H_Movement.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnH_Movement;
+                @H_Movement.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnH_Movement;
+                @H_Movement.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnH_Movement;
             }
-            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
+            m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @MoveRight.started += instance.OnMoveRight;
@@ -283,15 +331,19 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @H_Movement.started += instance.OnH_Movement;
+                @H_Movement.performed += instance.OnH_Movement;
+                @H_Movement.canceled += instance.OnH_Movement;
             }
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-    public interface IGameplayActions
+    public Player1Actions @Player1 => new Player1Actions(this);
+    public interface IPlayer1Actions
     {
         void OnMoveRight(InputAction.CallbackContext context);
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnH_Movement(InputAction.CallbackContext context);
     }
 }

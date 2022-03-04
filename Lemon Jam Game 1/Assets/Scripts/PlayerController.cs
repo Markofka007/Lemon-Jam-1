@@ -13,32 +13,27 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float maxSpeed;
     public float jumpForce;
-    private bool canDoubleJump = false;
+    private bool canJump;
+    private bool canDoubleJump;
 
     private float H_Input;
     private float V_input;
 
     public LayerMask canJumpOn;
 
+
     private void Awake()
     {
         controls = new PlayerControlls();
-
-        controls.Gameplay.MoveRight.performed += ctx => MoveRight();
-        controls.Gameplay.MoveLeft.performed += ctx => MoveLeft();
-
-        controls.Gameplay.Jump.performed += ctx => Jump();
+        controls.Player1.Enable();
+        controls.Player1.H_Movement.performed += Move;
     }
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-
-        
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (transform.position.y < -10)
@@ -47,23 +42,16 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
         }
 
-        /*
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
         {
-            if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
-            {
-                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                canDoubleJump = true;
-            }
-            else if (canDoubleJump)
-            {
-                rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
-                canDoubleJump = false;
-            }
+            canJump = true;
+            canDoubleJump = true;
+        } else
+        {
+            canJump = false;
         }
-        */
 
-        H_Input = Input.GetAxisRaw("Horizontal");
+        //H_Input = Input.GetAxisRaw("Horizontal");
         V_input = Input.GetAxisRaw("Vertical");
 
         
@@ -71,46 +59,45 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
-        if (H_Input > 0 && rb.velocity.x < maxSpeed)
-        {
-            rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
-        }
-        if (H_Input < 0 && rb.velocity.x > -maxSpeed)
-        {
-            rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
-        }
-        */
-
+        H_Input = controls.Player1.H_Movement.ReadValue<float>();
+        rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
     }
 
-    private void MoveRight()
+    public void MoveRight()
     {
         if (rb.velocity.x < maxSpeed)
         {
-            rb.AddForce(new Vector2(moveSpeed, 0f), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(moveSpeed, 0f), ForceMode2D.Impulse);
         }
     }
 
-    private void MoveLeft()
+    public void MoveLeft()
     {
         if (rb.velocity.x > -maxSpeed)
         {
-            rb.AddForce(new Vector2(-moveSpeed, 0f), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(-moveSpeed, 0f), ForceMode2D.Impulse);
         }
     }
 
-    private void Jump()
+    public void Move(InputAction.CallbackContext context)
     {
-        if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
+        //H_Input = context.ReadValue<float>();
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            canDoubleJump = true;
-        }
-        else if (canDoubleJump)
-        {
-            rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
-            canDoubleJump = false;
+            if (canJump)
+            {
+                rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
+                canJump = false;
+            }
+            else if (canDoubleJump)
+            {
+                rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
+                canDoubleJump = false;
+            }
         }
     }
 }
