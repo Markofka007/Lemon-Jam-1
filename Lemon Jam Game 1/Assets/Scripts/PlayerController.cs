@@ -3,31 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    PlayerControlls controls;
-    Vector2 move;
 
     public float moveSpeed;
     public float maxSpeed;
     public float jumpForce;
     private bool canJump;
     private bool canDoubleJump;
-
     private float H_Input;
-    private float V_input;
-
     public LayerMask canJumpOn;
-
-
-    private void Awake()
-    {
-        controls = new PlayerControlls();
-        controls.Player1.Enable();
-        controls.Player1.H_Movement.performed += Move;
-    }
+    
     
     void Start()
     {
@@ -50,38 +38,44 @@ public class PlayerController : MonoBehaviour
         {
             canJump = false;
         }
-
-        //H_Input = Input.GetAxisRaw("Horizontal");
-        V_input = Input.GetAxisRaw("Vertical");
-
+        
         
     }
 
     private void FixedUpdate()
     {
-        H_Input = controls.Player1.H_Movement.ReadValue<float>();
         rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
+        Debug.Log(H_Input);
     }
 
-    public void MoveRight()
+    public void MoveRight(InputAction.CallbackContext context)
     {
         if (rb.velocity.x < maxSpeed)
         {
-            //rb.AddForce(new Vector2(moveSpeed, 0f), ForceMode2D.Impulse);
+            if (context.performed)
+            {
+                H_Input = 1f;
+            }
+            else if (context.canceled)
+            {
+                H_Input = 0f;
+            }
         }
     }
 
-    public void MoveLeft()
+    public void MoveLeft(InputAction.CallbackContext context)
     {
         if (rb.velocity.x > -maxSpeed)
         {
-            //rb.AddForce(new Vector2(-moveSpeed, 0f), ForceMode2D.Impulse);
+            if (context.performed)
+            {
+                H_Input = -1f;
+            }
+            else if (context.canceled)
+            {
+                H_Input = 0f;
+            }
         }
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-        //H_Input = context.ReadValue<float>();
     }
 
     public void Jump(InputAction.CallbackContext context)
