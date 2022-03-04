@@ -8,7 +8,7 @@ public class PlatformSpawnManager : MonoBehaviour
     private float timeSinceLastSpawn = 0;
     
     public float timeToSpawn;
-    public GameObject platform;
+    public GameObject[] platforms;
     public Transform spawnSpot;
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class PlatformSpawnManager : MonoBehaviour
     IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
     {
         yield return new WaitForSeconds(timeToSpawn);
-        SpawnPlatform(platform);
+        SpawnPlatform(platforms[Random.Range(0, platforms.Length)]);//Spawn a random platform from the array
     }
 
     void SpawnPlatform(GameObject platform)
