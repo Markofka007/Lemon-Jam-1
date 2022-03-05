@@ -38,43 +38,37 @@ public class PlayerController : MonoBehaviour
         {
             canJump = false;
         }
-        
-        
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
-        Debug.Log(H_Input);
+        if (H_Input > 0 && rb.velocity.x < maxSpeed || H_Input < 0 && rb.velocity.x > -maxSpeed)
+        {
+            rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
+        }
     }
 
     public void MoveRight(InputAction.CallbackContext context)
     {
-        if (rb.velocity.x < maxSpeed)
+        if (context.performed)
         {
-            if (context.performed)
-            {
-                H_Input = 1f;
-            }
-            else if (context.canceled)
-            {
-                H_Input = 0f;
-            }
+            H_Input = 1f;
+        }
+        else if (context.canceled && H_Input != -1)
+        {
+            H_Input = 0f;
         }
     }
 
     public void MoveLeft(InputAction.CallbackContext context)
     {
-        if (rb.velocity.x > -maxSpeed)
+        if (context.performed)
         {
-            if (context.performed)
-            {
-                H_Input = -1f;
-            }
-            else if (context.canceled)
-            {
-                H_Input = 0f;
-            }
+            H_Input = -1f;
+        }
+        else if (context.canceled && H_Input != 1)
+        {
+            H_Input = 0f;
         }
     }
 
