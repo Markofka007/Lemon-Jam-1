@@ -48,28 +48,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void MoveRight(InputAction.CallbackContext context)
+    public void Move(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            H_Input = 1f;
-        }
-        else if (context.canceled && H_Input != -1)
-        {
-            H_Input = 0f;
-        }
-    }
-
-    public void MoveLeft(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            H_Input = -1f;
-        }
-        else if (context.canceled && H_Input != 1)
-        {
-            H_Input = 0f;
-        }
+        H_Input = context.ReadValue<float>();
     }
 
     public void Jump(InputAction.CallbackContext context)

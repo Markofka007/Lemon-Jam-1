@@ -28,36 +28,18 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
             ""id"": ""2b5d2c62-40e4-4889-94ab-75b944b15753"",
             ""actions"": [
                 {
-                    ""name"": ""MoveRight"",
-                    ""type"": ""Button"",
-                    ""id"": ""d9eb55a4-99b8-489c-baec-a0343691d15e"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""e6f8723f-386b-4b0c-a703-f67b35f5948b"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MoveLeft"",
-                    ""type"": ""Button"",
-                    ""id"": ""03f8ad65-62e0-45ae-9792-f4894cc0c9a2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""78e03480-e301-4f45-8443-a23e00c0c3b7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""e0a3044c-63db-420d-a6d3-7f90f771c7f5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -71,52 +53,72 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""e0a3044c-63db-420d-a6d3-7f90f771c7f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""ad41e6a1-8020-4a6e-84e6-943d45aedbc3"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""4c893f65-a185-4a66-af50-ce800ef3819d"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveRight"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ff1a9510-3316-44e2-bd0e-68ff60bb99dc"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""id"": ""8e90519e-5586-45e1-8756-9c81c494cc84"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveRight"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""0149345e-e6c4-4a49-8334-b7845768ae78"",
+                    ""name"": ""H_Axis"",
+                    ""id"": ""efa548e6-2dcd-4a40-b657-edb3de3a4d5a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""11d14841-0647-414f-bcea-25bc5aca5ff8"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveLeft"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""461c02ba-e634-4b59-9cc2-5dca8f4a72dc"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""name"": ""positive"",
+                    ""id"": ""4311fc2a-6d1e-408c-857f-ece9f1cc0a66"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveLeft"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -153,28 +155,6 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4c893f65-a185-4a66-af50-ce800ef3819d"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8e90519e-5586-45e1-8756-9c81c494cc84"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""4c288b96-79fa-4a06-8f66-c7f6d224c6ec"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
@@ -202,11 +182,10 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
 }");
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
-        m_Player1_MoveRight = m_Player1.FindAction("MoveRight", throwIfNotFound: true);
-        m_Player1_MoveLeft = m_Player1.FindAction("MoveLeft", throwIfNotFound: true);
+        m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
-        m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
         m_Player1_Equip = m_Player1.FindAction("Equip", throwIfNotFound: true);
+        m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,20 +245,18 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
     // Player1
     private readonly InputActionMap m_Player1;
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
-    private readonly InputAction m_Player1_MoveRight;
-    private readonly InputAction m_Player1_MoveLeft;
+    private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Jump;
-    private readonly InputAction m_Player1_Fire;
     private readonly InputAction m_Player1_Equip;
+    private readonly InputAction m_Player1_Fire;
     public struct Player1Actions
     {
         private @Player1Inputs m_Wrapper;
         public Player1Actions(@Player1Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveRight => m_Wrapper.m_Player1_MoveRight;
-        public InputAction @MoveLeft => m_Wrapper.m_Player1_MoveLeft;
+        public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
-        public InputAction @Fire => m_Wrapper.m_Player1_Fire;
         public InputAction @Equip => m_Wrapper.m_Player1_Equip;
+        public InputAction @Fire => m_Wrapper.m_Player1_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -289,50 +266,43 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_Player1ActionsCallbackInterface != null)
             {
-                @MoveRight.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
-                @MoveRight.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
-                @MoveRight.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveRight;
-                @MoveLeft.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
-                @MoveLeft.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
-                @MoveLeft.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMoveLeft;
+                @Move.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnMove;
                 @Jump.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJump;
-                @Fire.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
                 @Equip.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
                 @Equip.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
                 @Equip.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
+                @Fire.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @MoveRight.started += instance.OnMoveRight;
-                @MoveRight.performed += instance.OnMoveRight;
-                @MoveRight.canceled += instance.OnMoveRight;
-                @MoveLeft.started += instance.OnMoveLeft;
-                @MoveLeft.performed += instance.OnMoveLeft;
-                @MoveLeft.canceled += instance.OnMoveLeft;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
                 @Equip.started += instance.OnEquip;
                 @Equip.performed += instance.OnEquip;
                 @Equip.canceled += instance.OnEquip;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
         }
     }
     public Player1Actions @Player1 => new Player1Actions(this);
     public interface IPlayer1Actions
     {
-        void OnMoveRight(InputAction.CallbackContext context);
-        void OnMoveLeft(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnEquip(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }

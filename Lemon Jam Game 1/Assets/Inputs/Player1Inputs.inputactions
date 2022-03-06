@@ -6,36 +6,18 @@
             "id": "2b5d2c62-40e4-4889-94ab-75b944b15753",
             "actions": [
                 {
-                    "name": "MoveRight",
-                    "type": "Button",
-                    "id": "d9eb55a4-99b8-489c-baec-a0343691d15e",
-                    "expectedControlType": "Button",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "e6f8723f-386b-4b0c-a703-f67b35f5948b",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MoveLeft",
-                    "type": "Button",
-                    "id": "03f8ad65-62e0-45ae-9792-f4894cc0c9a2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
                     "type": "Button",
                     "id": "78e03480-e301-4f45-8443-a23e00c0c3b7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "e0a3044c-63db-420d-a6d3-7f90f771c7f5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -49,52 +31,72 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "e0a3044c-63db-420d-a6d3-7f90f771c7f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "ad41e6a1-8020-4a6e-84e6-943d45aedbc3",
-                    "path": "<Keyboard>/d",
+                    "id": "4c893f65-a185-4a66-af50-ce800ef3819d",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveRight",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ff1a9510-3316-44e2-bd0e-68ff60bb99dc",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "8e90519e-5586-45e1-8756-9c81c494cc84",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveRight",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "0149345e-e6c4-4a49-8334-b7845768ae78",
+                    "name": "H_Axis",
+                    "id": "efa548e6-2dcd-4a40-b657-edb3de3a4d5a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "11d14841-0647-414f-bcea-25bc5aca5ff8",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLeft",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "461c02ba-e634-4b59-9cc2-5dca8f4a72dc",
-                    "path": "<Gamepad>/leftStick/left",
+                    "name": "positive",
+                    "id": "4311fc2a-6d1e-408c-857f-ece9f1cc0a66",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLeft",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -126,28 +128,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c893f65-a185-4a66-af50-ce800ef3819d",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8e90519e-5586-45e1-8756-9c81c494cc84",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
