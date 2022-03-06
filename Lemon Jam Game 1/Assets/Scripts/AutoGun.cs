@@ -39,7 +39,7 @@ public class AutoGun : MonoBehaviour
         gunToMouse = mousePos - gunTip.position;
 
         transform.localRotation = Quaternion.Euler(0, 0, -angleToMouse + 90f);
-        transform.localScale = new Vector3(1, Mathf.Abs(angleToMouse) / angleToMouse, 1);
+        transform.localScale = new Vector3(1, Mathf.Abs(angleToMouse) / angleToMouse , 1);
     }
 
     public void Fire(InputAction.CallbackContext context)
@@ -51,6 +51,8 @@ public class AutoGun : MonoBehaviour
             lr.SetPosition(1, mousePos);
 
             canShoot = false;
+
+            transform.parent.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f, Mathf.Sin(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f), ForceMode2D.Impulse);
 
             this.Wait(0.1f, () =>
             {
