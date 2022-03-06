@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemHandler : MonoBehaviour
 {
@@ -27,50 +28,46 @@ public class ItemHandler : MonoBehaviour
 
     private void Update()
     {
-        Vector3 distanceToPlayer = player.position - transform.position;
 
-        if (Input.GetKeyDown(KeyCode.E) && distanceToPlayer.magnitude <= 5f && !equiped && !P1_slotFull)
-        {
-            PickUpItem();
-        }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Q) && equiped)
+    public void PickUpItem(InputAction.CallbackContext context)
+    {
+        if (context.performed && (player.position - transform.position).magnitude <= 5f && !equiped && !P1_slotFull)
         {
-            DropItem();
+            equiped = true;
+            P1_slotFull = true;
+
+            transform.SetParent(gunContainer);
+            transform.localPosition = Vector3.forward * -1;
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
+            transform.localScale = Vector3.one;
+
+            rb.isKinematic = true;
+            coll.isTrigger = true;
+
+            autoGunScript.enabled = true;
         }
     }
 
-    public void PickUpItem()
+    public void DropItem(InputAction.CallbackContext context)
     {
-        equiped = true;
-        P1_slotFull = true;
+        if (context.performed && equiped)
+        {
+            equiped = false;
+            P1_slotFull = false;
 
-        transform.SetParent(gunContainer);
-        transform.localPosition = Vector3.forward * -1;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localScale = Vector3.one;
+            transform.SetParent(null);
 
-        rb.isKinematic = true;
-        coll.isTrigger = true;
+            rb.isKinematic = false;
+            coll.isTrigger = false;
 
-        autoGunScript.enabled = true;
-    }
+            rb.velocity = player.GetComponent<Rigidbody2D>().velocity;
+            rb.AddForce(Vector2.up * 2f, ForceMode2D.Impulse);
+            float random = Random.Range(-1f, 1f);
+            rb.AddTorque(random * 5f);
 
-    private void DropItem()
-    {
-        equiped = false;
-        P1_slotFull = false;
-
-        transform.SetParent(null);
-
-        rb.isKinematic = false;
-        coll.isTrigger = false;
-
-        rb.velocity = player.GetComponent<Rigidbody2D>().velocity;
-        rb.AddForce(Vector2.up * 2f, ForceMode2D.Impulse);
-        float random = Random.Range(-1f, 1f);
-        rb.AddTorque(random * 5f);
-
-        autoGunScript.enabled = false;
+            autoGunScript.enabled = false;
+        }
     }
 }

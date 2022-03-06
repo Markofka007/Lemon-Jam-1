@@ -1113,14 +1113,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: d9eb55a4-99b8-489c-baec-a0343691d15e
-    m_ActionName: Player1/MoveRight[/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 03f8ad65-62e0-45ae-9792-f4894cc0c9a2
-    m_ActionName: Player1/MoveLeft[/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 78e03480-e301-4f45-8443-a23e00c0c3b7
     m_ActionName: Player1/Jump[/Keyboard/space,/Keyboard/w]
   - m_PersistentCalls:
@@ -1140,13 +1132,41 @@ MonoBehaviour:
     m_ActionId: e0a3044c-63db-420d-a6d3-7f90f771c7f5
     m_ActionName: Player1/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 972757631}
+        m_TargetAssemblyTypeName: ItemHandler, Assembly-CSharp
+        m_MethodName: PickUpItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6cc84163-3915-4814-9066-cb49e67b1826
     m_ActionName: Player1/Equip[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e6f8723f-386b-4b0c-a703-f67b35f5948b
     m_ActionName: Player1/Move[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 972757631}
+        m_TargetAssemblyTypeName: ItemHandler, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63bb4a02-ac4b-48e0-83e5-7c5830109c0c
+    m_ActionName: Player1/Drop[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1

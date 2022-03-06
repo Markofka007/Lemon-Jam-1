@@ -55,6 +55,15 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""63bb4a02-ac4b-48e0-83e5-7c5830109c0c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Fire"",
                     ""type"": ""Button"",
                     ""id"": ""e0a3044c-63db-420d-a6d3-7f90f771c7f5"",
@@ -156,7 +165,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c288b96-79fa-4a06-8f66-c7f6d224c6ec"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -174,6 +183,17 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""Equip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2d029d0-ec3c-4506-8290-c1e30044f325"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
         m_Player1_Equip = m_Player1.FindAction("Equip", throwIfNotFound: true);
+        m_Player1_Drop = m_Player1.FindAction("Drop", throwIfNotFound: true);
         m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
     }
 
@@ -248,6 +269,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Jump;
     private readonly InputAction m_Player1_Equip;
+    private readonly InputAction m_Player1_Drop;
     private readonly InputAction m_Player1_Fire;
     public struct Player1Actions
     {
@@ -256,6 +278,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
         public InputAction @Equip => m_Wrapper.m_Player1_Equip;
+        public InputAction @Drop => m_Wrapper.m_Player1_Drop;
         public InputAction @Fire => m_Wrapper.m_Player1_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
@@ -275,6 +298,9 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 @Equip.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
                 @Equip.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
                 @Equip.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
+                @Drop.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
+                @Drop.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
+                @Drop.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnDrop;
                 @Fire.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
@@ -291,6 +317,9 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 @Equip.started += instance.OnEquip;
                 @Equip.performed += instance.OnEquip;
                 @Equip.canceled += instance.OnEquip;
+                @Drop.started += instance.OnDrop;
+                @Drop.performed += instance.OnDrop;
+                @Drop.canceled += instance.OnDrop;
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
@@ -303,6 +332,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnEquip(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
     }
 }
