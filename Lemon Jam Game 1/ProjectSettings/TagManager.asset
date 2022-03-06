@@ -10,6 +10,11 @@ TagManager:
   - Player2
   - Player3
   - Player4
+  - P1Container
+  - P2Container
+  - P3Container
+  - P4Container
+  - AutoGun
   layers:
   - Default
   - TransparentFX
@@ -28,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - AutoGun
   - 
   - 
   - 

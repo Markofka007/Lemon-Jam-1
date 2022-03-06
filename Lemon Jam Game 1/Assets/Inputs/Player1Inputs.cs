@@ -62,6 +62,15 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equip"",
+                    ""type"": ""Button"",
+                    ""id"": ""6cc84163-3915-4814-9066-cb49e67b1826"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,28 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c288b96-79fa-4a06-8f66-c7f6d224c6ec"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37923c5e-0b78-4ad3-abcd-eacb9a66e9a4"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -175,6 +206,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         m_Player1_MoveLeft = m_Player1.FindAction("MoveLeft", throwIfNotFound: true);
         m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
         m_Player1_Fire = m_Player1.FindAction("Fire", throwIfNotFound: true);
+        m_Player1_Equip = m_Player1.FindAction("Equip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +270,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_MoveLeft;
     private readonly InputAction m_Player1_Jump;
     private readonly InputAction m_Player1_Fire;
+    private readonly InputAction m_Player1_Equip;
     public struct Player1Actions
     {
         private @Player1Inputs m_Wrapper;
@@ -246,6 +279,7 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         public InputAction @MoveLeft => m_Wrapper.m_Player1_MoveLeft;
         public InputAction @Jump => m_Wrapper.m_Player1_Jump;
         public InputAction @Fire => m_Wrapper.m_Player1_Fire;
+        public InputAction @Equip => m_Wrapper.m_Player1_Equip;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -267,6 +301,9 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFire;
+                @Equip.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
+                @Equip.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
+                @Equip.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnEquip;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -283,6 +320,9 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Equip.started += instance.OnEquip;
+                @Equip.performed += instance.OnEquip;
+                @Equip.canceled += instance.OnEquip;
             }
         }
     }
@@ -293,5 +333,6 @@ public partial class @Player1Inputs : IInputActionCollection2, IDisposable
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnEquip(InputAction.CallbackContext context);
     }
 }
