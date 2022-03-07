@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 383862292}
   - component: {fileID: 383862297}
   - component: {fileID: 383862291}
+  - component: {fileID: 383862298}
   m_Layer: 7
   m_Name: Player1
   m_TagString: Player1
@@ -646,11 +647,27 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e6f8723f-386b-4b0c-a703-f67b35f5948b
     m_ActionName: Player1/Move[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63bb4a02-ac4b-48e0-83e5-7c5830109c0c
+    m_ActionName: Player1/Drop[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &383862298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383862290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &597039554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}

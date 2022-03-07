@@ -43,6 +43,8 @@ public class ItemHandler : MonoBehaviour
             transform.localRotation = Quaternion.Euler(Vector3.zero);
             transform.localScale = Vector3.one;
 
+            transform.parent.parent.GetComponent<FistAttack>().enabled = false;
+
             rb.isKinematic = true;
             coll.isTrigger = true;
 
@@ -56,6 +58,8 @@ public class ItemHandler : MonoBehaviour
         {
             equiped = false;
             P1_slotFull = false;
+
+            transform.parent.parent.GetComponent<FistAttack>().enabled = true;
 
             transform.SetParent(null);
 
