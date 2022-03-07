@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool canJump;
     private bool canDoubleJump;
     private float H_Input;
-    public LayerMask canJumpOn;
+    [SerializeField] private LayerMask canJumpOn;
     
     
     void Start()
