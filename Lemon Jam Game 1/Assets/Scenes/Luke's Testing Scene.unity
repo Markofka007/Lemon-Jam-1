@@ -304,11 +304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236199268105929326, guid: 2aa54160901c9fd4383cb5fa7374f19c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2805195
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8236199268105929326, guid: 2aa54160901c9fd4383cb5fa7374f19c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.825953
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 8236199268105929326, guid: 2aa54160901c9fd4383cb5fa7374f19c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -387,7 +387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
       propertyPath: m_LocalScale.x
@@ -446,6 +446,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 809583341}
     m_Modifications:
+    - target: {fileID: 4850893319560773730, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 767e5bea0c4dcfe4a83adf2938152dac, type: 2}
     - target: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -520,6 +524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 809583341}
     m_Modifications:
+    - target: {fileID: 4850893319560773730, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 767e5bea0c4dcfe4a83adf2938152dac, type: 2}
     - target: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -665,6 +673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 809583341}
     m_Modifications:
+    - target: {fileID: 4850893319560773730, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 767e5bea0c4dcfe4a83adf2938152dac, type: 2}
     - target: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
       propertyPath: m_RootOrder
       value: 1
