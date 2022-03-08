@@ -54,10 +54,10 @@ public class ItemHandler : MonoBehaviour
 
     public void P1_PickUpItem(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         if (context.performed && (player1.position - transform.position).magnitude <= 5f && !equiped && !P1_slotFull)
         {
-            Debug.Log(context);
-
             equiped = true;
             P1_slotFull = true;
 
@@ -77,10 +77,10 @@ public class ItemHandler : MonoBehaviour
 
     public void P1_DropItem(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         if (context.performed && equiped)
         {
-            Debug.Log(context);
-
             equiped = false;
             P1_slotFull = false;
 
@@ -104,8 +104,6 @@ public class ItemHandler : MonoBehaviour
     {
         if (context.performed && (player2.position - transform.position).magnitude <= 5f && !equiped && !P2_slotFull)
         {
-            Debug.Log(context);
-
             equiped = true;
             P2_slotFull = true;
 
@@ -127,8 +125,6 @@ public class ItemHandler : MonoBehaviour
     {
         if (context.performed && equiped)
         {
-            Debug.Log(context);
-
             equiped = false;
             P2_slotFull = false;
 

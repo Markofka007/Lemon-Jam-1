@@ -50,11 +50,15 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         H_Input = context.ReadValue<float>();
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         if (context.performed)
         {
             if (canJump)

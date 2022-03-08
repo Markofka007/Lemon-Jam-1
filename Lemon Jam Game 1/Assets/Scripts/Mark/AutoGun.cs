@@ -46,10 +46,10 @@ public class AutoGun : MonoBehaviour
     {
         if (context.performed && canShoot && this.enabled)
         {
-            lr.positionCount = 2;
-            lr.SetPosition(0, gunTip.position);
-            lr.SetPosition(1, mousePos);
-
+                lr.positionCount = 2;
+                lr.SetPosition(0, gunTip.position);
+                lr.SetPosition(1, mousePos);
+            
             canShoot = false;
 
             transform.parent.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f, Mathf.Sin(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f), ForceMode2D.Impulse);
