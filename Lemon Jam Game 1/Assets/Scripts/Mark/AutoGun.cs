@@ -46,9 +46,9 @@ public class AutoGun : MonoBehaviour
     {
         if (context.performed && canShoot && this.enabled)
         {
-                lr.positionCount = 2;
-                lr.SetPosition(0, gunTip.position);
-                lr.SetPosition(1, mousePos);
+            lr.positionCount = 2;
+            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(1, mousePos);
             
             canShoot = false;
 

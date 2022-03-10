@@ -274,6 +274,94 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Items"",
+            ""id"": ""ad217dc7-7ee4-4e63-827e-5dc3296e1e05"",
+            ""actions"": [
+                {
+                    ""name"": ""Equip"",
+                    ""type"": ""Button"",
+                    ""id"": ""c7169029-7870-48a0-a66d-58e5f925e413"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""34ea8a61-23f1-4506-805f-7b19987f62f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equip2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b13045d7-0667-4b5b-b12b-0f1e68b294ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop2"",
+                    ""type"": ""Button"",
+                    ""id"": ""faaaca02-ef5a-490a-8e5e-5e70959d80a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f846b06b-88b7-48c8-9e0f-0757aa2ec17e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Equip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89772eeb-ff48-4648-844a-90ee218cf24d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f055bc54-2392-4bf6-8c94-c970df9ae204"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Equip2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14db0509-e6ad-4dcb-8115-96483c4743a2"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Drop2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -313,6 +401,12 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Drop2 = m_Player.FindAction("Drop2", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
+        // Items
+        m_Items = asset.FindActionMap("Items", throwIfNotFound: true);
+        m_Items_Equip = m_Items.FindAction("Equip", throwIfNotFound: true);
+        m_Items_Drop = m_Items.FindAction("Drop", throwIfNotFound: true);
+        m_Items_Equip2 = m_Items.FindAction("Equip2", throwIfNotFound: true);
+        m_Items_Drop2 = m_Items.FindAction("Drop2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -473,6 +567,63 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Items
+    private readonly InputActionMap m_Items;
+    private IItemsActions m_ItemsActionsCallbackInterface;
+    private readonly InputAction m_Items_Equip;
+    private readonly InputAction m_Items_Drop;
+    private readonly InputAction m_Items_Equip2;
+    private readonly InputAction m_Items_Drop2;
+    public struct ItemsActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public ItemsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Equip => m_Wrapper.m_Items_Equip;
+        public InputAction @Drop => m_Wrapper.m_Items_Drop;
+        public InputAction @Equip2 => m_Wrapper.m_Items_Equip2;
+        public InputAction @Drop2 => m_Wrapper.m_Items_Drop2;
+        public InputActionMap Get() { return m_Wrapper.m_Items; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ItemsActions set) { return set.Get(); }
+        public void SetCallbacks(IItemsActions instance)
+        {
+            if (m_Wrapper.m_ItemsActionsCallbackInterface != null)
+            {
+                @Equip.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
+                @Equip.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
+                @Equip.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
+                @Drop.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
+                @Drop.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
+                @Drop.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
+                @Equip2.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
+                @Equip2.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
+                @Equip2.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
+                @Drop2.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
+                @Drop2.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
+                @Drop2.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
+            }
+            m_Wrapper.m_ItemsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Equip.started += instance.OnEquip;
+                @Equip.performed += instance.OnEquip;
+                @Equip.canceled += instance.OnEquip;
+                @Drop.started += instance.OnDrop;
+                @Drop.performed += instance.OnDrop;
+                @Drop.canceled += instance.OnDrop;
+                @Equip2.started += instance.OnEquip2;
+                @Equip2.performed += instance.OnEquip2;
+                @Equip2.canceled += instance.OnEquip2;
+                @Drop2.started += instance.OnDrop2;
+                @Drop2.performed += instance.OnDrop2;
+                @Drop2.canceled += instance.OnDrop2;
+            }
+        }
+    }
+    public ItemsActions @Items => new ItemsActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -503,5 +654,12 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnDrop2(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnFire2(InputAction.CallbackContext context);
+    }
+    public interface IItemsActions
+    {
+        void OnEquip(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
+        void OnEquip2(InputAction.CallbackContext context);
+        void OnDrop2(InputAction.CallbackContext context);
     }
 }

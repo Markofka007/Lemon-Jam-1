@@ -28,12 +28,16 @@ public class ItemHandler : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
 
         player1 = GameObject.FindGameObjectWithTag("Player1").transform;
+        Debug.Log(player1.name);
         player2 = GameObject.FindGameObjectWithTag("Player2").transform;
+        Debug.Log(player2.name);
         //player3 = GameObject.FindGameObjectWithTag("Player3").transform;
         //player4 = GameObject.FindGameObjectWithTag("Player4").transform;
 
         gunContainer1 = GameObject.FindGameObjectWithTag("P1Container").transform;
+        Debug.Log(gunContainer1.name);
         gunContainer2 = GameObject.FindGameObjectWithTag("P2Container").transform;
+        Debug.Log(gunContainer2.name);
         //gunContainer3 = GameObject.FindGameObjectWithTag("P3Container").transform;
         //gunContainer4 = GameObject.FindGameObjectWithTag("P4Container").transform;
 
@@ -66,7 +70,7 @@ public class ItemHandler : MonoBehaviour
             transform.localRotation = Quaternion.Euler(Vector3.zero);
             transform.localScale = Vector3.one;
 
-            transform.parent.parent.GetComponent<FistAttack>().enabled = false;
+            //transform.parent.parent.GetComponent<FistAttack>().enabled = false;
 
             rb.isKinematic = true;
             coll.isTrigger = true;
@@ -84,7 +88,7 @@ public class ItemHandler : MonoBehaviour
             equiped = false;
             P1_slotFull = false;
 
-            transform.parent.parent.GetComponent<FistAttack>().enabled = true;
+            //transform.parent.parent.GetComponent<FistAttack>().enabled = true;
 
             transform.SetParent(null);
 
@@ -102,6 +106,8 @@ public class ItemHandler : MonoBehaviour
 
     public void P2_PickUpItem(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         if (context.performed && (player2.position - transform.position).magnitude <= 5f && !equiped && !P2_slotFull)
         {
             equiped = true;
@@ -112,7 +118,7 @@ public class ItemHandler : MonoBehaviour
             transform.localRotation = Quaternion.Euler(Vector3.zero);
             transform.localScale = Vector3.one;
 
-            transform.parent.parent.GetComponent<FistAttack>().enabled = false;
+            //transform.parent.parent.GetComponent<FistAttack>().enabled = false;
 
             rb.isKinematic = true;
             coll.isTrigger = true;
@@ -123,12 +129,14 @@ public class ItemHandler : MonoBehaviour
 
     public void P2_DropItem(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+
         if (context.performed && equiped)
         {
             equiped = false;
             P2_slotFull = false;
 
-            transform.parent.parent.GetComponent<FistAttack>().enabled = true;
+            //transform.parent.parent.GetComponent<FistAttack>().enabled = true;
 
             transform.SetParent(null);
 
