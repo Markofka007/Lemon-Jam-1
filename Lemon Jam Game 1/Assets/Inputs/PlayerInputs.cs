@@ -38,12 +38,39 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Move2"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""135829f2-281c-455e-bcca-8b541ded65cb"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Move3"",
+                    ""type"": ""Value"",
+                    ""id"": ""15c69c6f-c2c6-4e31-aee0-79064c6d97cd"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim2"",
+                    ""type"": ""Value"",
+                    ""id"": ""d9cb63df-ebfb-4545-a02d-3e1cc0050ab5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Aim3"",
+                    ""type"": ""Value"",
+                    ""id"": ""6c6b2c27-6d08-4878-87cd-c1aa88c94b62"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Jump"",
@@ -57,25 +84,16 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Jump2"",
                     ""type"": ""Button"",
-                    ""id"": ""964da0a9-406e-4f6e-a883-52441a0b5278"",
+                    ""id"": ""b53a6da0-5704-4415-bac3-f79757ffe0e9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Equip"",
+                    ""name"": ""Jump3"",
                     ""type"": ""Button"",
-                    ""id"": ""6cc84163-3915-4814-9066-cb49e67b1826"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Equip2"",
-                    ""type"": ""Button"",
-                    ""id"": ""b9eac536-e487-4e51-bd1e-965b51e7d32c"",
+                    ""id"": ""37c1c807-1c88-41c1-8091-802608412688"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -93,7 +111,16 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Drop2"",
                     ""type"": ""Button"",
-                    ""id"": ""9affae34-1795-4a97-926b-ba798cda2585"",
+                    ""id"": ""9836f99f-0d48-4a2c-ba67-fae2f1b47366"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop3"",
+                    ""type"": ""Button"",
+                    ""id"": ""64938df4-cd95-4e02-9039-82abbd222c19"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -111,7 +138,16 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Fire2"",
                     ""type"": ""Button"",
-                    ""id"": ""51d4c309-906f-4e20-960a-3122928b0909"",
+                    ""id"": ""2924d106-0f24-4320-a92a-f63dd55eb7e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire3"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7d8947f-4437-4396-aa13-67a2f5429cd4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -176,19 +212,19 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4c288b96-79fa-4a06-8f66-c7f6d224c6ec"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""85648406-25c1-4ae9-9b0c-ec3b3d06e562"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
-                    ""action"": ""Equip"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""a2d029d0-ec3c-4506-8290-c1e30044f325"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -231,7 +267,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""17b912a1-a760-40de-a151-68107083a6b8"",
+                    ""id"": ""c1c2a4de-7ae1-435f-8919-34b745f60c16"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -242,19 +278,8 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c450b6be-5ef5-467a-a3ed-7cf0920b42b5"",
+                    ""id"": ""628ff77c-908a-4df8-b046-4a7c5601d9bd"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Equip2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ca349bd7-e33e-49f2-9d6d-0b82e0143d0f"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -264,7 +289,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec6cdc34-c293-4ea2-abc7-cf743c2b3a2e"",
+                    ""id"": ""a6161220-c685-4839-b79a-52d7f527ded9"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -272,94 +297,182 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""action"": ""Fire2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Items"",
-            ""id"": ""ad217dc7-7ee4-4e63-827e-5dc3296e1e05"",
-            ""actions"": [
-                {
-                    ""name"": ""Equip"",
-                    ""type"": ""Button"",
-                    ""id"": ""c7169029-7870-48a0-a66d-58e5f925e413"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Drop"",
-                    ""type"": ""Button"",
-                    ""id"": ""34ea8a61-23f1-4506-805f-7b19987f62f2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
+                    ""name"": ""LeftStickX"",
+                    ""id"": ""74921476-e928-434e-b9eb-77c8fb6ca473"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move3"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Equip2"",
-                    ""type"": ""Button"",
-                    ""id"": ""b13045d7-0667-4b5b-b12b-0f1e68b294ba"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
+                    ""name"": ""negative"",
+                    ""id"": ""5f026a79-4054-42b9-8346-85857264eca2"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Drop2"",
-                    ""type"": ""Button"",
-                    ""id"": ""faaaca02-ef5a-490a-8e5e-5e70959d80a6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
+                    ""name"": ""positive"",
+                    ""id"": ""b2b39e6d-f1ca-4cfc-a22e-0f2801b259a0"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
                 {
                     ""name"": """",
-                    ""id"": ""f846b06b-88b7-48c8-9e0f-0757aa2ec17e"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""17708944-288d-4eb0-bc08-27ca59343639"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Equip"",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Jump3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""89772eeb-ff48-4648-844a-90ee218cf24d"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Drop"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f055bc54-2392-4bf6-8c94-c970df9ae204"",
+                    ""id"": ""9bebb833-193a-414a-9e3e-5dfada655d35"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Equip2"",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Drop3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""14db0509-e6ad-4dcb-8115-96483c4743a2"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""4e4a54ae-166a-4c90-8bc5-194cabf01ae6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Fire3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""id"": ""75a50636-057d-4a20-8280-10d5dcfa5dde"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""60a36ba2-181d-4fc6-a73b-6c8e41fb6062"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
-                    ""action"": ""Drop2"",
+                    ""action"": ""Aim2"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""95490c22-0b22-42b3-b31b-6e7e5d5e5bc1"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9caa7c16-95a4-4e32-83c7-abec7a24bce2"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6a75218d-899a-4b23-87a3-d8864c5fa71a"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""id"": ""92ba081c-7d23-49e4-ab18-8edb33d6c340"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim3"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""db9c3c6f-2ee4-4228-9f19-68b86fa428ea"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Aim3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""d07f1d75-7648-411c-bbaa-711c00cf63af"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Aim3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""dd210a03-f0c8-4462-aeb4-04659d9385b4"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Aim3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b8814586-8175-407a-9e88-481a080f5c99"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Aim3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -371,7 +484,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -386,6 +499,17 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Controller2"",
+            ""bindingGroup"": ""Controller2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -393,20 +517,18 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Move2 = m_Player.FindAction("Move2", throwIfNotFound: true);
+        m_Player_Move3 = m_Player.FindAction("Move3", throwIfNotFound: true);
+        m_Player_Aim2 = m_Player.FindAction("Aim2", throwIfNotFound: true);
+        m_Player_Aim3 = m_Player.FindAction("Aim3", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Jump2 = m_Player.FindAction("Jump2", throwIfNotFound: true);
-        m_Player_Equip = m_Player.FindAction("Equip", throwIfNotFound: true);
-        m_Player_Equip2 = m_Player.FindAction("Equip2", throwIfNotFound: true);
+        m_Player_Jump3 = m_Player.FindAction("Jump3", throwIfNotFound: true);
         m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
         m_Player_Drop2 = m_Player.FindAction("Drop2", throwIfNotFound: true);
+        m_Player_Drop3 = m_Player.FindAction("Drop3", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
-        // Items
-        m_Items = asset.FindActionMap("Items", throwIfNotFound: true);
-        m_Items_Equip = m_Items.FindAction("Equip", throwIfNotFound: true);
-        m_Items_Drop = m_Items.FindAction("Drop", throwIfNotFound: true);
-        m_Items_Equip2 = m_Items.FindAction("Equip2", throwIfNotFound: true);
-        m_Items_Drop2 = m_Items.FindAction("Drop2", throwIfNotFound: true);
+        m_Player_Fire3 = m_Player.FindAction("Fire3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -468,28 +590,36 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Move2;
+    private readonly InputAction m_Player_Move3;
+    private readonly InputAction m_Player_Aim2;
+    private readonly InputAction m_Player_Aim3;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Jump2;
-    private readonly InputAction m_Player_Equip;
-    private readonly InputAction m_Player_Equip2;
+    private readonly InputAction m_Player_Jump3;
     private readonly InputAction m_Player_Drop;
     private readonly InputAction m_Player_Drop2;
+    private readonly InputAction m_Player_Drop3;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Fire2;
+    private readonly InputAction m_Player_Fire3;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
         public PlayerActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Move2 => m_Wrapper.m_Player_Move2;
+        public InputAction @Move3 => m_Wrapper.m_Player_Move3;
+        public InputAction @Aim2 => m_Wrapper.m_Player_Aim2;
+        public InputAction @Aim3 => m_Wrapper.m_Player_Aim3;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Jump2 => m_Wrapper.m_Player_Jump2;
-        public InputAction @Equip => m_Wrapper.m_Player_Equip;
-        public InputAction @Equip2 => m_Wrapper.m_Player_Equip2;
+        public InputAction @Jump3 => m_Wrapper.m_Player_Jump3;
         public InputAction @Drop => m_Wrapper.m_Player_Drop;
         public InputAction @Drop2 => m_Wrapper.m_Player_Drop2;
+        public InputAction @Drop3 => m_Wrapper.m_Player_Drop3;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
+        public InputAction @Fire3 => m_Wrapper.m_Player_Fire3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -505,30 +635,42 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Move2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
                 @Move2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
                 @Move2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
+                @Move3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove3;
+                @Move3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove3;
+                @Move3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove3;
+                @Aim2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
+                @Aim2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
+                @Aim2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
+                @Aim3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim3;
+                @Aim3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim3;
+                @Aim3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim3;
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump2;
                 @Jump2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump2;
                 @Jump2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump2;
-                @Equip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip;
-                @Equip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip;
-                @Equip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip;
-                @Equip2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip2;
-                @Equip2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip2;
-                @Equip2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquip2;
+                @Jump3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump3;
+                @Jump3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump3;
+                @Jump3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump3;
                 @Drop.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
                 @Drop.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
                 @Drop.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop;
                 @Drop2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop2;
                 @Drop2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop2;
                 @Drop2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop2;
+                @Drop3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop3;
+                @Drop3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop3;
+                @Drop3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDrop3;
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
                 @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
                 @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
+                @Fire3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
+                @Fire3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -539,91 +681,46 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Move2.started += instance.OnMove2;
                 @Move2.performed += instance.OnMove2;
                 @Move2.canceled += instance.OnMove2;
+                @Move3.started += instance.OnMove3;
+                @Move3.performed += instance.OnMove3;
+                @Move3.canceled += instance.OnMove3;
+                @Aim2.started += instance.OnAim2;
+                @Aim2.performed += instance.OnAim2;
+                @Aim2.canceled += instance.OnAim2;
+                @Aim3.started += instance.OnAim3;
+                @Aim3.performed += instance.OnAim3;
+                @Aim3.canceled += instance.OnAim3;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
                 @Jump2.started += instance.OnJump2;
                 @Jump2.performed += instance.OnJump2;
                 @Jump2.canceled += instance.OnJump2;
-                @Equip.started += instance.OnEquip;
-                @Equip.performed += instance.OnEquip;
-                @Equip.canceled += instance.OnEquip;
-                @Equip2.started += instance.OnEquip2;
-                @Equip2.performed += instance.OnEquip2;
-                @Equip2.canceled += instance.OnEquip2;
+                @Jump3.started += instance.OnJump3;
+                @Jump3.performed += instance.OnJump3;
+                @Jump3.canceled += instance.OnJump3;
                 @Drop.started += instance.OnDrop;
                 @Drop.performed += instance.OnDrop;
                 @Drop.canceled += instance.OnDrop;
                 @Drop2.started += instance.OnDrop2;
                 @Drop2.performed += instance.OnDrop2;
                 @Drop2.canceled += instance.OnDrop2;
+                @Drop3.started += instance.OnDrop3;
+                @Drop3.performed += instance.OnDrop3;
+                @Drop3.canceled += instance.OnDrop3;
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
                 @Fire2.started += instance.OnFire2;
                 @Fire2.performed += instance.OnFire2;
                 @Fire2.canceled += instance.OnFire2;
+                @Fire3.started += instance.OnFire3;
+                @Fire3.performed += instance.OnFire3;
+                @Fire3.canceled += instance.OnFire3;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // Items
-    private readonly InputActionMap m_Items;
-    private IItemsActions m_ItemsActionsCallbackInterface;
-    private readonly InputAction m_Items_Equip;
-    private readonly InputAction m_Items_Drop;
-    private readonly InputAction m_Items_Equip2;
-    private readonly InputAction m_Items_Drop2;
-    public struct ItemsActions
-    {
-        private @PlayerInputs m_Wrapper;
-        public ItemsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Equip => m_Wrapper.m_Items_Equip;
-        public InputAction @Drop => m_Wrapper.m_Items_Drop;
-        public InputAction @Equip2 => m_Wrapper.m_Items_Equip2;
-        public InputAction @Drop2 => m_Wrapper.m_Items_Drop2;
-        public InputActionMap Get() { return m_Wrapper.m_Items; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ItemsActions set) { return set.Get(); }
-        public void SetCallbacks(IItemsActions instance)
-        {
-            if (m_Wrapper.m_ItemsActionsCallbackInterface != null)
-            {
-                @Equip.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
-                @Equip.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
-                @Equip.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip;
-                @Drop.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
-                @Drop.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
-                @Drop.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop;
-                @Equip2.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
-                @Equip2.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
-                @Equip2.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnEquip2;
-                @Drop2.started -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
-                @Drop2.performed -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
-                @Drop2.canceled -= m_Wrapper.m_ItemsActionsCallbackInterface.OnDrop2;
-            }
-            m_Wrapper.m_ItemsActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Equip.started += instance.OnEquip;
-                @Equip.performed += instance.OnEquip;
-                @Equip.canceled += instance.OnEquip;
-                @Drop.started += instance.OnDrop;
-                @Drop.performed += instance.OnDrop;
-                @Drop.canceled += instance.OnDrop;
-                @Equip2.started += instance.OnEquip2;
-                @Equip2.performed += instance.OnEquip2;
-                @Equip2.canceled += instance.OnEquip2;
-                @Drop2.started += instance.OnDrop2;
-                @Drop2.performed += instance.OnDrop2;
-                @Drop2.canceled += instance.OnDrop2;
-            }
-        }
-    }
-    public ItemsActions @Items => new ItemsActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -642,24 +739,30 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
+    private int m_Controller2SchemeIndex = -1;
+    public InputControlScheme Controller2Scheme
+    {
+        get
+        {
+            if (m_Controller2SchemeIndex == -1) m_Controller2SchemeIndex = asset.FindControlSchemeIndex("Controller2");
+            return asset.controlSchemes[m_Controller2SchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnMove2(InputAction.CallbackContext context);
+        void OnMove3(InputAction.CallbackContext context);
+        void OnAim2(InputAction.CallbackContext context);
+        void OnAim3(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnJump2(InputAction.CallbackContext context);
-        void OnEquip(InputAction.CallbackContext context);
-        void OnEquip2(InputAction.CallbackContext context);
+        void OnJump3(InputAction.CallbackContext context);
         void OnDrop(InputAction.CallbackContext context);
         void OnDrop2(InputAction.CallbackContext context);
+        void OnDrop3(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnFire2(InputAction.CallbackContext context);
-    }
-    public interface IItemsActions
-    {
-        void OnEquip(InputAction.CallbackContext context);
-        void OnDrop(InputAction.CallbackContext context);
-        void OnEquip2(InputAction.CallbackContext context);
-        void OnDrop2(InputAction.CallbackContext context);
+        void OnFire3(InputAction.CallbackContext context);
     }
 }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class AutoGun : MonoBehaviour
 {
@@ -42,9 +41,9 @@ public class AutoGun : MonoBehaviour
         transform.localScale = new Vector3(1, Mathf.Abs(angleToMouse) / angleToMouse , 1);
     }
 
-    public void Fire(InputAction.CallbackContext context)
+    public void Fire()
     {
-        if (context.performed && canShoot && this.enabled)
+        if (this.enabled)
         {
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);

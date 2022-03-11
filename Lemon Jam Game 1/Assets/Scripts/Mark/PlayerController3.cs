@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController3 : MonoBehaviour
 {
     private Rigidbody2D rb;
 
@@ -16,21 +16,17 @@ public class PlayerController : MonoBehaviour
     private float H_Input;
     [SerializeField] private LayerMask canJumpOn;
 
+    private Vector2 rightStick;
 
-    private Camera mainCam;
 
-    private Vector3 mousePos;
-    private Vector3 localMousePos;
-    private float angleToMouse;
+    private float controllerAngle;
 
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-
-        mainCam = Camera.main;
     }
-    
+
     void Update()
     {
         if (transform.position.y < -10)
@@ -43,15 +39,13 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
             canDoubleJump = true;
-        } else
+        }
+        else
         {
             canJump = false;
         }
 
-
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        localMousePos = mousePos - transform.position;
-        angleToMouse = Mathf.Rad2Deg * Mathf.Atan2(localMousePos.x, localMousePos.y);
+        controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
     }
 
     private void FixedUpdate()
@@ -65,6 +59,11 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         H_Input = context.ReadValue<float>();
+    }
+
+    public void Aim(InputAction.CallbackContext context)
+    {
+        rightStick = context.ReadValue<Vector2>();
     }
 
     public void Jump(InputAction.CallbackContext context)
