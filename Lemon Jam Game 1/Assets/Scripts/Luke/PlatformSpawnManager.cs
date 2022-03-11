@@ -10,16 +10,20 @@ public class PlatformSpawnManager : MonoBehaviour
     public float timeToSpawn;
     public GameObject[] platforms;
     public Transform spawnSpot;
+    public bool doSpawn = true;
 
     // Update is called once per frame
     void Update()
     {
-        timeSinceLastSpawn += Time.deltaTime;//Increment the timer after the last spawn
-
-        if (timeSinceLastSpawn > timeToSpawn)//True after timeToSpawn seconds since last spawn
+       if(doSpawn)
         {
-            StartCoroutine("WaitSpawn");//Begin delayed spawn
-            timeSinceLastSpawn = 0;//Reset clock
+            timeSinceLastSpawn += Time.deltaTime;//Increment the timer after the last spawn
+
+            if (timeSinceLastSpawn > timeToSpawn)//True after timeToSpawn seconds since last spawn
+            {
+                StartCoroutine("WaitSpawn");//Begin delayed spawn
+                timeSinceLastSpawn = 0;//Reset clock
+            }
         }
     }
 
