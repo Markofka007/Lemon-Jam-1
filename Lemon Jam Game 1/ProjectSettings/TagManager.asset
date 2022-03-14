@@ -3,24 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Platform Segment
-  - Player1
-  - Player2
-  - Player3
-  - Player4
-  - P1Container
-  - P2Container
-  - P3Container
-  - P4Container
-  - AutoGun
-<<<<<<< Updated upstream
-  - Ending Platform
-  - Platform
-=======
-  - Equipable
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -28,18 +11,18 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Player1
-  - Player2
-  - Player3
-  - Player4
-  - ScreenWalls
   - 
   - 
   - 
   - 
   - 
-  - AutoGun
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
