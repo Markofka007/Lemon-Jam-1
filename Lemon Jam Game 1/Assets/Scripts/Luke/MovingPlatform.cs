@@ -16,22 +16,39 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tempOrigin = transform.position;
-
+        tempOrigin = origin.position;
+        movePosition = moveTo.position;
+        shouldMoveTo = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position != movePosition)
+        if(shouldMoveTo)
         {
             transform.position = Vector3.MoveTowards(transform.position, movePosition, Time.deltaTime * speed);
+            StartCoroutine("Delay");
         }
 
-        if(transform.position != movePosition)
+        if(!shouldMoveTo)
         {
-            //transform.position = Vector3()
+            transform.position = Vector3.MoveTowards(transform.position, tempOrigin, Time.deltaTime * speed);
+            StartCoroutine("Delay");
         }
     }
-       
+    
+    IEnumerator Delay()
+    {
+        float spawnDelay = speed;
+        yield return new WaitForSeconds(spawnDelay);
+        OtherThing();
+    }
+
+    void OtherThing()
+    {
+        shouldMoveTo = !shouldMoveTo;
+        movePosition = moveTo.position;
+        tempOrigin = origin.position;
+    }
+
 }

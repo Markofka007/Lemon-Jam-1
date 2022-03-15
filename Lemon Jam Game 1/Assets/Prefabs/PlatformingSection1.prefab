@@ -21,19 +21,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4394614408310504749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2168935466974458833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e24ca03bc027bb4da8d262dd8971923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Velo: 7
 --- !u!1 &2508033996279739080
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +30,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6727760958980122034}
+  - component: {fileID: -3723314469512558395}
   m_Layer: 6
   m_Name: PlatformingSection1
   m_TagString: Platform Segment
@@ -68,6 +56,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3723314469512558395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2508033996279739080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e24ca03bc027bb4da8d262dd8971923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velo: 7
 --- !u!50 &3051417466929501830
 Rigidbody2D:
   serializedVersion: 4
@@ -89,19 +90,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3977182074296078462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6763082889554348401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e24ca03bc027bb4da8d262dd8971923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Velo: 7
 --- !u!50 &1321649920778835843
 Rigidbody2D:
   serializedVersion: 4
@@ -123,19 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1750104976730919216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8204059480935101485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e24ca03bc027bb4da8d262dd8971923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Velo: 7
 --- !u!1001 &1632226822616303430
 PrefabInstance:
   m_ObjectHideFlags: 0

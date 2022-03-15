@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    public float Velo;
-    private Rigidbody2D rb;
+    public float Velo = 7;
 
     // Update is called once per frame
-    private void Start()
+    private void Update()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(-Velo, 0);
+        transform.position += Vector3.left * Velo * Time.deltaTime;
     }
 }
