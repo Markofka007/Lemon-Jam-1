@@ -87,7 +87,7 @@ public class PlayerController4 : MonoBehaviour
     {
         if (context.performed)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<AutoGun3>().Fire();
+            transform.GetChild(0).GetChild(0).GetComponent<AutoGun4>().Fire();
         }
     }
 }

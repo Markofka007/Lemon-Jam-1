@@ -64,6 +64,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""197c876d-0285-486f-9f6e-a26e47cfa208"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Aim2"",
                     ""type"": ""Value"",
                     ""id"": ""d9cb63df-ebfb-4545-a02d-3e1cc0050ab5"",
@@ -203,10 +212,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c893f65-a185-4a66-af50-ce800ef3819d"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -225,10 +234,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""11d14841-0647-414f-bcea-25bc5aca5ff8"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -236,10 +245,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""4311fc2a-6d1e-408c-857f-ece9f1cc0a66"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -247,21 +256,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d72ae9f4-00cc-447a-b6ba-7e2aa195180e"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""85648406-25c1-4ae9-9b0c-ec3b3d06e562"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KBM"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -269,10 +267,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a2d029d0-ec3c-4506-8290-c1e30044f325"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -294,7 +292,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Move2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -305,7 +303,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Move2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -316,7 +314,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Jump2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -327,7 +325,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Drop2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -338,7 +336,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Fire2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -360,7 +358,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Move3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -371,7 +369,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Move3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -382,7 +380,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Jump3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -393,7 +391,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Drop3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -404,7 +402,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Fire3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -426,7 +424,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Aim2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -437,7 +435,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Aim2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -448,7 +446,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Aim2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -459,7 +457,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller"",
+                    ""groups"": ""Controller2"",
                     ""action"": ""Aim2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -481,7 +479,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Aim3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -492,7 +490,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Aim3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -503,7 +501,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Aim3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -514,7 +512,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller2"",
+                    ""groups"": ""Controller3"",
                     ""action"": ""Aim3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -536,7 +534,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Move4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -547,7 +545,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Move4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -569,7 +567,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Aim4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -580,7 +578,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Aim4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -591,7 +589,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Aim4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -602,66 +600,110 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Aim4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""18532b39-af14-424a-8a7e-c4d7401fe866"",
+                    ""id"": ""de434094-d211-43e6-86a2-fc2a4c94c58d"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Jump4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""05d47bbf-66f0-4bb1-bbf6-09a2d0f85832"",
+                    ""id"": ""3a42fbca-0c85-4498-adc9-c73ea25f38fd"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Drop4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""edab43b7-6567-4daf-ae6f-2d982c989323"",
+                    ""id"": ""0b2560bd-5e78-451d-9acb-95028a4d844b"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller3"",
+                    ""groups"": ""Controller4"",
                     ""action"": ""Fire4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""id"": ""6504fc47-2f0b-4dd9-b82f-5bf1f0452934"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b922d938-b0f7-45ea-b0ed-0add992e2bac"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e21eb0e7-6de0-4097-9301-43fa7a69c4e9"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""87644c38-83eb-41a2-87d2-0c0d37595b5f"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""78527749-43d7-4cf3-b8f0-ed2f77a1b8a4"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""KBM"",
-            ""bindingGroup"": ""KBM"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
             ""name"": ""Controller"",
             ""bindingGroup"": ""Controller"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -687,6 +729,17 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Controller4"",
+            ""bindingGroup"": ""Controller4"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -696,6 +749,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Move2 = m_Player.FindAction("Move2", throwIfNotFound: true);
         m_Player_Move3 = m_Player.FindAction("Move3", throwIfNotFound: true);
         m_Player_Move4 = m_Player.FindAction("Move4", throwIfNotFound: true);
+        m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Aim2 = m_Player.FindAction("Aim2", throwIfNotFound: true);
         m_Player_Aim3 = m_Player.FindAction("Aim3", throwIfNotFound: true);
         m_Player_Aim4 = m_Player.FindAction("Aim4", throwIfNotFound: true);
@@ -774,6 +828,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move2;
     private readonly InputAction m_Player_Move3;
     private readonly InputAction m_Player_Move4;
+    private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Aim2;
     private readonly InputAction m_Player_Aim3;
     private readonly InputAction m_Player_Aim4;
@@ -797,6 +852,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         public InputAction @Move2 => m_Wrapper.m_Player_Move2;
         public InputAction @Move3 => m_Wrapper.m_Player_Move3;
         public InputAction @Move4 => m_Wrapper.m_Player_Move4;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Aim2 => m_Wrapper.m_Player_Aim2;
         public InputAction @Aim3 => m_Wrapper.m_Player_Aim3;
         public InputAction @Aim4 => m_Wrapper.m_Player_Aim4;
@@ -833,6 +889,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Move4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove4;
                 @Move4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove4;
                 @Move4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove4;
+                @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 @Aim2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
                 @Aim2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
                 @Aim2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim2;
@@ -894,6 +953,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Move4.started += instance.OnMove4;
                 @Move4.performed += instance.OnMove4;
                 @Move4.canceled += instance.OnMove4;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
                 @Aim2.started += instance.OnAim2;
                 @Aim2.performed += instance.OnAim2;
                 @Aim2.canceled += instance.OnAim2;
@@ -943,15 +1005,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-    private int m_KBMSchemeIndex = -1;
-    public InputControlScheme KBMScheme
-    {
-        get
-        {
-            if (m_KBMSchemeIndex == -1) m_KBMSchemeIndex = asset.FindControlSchemeIndex("KBM");
-            return asset.controlSchemes[m_KBMSchemeIndex];
-        }
-    }
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -979,12 +1032,22 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_Controller3SchemeIndex];
         }
     }
+    private int m_Controller4SchemeIndex = -1;
+    public InputControlScheme Controller4Scheme
+    {
+        get
+        {
+            if (m_Controller4SchemeIndex == -1) m_Controller4SchemeIndex = asset.FindControlSchemeIndex("Controller4");
+            return asset.controlSchemes[m_Controller4SchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnMove2(InputAction.CallbackContext context);
         void OnMove3(InputAction.CallbackContext context);
         void OnMove4(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
         void OnAim2(InputAction.CallbackContext context);
         void OnAim3(InputAction.CallbackContext context);
         void OnAim4(InputAction.CallbackContext context);

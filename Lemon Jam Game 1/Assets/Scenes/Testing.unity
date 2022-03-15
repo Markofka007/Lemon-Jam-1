@@ -231,6 +231,7 @@ MonoBehaviour:
   canJumpOn:
     serializedVersion: 2
     m_Bits: 904
+  controllerAngle: 0
 --- !u!70 &383862292
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -485,8 +486,24 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
     m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger,/XInputControllerWindows4/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 383862291}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Aim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 197c876d-0285-486f-9f6e-a26e47cfa208
+    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: KBM
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -878,8 +895,12 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
     m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger,/XInputControllerWindows4/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 197c876d-0285-486f-9f6e-a26e47cfa208
+    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Controller2
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -962,7 +983,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9056604, g: 0.8311436, b: 0.31185475, a: 1}
+  m_Color: {r: 0.3946963, g: 0.8867924, b: 0.29699183, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1783,8 +1804,12 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
     m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger,/XInputControllerWindows4/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 197c876d-0285-486f-9f6e-a26e47cfa208
+    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller2
+  m_DefaultControlScheme: Controller3
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1867,7 +1892,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9056604, g: 0.8311436, b: 0.31185475, a: 1}
+  m_Color: {r: 0.90588236, g: 0.5256861, b: 0.31372547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1934,7 +1959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1643921887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,8 +2146,12 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
     m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger,/XInputControllerWindows4/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 197c876d-0285-486f-9f6e-a26e47cfa208
+    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller3
+  m_DefaultControlScheme: Controller4
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -2205,7 +2234,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9056604, g: 0.8311436, b: 0.31185475, a: 1}
+  m_Color: {r: 0.58680326, g: 0.31372547, b: 0.90588236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

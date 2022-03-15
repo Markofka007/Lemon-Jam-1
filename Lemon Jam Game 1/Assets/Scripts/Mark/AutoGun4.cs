@@ -14,7 +14,7 @@ public class AutoGun4 : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private bool canShoot;
+    //private bool canShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class AutoGun4 : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        canShoot = true;
+        //canShoot = true;
     }
 
     // Update is called once per frame
@@ -53,21 +53,18 @@ public class AutoGun4 : MonoBehaviour
             if (ray)
             {
                 lr.SetPosition(1, ray.point);
+
+                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 5f, ForceMode2D.Impulse);
             }
             else
             {
                 lr.SetPosition(1, transform.position + new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad) * 100, Mathf.Sin(angleCorrected * Mathf.Deg2Rad) * 100, 0));
             }
-
-
-            canShoot = false;
-
-            transform.parent.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected) * -2f, Mathf.Sin(Mathf.Deg2Rad * angleCorrected) * -2f), ForceMode2D.Impulse);
+            
 
             this.Wait(0.1f, () =>
             {
                 lr.positionCount = 0;
-                canShoot = true;
             });
         }
     }

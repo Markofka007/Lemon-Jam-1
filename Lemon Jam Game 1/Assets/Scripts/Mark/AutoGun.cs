@@ -4,48 +4,48 @@ using UnityEngine;
 
 public class AutoGun : MonoBehaviour
 {
-    private Camera mainCam;
-
-    private Vector3 mousePos;
-    private Vector3 localMousePos;
-    private float angleToMouse;
+    PlayerController p1;
 
     private Transform gunTip;
-    private Vector3 gunToMouse;
+
+    float angleCorrected;
 
     private LineRenderer lr;
 
-    private bool canShoot;
+    private Rigidbody2D rb;
+
+    //private bool canShoot;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = Camera.main;
-
         lr = GetComponent<LineRenderer>();
 
-        canShoot = true;
+        rb = GetComponent<Rigidbody2D>();
+
+        //canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        localMousePos = mousePos - transform.position;
-        angleToMouse = Mathf.Rad2Deg * Mathf.Atan2(localMousePos.x, localMousePos.y);
+        p1 = transform.parent.parent.GetComponent<PlayerController>();
+
+        angleCorrected = -p1.controllerAngle + 90f;
 
         gunTip = transform.GetChild(4).gameObject.transform;
-        gunToMouse = mousePos - gunTip.position;
 
-        transform.localRotation = Quaternion.Euler(0, 0, -angleToMouse + 90f);
-        transform.localScale = new Vector3(1, Mathf.Abs(angleToMouse) / angleToMouse , 1);
+        //myRB.rotation = -p1.controllerAngle + 90f;
+
+        transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
+        transform.localScale = new Vector3(1, Mathf.Abs(p1.controllerAngle) / p1.controllerAngle, 1);
     }
 
     public void Fire()
     {
         if (this.enabled)
         {
-            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, mousePos, 100);
+            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad), Mathf.Sin(angleCorrected * Mathf.Deg2Rad)), 100);
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
@@ -53,20 +53,18 @@ public class AutoGun : MonoBehaviour
             if (ray)
             {
                 lr.SetPosition(1, ray.point);
+
+                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 5f, ForceMode2D.Impulse);
             }
             else
             {
-                lr.SetPosition(1, transform.position + (mousePos * 100));
+                lr.SetPosition(1, transform.position + new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad) * 100, Mathf.Sin(angleCorrected * Mathf.Deg2Rad) * 100, 0));
             }
-
-            canShoot = false;
-
-            transform.parent.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f, Mathf.Sin(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f), ForceMode2D.Impulse);
+            
 
             this.Wait(0.1f, () =>
             {
                 lr.positionCount = 0;
-                canShoot = true;
             });
         }
     }
