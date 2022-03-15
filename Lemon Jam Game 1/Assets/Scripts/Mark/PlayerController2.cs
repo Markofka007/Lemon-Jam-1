@@ -19,7 +19,7 @@ public class PlayerController2 : MonoBehaviour
     private Vector2 rightStick;
 
 
-    private float controllerAngle;
+    public float controllerAngle;
 
 
     void Start()
@@ -45,6 +45,7 @@ public class PlayerController2 : MonoBehaviour
             canJump = false;
         }
 
+        
         controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
     }
 
@@ -63,9 +64,9 @@ public class PlayerController2 : MonoBehaviour
 
     public void Aim(InputAction.CallbackContext context)
     {
-        Debug.Log(context);
-
         rightStick = context.ReadValue<Vector2>();
+
+        //Debug.Log(rightStick);
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -89,7 +90,7 @@ public class PlayerController2 : MonoBehaviour
     {
         if (context.performed)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<AutoGun2>().Fire(controllerAngle);
+            transform.GetChild(0).GetChild(0).GetComponent<AutoGun2>().Fire();
         }
     }
 }

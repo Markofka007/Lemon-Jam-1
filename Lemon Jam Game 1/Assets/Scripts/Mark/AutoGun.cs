@@ -45,10 +45,20 @@ public class AutoGun : MonoBehaviour
     {
         if (this.enabled)
         {
+            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, mousePos, 100);
+
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
-            lr.SetPosition(1, mousePos);
-            
+
+            if (ray)
+            {
+                lr.SetPosition(1, ray.point);
+            }
+            else
+            {
+                lr.SetPosition(1, transform.position + (mousePos * 100));
+            }
+
             canShoot = false;
 
             transform.parent.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f, Mathf.Sin(Mathf.Deg2Rad * (-angleToMouse + 90f)) * -2f), ForceMode2D.Impulse);

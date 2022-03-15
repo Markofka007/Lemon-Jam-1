@@ -19,7 +19,7 @@ public class PlayerController3 : MonoBehaviour
     private Vector2 rightStick;
 
 
-    private float controllerAngle;
+    public float controllerAngle;
 
 
     void Start()
@@ -44,6 +44,7 @@ public class PlayerController3 : MonoBehaviour
         {
             canJump = false;
         }
+
 
         controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
     }
@@ -80,6 +81,14 @@ public class PlayerController3 : MonoBehaviour
                 rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
                 canDoubleJump = false;
             }
+        }
+    }
+
+    public void Fire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            transform.GetChild(0).GetChild(0).GetComponent<AutoGun3>().Fire();
         }
     }
 }

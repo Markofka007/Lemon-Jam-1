@@ -33,6 +33,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Move4",
+                    "type": "Value",
+                    "id": "cde3f25e-44c4-40f1-be1e-e570a4307b5c",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Aim2",
                     "type": "Value",
                     "id": "d9cb63df-ebfb-4545-a02d-3e1cc0050ab5",
@@ -45,6 +54,15 @@
                     "name": "Aim3",
                     "type": "Value",
                     "id": "6c6b2c27-6d08-4878-87cd-c1aa88c94b62",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Aim4",
+                    "type": "Value",
+                    "id": "2ca6f03a-3dd8-43cd-8f1a-dc757c321d78",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -78,6 +96,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Jump4",
+                    "type": "Button",
+                    "id": "b430fa7e-0789-414d-ba62-58ce2d74f1e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Drop",
                     "type": "Button",
                     "id": "63bb4a02-ac4b-48e0-83e5-7c5830109c0c",
@@ -105,6 +132,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Drop4",
+                    "type": "Button",
+                    "id": "369edeaa-cddd-4989-8954-8178aebbb8fd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Fire",
                     "type": "Button",
                     "id": "e0a3044c-63db-420d-a6d3-7f90f771c7f5",
@@ -126,6 +162,15 @@
                     "name": "Fire3",
                     "type": "Button",
                     "id": "a7d8947f-4437-4396-aa13-67a2f5429cd4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire4",
+                    "type": "Button",
+                    "id": "e229b5f2-430e-464b-a093-4447e661593b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -246,7 +291,7 @@
                 {
                     "name": "",
                     "id": "c1c2a4de-7ae1-435f-8919-34b745f60c16",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -312,7 +357,7 @@
                 {
                     "name": "",
                     "id": "17708944-288d-4eb0-bc08-27ca59343639",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller2",
@@ -345,7 +390,7 @@
                 {
                     "name": "RightStick",
                     "id": "75a50636-057d-4a20-8280-10d5dcfa5dde",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -400,7 +445,7 @@
                 {
                     "name": "RightStick",
                     "id": "92ba081c-7d23-49e4-ab18-8edb33d6c340",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -451,6 +496,127 @@
                     "action": "Aim3",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "LeftStickX",
+                    "id": "a94a0cab-1349-4f57-af8e-d66751e982f5",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move4",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "dd930be7-ab44-429b-9c5c-8fb0be700ea7",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Move4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d707a69e-3951-4280-9bd6-b1707c0b3663",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Move4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "RightStick",
+                    "id": "ea39cf02-7b24-4e36-97e3-c0790a5f8423",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim4",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "4c3b4a85-acde-4c0e-933c-65c8cb721a4b",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Aim4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b73fc10f-a7cb-46f8-9591-8fdc26952afa",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Aim4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a0d1f620-d8d4-4341-a4c2-97a5f5369572",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Aim4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "86597be6-10ce-4c69-bd18-b5090cb461d8",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Aim4",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "18532b39-af14-424a-8a7e-c4d7401fe866",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Jump4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05d47bbf-66f0-4bb1-bbf6-09a2d0f85832",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Drop4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edab43b7-6567-4daf-ae6f-2d982c989323",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller3",
+                    "action": "Fire4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -481,6 +647,17 @@
         {
             "name": "Controller2",
             "bindingGroup": "Controller2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller3",
+            "bindingGroup": "Controller3",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",

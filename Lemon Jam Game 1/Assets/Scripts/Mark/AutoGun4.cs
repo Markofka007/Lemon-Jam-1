@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoGun2 : MonoBehaviour
+public class AutoGun4 : MonoBehaviour
 {
-    PlayerController2 p2;
+    PlayerController4 p4;
 
     private Transform gunTip;
 
@@ -29,16 +29,16 @@ public class AutoGun2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        p2 = transform.parent.parent.GetComponent<PlayerController2>();
+        p4 = transform.parent.parent.GetComponent<PlayerController4>();
 
-        angleCorrected = -p2.controllerAngle + 90f;
+        angleCorrected = -p4.controllerAngle + 90f;
 
         gunTip = transform.GetChild(4).gameObject.transform;
 
         //myRB.rotation = -p2.controllerAngle + 90f;
 
         transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
-        transform.localScale = new Vector3(1, Mathf.Abs(p2.controllerAngle) / p2.controllerAngle, 1);
+        transform.localScale = new Vector3(1, Mathf.Abs(p4.controllerAngle) / p4.controllerAngle, 1);
     }
 
     public void Fire()

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-public class PlayerController : MonoBehaviour
+public class PlayerController4 : MonoBehaviour
 {
     private Rigidbody2D rb;
 
@@ -16,21 +15,17 @@ public class PlayerController : MonoBehaviour
     private float H_Input;
     [SerializeField] private LayerMask canJumpOn;
 
+    private Vector2 rightStick;
 
-    private Camera mainCam;
 
-    private Vector3 mousePos;
-    private Vector3 localMousePos;
-    private float angleToMouse;
+    public float controllerAngle;
 
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-
-        mainCam = Camera.main;
     }
-    
+
     void Update()
     {
         if (transform.position.y < -10)
@@ -43,15 +38,14 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
             canDoubleJump = true;
-        } else
+        }
+        else
         {
             canJump = false;
         }
 
 
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        localMousePos = mousePos - transform.position;
-        angleToMouse = Mathf.Rad2Deg * Mathf.Atan2(localMousePos.x, localMousePos.y);
+        controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
     }
 
     private void FixedUpdate()
@@ -65,6 +59,11 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         H_Input = context.ReadValue<float>();
+    }
+
+    public void Aim(InputAction.CallbackContext context)
+    {
+        rightStick = context.ReadValue<Vector2>();
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<AutoGun>().Fire();
+            transform.GetChild(0).GetChild(0).GetComponent<AutoGun3>().Fire();
         }
     }
 }

@@ -42,6 +42,9 @@ public class PlayerItemHandler : MonoBehaviour
         item.transform.localPosition = Vector3.forward * -1;
         item.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
+        item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        item.GetComponent<Rigidbody2D>().freezeRotation = true;
+
         GetComponent<FistAttack>().enabled = false;
 
         item.GetComponent<Rigidbody2D>().isKinematic = true;
@@ -59,6 +62,10 @@ public class PlayerItemHandler : MonoBehaviour
 
             case 3:
                 item.GetComponent<AutoGun3>().enabled = true;
+                break;
+
+            case 4:
+                item.GetComponent<AutoGun4>().enabled = true;
                 break;
         }
     }
@@ -84,6 +91,10 @@ public class PlayerItemHandler : MonoBehaviour
                 case 3:
                     item.GetComponent<AutoGun3>().enabled = false;
                     break;
+
+                case 4:
+                    item.GetComponent<AutoGun4>().enabled = false;
+                    break;
             }
 
             item.transform.SetParent(null);
@@ -92,6 +103,7 @@ public class PlayerItemHandler : MonoBehaviour
             item.GetComponent<BoxCollider2D>().isTrigger = false;
             item.GetComponent<AutoGun>().enabled = false;
 
+            item.GetComponent<Rigidbody2D>().freezeRotation = false;
             item.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 2;
         }
     }
