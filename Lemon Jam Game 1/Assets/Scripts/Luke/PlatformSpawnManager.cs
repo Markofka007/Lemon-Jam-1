@@ -29,7 +29,7 @@ public class PlatformSpawnManager : MonoBehaviour
 
     IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
     {
-        yield return new WaitForSeconds(timeToSpawn);
+        yield return new WaitForSeconds(0);
         SpawnPlatform(platforms[Random.Range(0, platforms.Length)]);//Spawn a random platform from the array
     }
 
