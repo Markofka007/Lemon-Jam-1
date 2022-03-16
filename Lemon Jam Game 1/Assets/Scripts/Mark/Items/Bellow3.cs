@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class ItemInteractor2 : MonoBehaviour
+public class Bellow3 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,5 +15,4 @@ public class ItemInteractor2 : MonoBehaviour
     {
         
     }
-    
 }

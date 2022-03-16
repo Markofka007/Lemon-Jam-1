@@ -50,6 +50,10 @@ public class PlayerItemHandler : MonoBehaviour
         item.GetComponent<Rigidbody2D>().isKinematic = true;
         item.GetComponent<BoxCollider2D>().isTrigger = true;
 
+        switch (item.layer)
+        { }
+
+
         switch (playerID)
         {
             case 1:
