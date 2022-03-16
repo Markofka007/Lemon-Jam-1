@@ -17,13 +17,6 @@ public class PlayerItemHandler : MonoBehaviour
     {
         container = transform.GetChild(0);
         containerFull = false;
-
-
-    }
-    
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,27 +43,47 @@ public class PlayerItemHandler : MonoBehaviour
         item.GetComponent<Rigidbody2D>().isKinematic = true;
         item.GetComponent<BoxCollider2D>().isTrigger = true;
 
-        switch (item.layer)
-        { }
-
-
-        switch (playerID)
+        if (item.name.Contains("Auto Gun"))
         {
-            case 1:
-                item.GetComponent<AutoGun>().enabled = true;
-                break;
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<AutoGun>().enabled = true;
+                    break;
 
-            case 2:
-                item.GetComponent<AutoGun2>().enabled = true;
-                break;
+                case 2:
+                    item.GetComponent<AutoGun2>().enabled = true;
+                    break;
 
-            case 3:
-                item.GetComponent<AutoGun3>().enabled = true;
-                break;
+                case 3:
+                    item.GetComponent<AutoGun3>().enabled = true;
+                    break;
 
-            case 4:
-                item.GetComponent<AutoGun4>().enabled = true;
-                break;
+                case 4:
+                    item.GetComponent<AutoGun4>().enabled = true;
+                    break;
+            }
+        }
+        else if (item.name.Contains("Bellow"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<Bellow>().enabled = true;
+                    break;
+
+                case 2:
+                    item.GetComponent<Bellow2>().enabled = true;
+                    break;
+
+                case 3:
+                    item.GetComponent<Bellow3>().enabled = true;
+                    break;
+
+                case 4:
+                    item.GetComponent<Bellow4>().enabled = true;
+                    break;
+            }
         }
     }
 
@@ -82,30 +95,55 @@ public class PlayerItemHandler : MonoBehaviour
 
             containerFull = false;
 
-            switch (playerID)
+            if (item.name.Contains("Auto Gun"))
             {
-                case 1:
-                    item.GetComponent<AutoGun>().enabled = false;
-                    break;
+                switch (playerID)
+                {
+                    case 1:
+                        item.GetComponent<AutoGun>().enabled = false;
+                        break;
 
-                case 2:
-                    item.GetComponent<AutoGun2>().enabled = false;
-                    break;
+                    case 2:
+                        item.GetComponent<AutoGun2>().enabled = false;
+                        break;
 
-                case 3:
-                    item.GetComponent<AutoGun3>().enabled = false;
-                    break;
+                    case 3:
+                        item.GetComponent<AutoGun3>().enabled = false;
+                        break;
 
-                case 4:
-                    item.GetComponent<AutoGun4>().enabled = false;
-                    break;
+                    case 4:
+                        item.GetComponent<AutoGun4>().enabled = false;
+                        break;
+                }
+            }
+            else if (item.name.Contains("Bellow"))
+            {
+                switch (playerID)
+                {
+                    case 1:
+                        item.GetComponent<Bellow>().enabled = false;
+                        break;
+
+                    case 2:
+                        item.GetComponent<Bellow2>().enabled = false;
+                        break;
+
+                    case 3:
+                        item.GetComponent<Bellow3>().enabled = false;
+                        break;
+
+                    case 4:
+                        item.GetComponent<Bellow4>().enabled = false;
+                        break;
+                }
             }
 
             item.transform.SetParent(null);
 
             item.GetComponent<Rigidbody2D>().isKinematic = false;
             item.GetComponent<BoxCollider2D>().isTrigger = false;
-            item.GetComponent<AutoGun>().enabled = false;
+
+            GetComponent<FistAttack>().enabled = true;
 
             item.GetComponent<Rigidbody2D>().freezeRotation = false;
             item.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 2;
