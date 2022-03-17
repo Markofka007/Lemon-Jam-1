@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class PlatformFriction : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private GameObject target = null;
+    private Vector3 offset;
+    void Start()
     {
-        collision.collider.transform.SetParent(transform);
+        target = null;
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D col)
     {
-        collision.collider.transform.SetParent(null);
+        target = col.gameObject;
+        offset = target.transform.position - transform.position;
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        target = null;
+    }
+    void LateUpdate()
+    {
+        if (target != null)
+        {
+            target.transform.position = transform.position + offset;
+        }
     }
 }
