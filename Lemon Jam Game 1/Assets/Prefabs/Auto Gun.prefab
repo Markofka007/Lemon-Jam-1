@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 2808900495600957753}
   - component: {fileID: 4218159616119668783}
   - component: {fileID: 7281389306984495354}
+  - component: {fileID: -3090952909357908939}
   - component: {fileID: 3604401807733572870}
   m_Layer: 17
   m_Name: Auto Gun
@@ -503,6 +504,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42a892dac55d76e498def539a1420b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3090952909357908939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604401807733573119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ce68b6329862241b457c4e975cb284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!120 &3604401807733572870

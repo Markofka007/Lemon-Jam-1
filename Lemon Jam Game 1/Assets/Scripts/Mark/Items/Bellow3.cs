@@ -44,9 +44,9 @@ public class Bellow3 : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (isActive && !collision.CompareTag("Player1"))
+        if (isActive && !collision.CompareTag("Player3"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 3f, ForceMode2D.Impulse);
+            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 1f, ForceMode2D.Impulse);
         }
     }
 }
