@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8052704052952701952}
   - component: {fileID: 4391258614257917567}
   - component: {fileID: 7023303821022433319}
-  - component: {fileID: -8138885300368586574}
   m_Layer: 3
   m_Name: BreakawayPlatform
   m_TagString: Platform
@@ -130,7 +129,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ff0be34355e3c49ba00cb4075665c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -145,17 +144,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a5ab9f815fb14298ac4c9f7d0b8ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-8138885300368586574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3809110835306680362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65b37afecfec94448dfbcc959fdb8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

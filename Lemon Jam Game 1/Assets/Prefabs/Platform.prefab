@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8005943448288594244}
   - component: {fileID: 1180440217817170461}
   - component: {fileID: 4850893319560773730}
-  - component: {fileID: 6260036343175026757}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Platform
@@ -129,20 +128,8 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14ff0be34355e3c49ba00cb4075665c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6260036343175026757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439672888686808631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65b37afecfec94448dfbcc959fdb8fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
