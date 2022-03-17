@@ -31,20 +31,20 @@ public class HeavyPlatform : MonoBehaviour
         //Debug.Log(numPlayers);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //A player has gone onto the platform
-        if(collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player3") || collision.CompareTag("Player4"))
+        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
             isOn = true;
             numPlayers++;
+            Debug.Log("Yerr");
         }
     }
 
-    //A player has left the platform
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player3") || collision.CompareTag("Player4"))
+        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
             isOn = false;
             numPlayers--;
