@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask canJumpOn;
 
     private Vector2 rightStick;
-
-
     public float controllerAngle;
+
+    public GameObject equipedItem;
 
 
     void Start()
@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
 
 
         controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
+
+        if (transform.GetChild(0).childCount == 1)
+        {
+            equipedItem = transform.GetChild(0).GetChild(0).gameObject;
+        }
     }
 
     private void FixedUpdate()
@@ -90,7 +95,22 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<AutoGun>().Fire();
+            if (equipedItem.name.Contains("Auto Gun"))
+            {
+                equipedItem.GetComponent<AutoGun>().Fire();
+            }
+            else if (equipedItem.name.Contains("Bellow"))
+            {
+                equipedItem.GetComponent<Bellow>().StartWind();
+            }
+        }
+
+        if (context.canceled)
+        {
+            if (equipedItem.name.Contains("Bellow"))
+            {
+                equipedItem.GetComponent<Bellow>().StopWind();
+            }
         }
     }
 }
