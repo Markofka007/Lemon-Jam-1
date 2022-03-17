@@ -46,7 +46,7 @@ public class Bellow : MonoBehaviour
     {
         if (isActive && !collision.CompareTag("Player1"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 5f, ForceMode2D.Impulse);
+            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 3f, ForceMode2D.Impulse);
         }
     }
 }
