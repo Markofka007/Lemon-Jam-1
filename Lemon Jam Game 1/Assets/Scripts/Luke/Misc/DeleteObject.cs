@@ -6,16 +6,7 @@ public class DeleteObject : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Platform"))
-        {
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.CompareTag("Ending Platform"))
-        {
-            Destroy(collision.gameObject.transform.parent.gameObject);
-            Destroy(collision.gameObject);
-        }
+        Destroy(collision.gameObject);
     }
 }
 

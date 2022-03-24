@@ -13,6 +13,9 @@ TagManager:
   - Player3
   - Ground
   - Player4
+  - Platform
+  - Ending Platform
+  - Go Back please
   layers:
   - Default
   - TransparentFX
