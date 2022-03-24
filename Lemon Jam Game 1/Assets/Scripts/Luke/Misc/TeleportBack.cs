@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class TeleportBack : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Go Back please"))
-        {
-            collision.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-        }
+        Debug.Log("Guh");
+        collision.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
     }
 }

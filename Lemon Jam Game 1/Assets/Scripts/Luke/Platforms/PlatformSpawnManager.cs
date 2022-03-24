@@ -6,14 +6,20 @@ public class PlatformSpawnManager : MonoBehaviour
 {
     private bool shouldSpawn = false;
     private float timeSinceLastSpawn = 0;
-    
+
     public float timeToSpawn;
     public GameObject[] platforms;
     public Transform spawnSpot;
     public bool doSpawn = true;
 
+    private void Start()
+    {
+        Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
+    }
+
+    /*
     // Update is called once per frame
-    void Update()
+    void //Update()
     {
        if(doSpawn)
         {
@@ -26,15 +32,17 @@ public class PlatformSpawnManager : MonoBehaviour
             }
         }
     }
+    */
+
 
     IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
     {
         yield return new WaitForSeconds(0);
-        SpawnPlatform(platforms[Random.Range(0, platforms.Length)]);//Spawn a random platform from the array
+        SpawnPlatform();//Spawn a random platform from the array
     }
 
-    void SpawnPlatform(GameObject platform)
+    public void SpawnPlatform()
     {
-        Instantiate(platform, spawnSpot.position, Quaternion.identity);
+        Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
     }
 }
