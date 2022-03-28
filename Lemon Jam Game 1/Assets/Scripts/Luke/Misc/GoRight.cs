@@ -15,7 +15,7 @@ public class GoRight : MonoBehaviour
 
         if(transform.position.x > FinalX)
         {
-           Debug.Log("Guh");
+           //Debug.Log("Guh");
            transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
     }
