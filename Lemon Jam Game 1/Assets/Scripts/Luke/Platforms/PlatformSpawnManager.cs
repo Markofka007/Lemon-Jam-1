@@ -38,11 +38,12 @@ public class PlatformSpawnManager : MonoBehaviour
     IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
     {
         yield return new WaitForSeconds(0);
-        SpawnPlatform();//Spawn a random platform from the array
+        GameObject platformSegment = platforms[Random.Range(0, platforms.Length)];
+        SpawnPlatform(platformSegment);//Spawn a random platform from the array
     }
 
-    public void SpawnPlatform()
+    public void SpawnPlatform(GameObject platformSegment)
     {
-        Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
+        Instantiate(platformSegment, spawnSpot.position, Quaternion.identity);
     }
 }
