@@ -8,7 +8,7 @@ public class DeleteObject : MonoBehaviour
     {
         if (collision.CompareTag("Ending Platform"))
         {
-            Destroy(collision.transform.parent);
+            Destroy(collision.transform.parent.gameObject);
             Destroy(collision.gameObject);
         }
         else

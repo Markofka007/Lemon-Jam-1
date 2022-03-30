@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HeavyPlatform : MonoBehaviour
 {
-    private bool isOn = false;//Bool for whether or not a player is on the platform
     private Rigidbody2D rb;//Reference to the rigidbody on the platform
     private int numPlayers = 0;//Number of players on the platform
 
@@ -36,7 +35,6 @@ public class HeavyPlatform : MonoBehaviour
         //A player has gone onto the platform
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
-            isOn = true;
             numPlayers++;
             Debug.Log("Yerr");
         }
@@ -46,7 +44,6 @@ public class HeavyPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
-            isOn = false;
             numPlayers--;
         }
     }

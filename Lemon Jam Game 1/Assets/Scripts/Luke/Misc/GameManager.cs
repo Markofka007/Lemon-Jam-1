@@ -5,35 +5,41 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PlatformSpawnManager PSM;
-    public GoRight GR;
+    public GameObject GoBack;
+
+    public float Velo = 7;
+    public float FinalX = 95;
 
     public GameObject platformSegment;
 
     private bool oneSpawn;
     private bool oneParent;
+    private int i = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if(GR.transform.position.x > 10 && GR.transform.position.x < 20)
+        if(GoBack.transform.position.x > 10 && GoBack.transform.position.x < 20)
         {
             oneSpawn = true;
         }
 
-        if(GR.transform.position.x >= GR.FinalX - 0.1f && oneSpawn)
+        if(GoBack.transform.position.x >= FinalX - 0.1f && oneSpawn)
         {
-            Debug.Log("Bub");
-            platformSegment = PSM.platforms[Random.Range(0, PSM.platforms.Length)];
-            PSM.SpawnPlatform(platformSegment);
-            platformSegment.transform = Vector3.zero;
-            oneSpawn = false;
-        }
-        /*
-        if(GR.transform.position.x >= 0.1f && oneParent)
-        {
+            platformSegment.transform.parent = GoBack.transform;
+            GoBack.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
             platformSegment.transform.parent = null;
-            oneParent = false;
+
+            platformSegment = PSM.platforms[Random.Range(0, PSM.platforms.Length)];
+            platformSegment = PSM.SpawnPlatform(platformSegment);
+            
+            oneSpawn = false;
+            
+            Debug.Log(i);
+            i++;
         }
-        */
+
+        GoBack.transform.position += Vector3.right * Velo * Time.deltaTime;
+
     }
 }

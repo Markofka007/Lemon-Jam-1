@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlatformSpawnManager : MonoBehaviour
 {
-    private bool shouldSpawn = false;
-    private float timeSinceLastSpawn = 0;
+    // bool shouldSpawn = false;
+    // private float timeSinceLastSpawn = 0;
 
     public float timeToSpawn;
     public GameObject[] platforms;
@@ -14,7 +14,7 @@ public class PlatformSpawnManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
+        //Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
     }
 
     /*
@@ -32,8 +32,6 @@ public class PlatformSpawnManager : MonoBehaviour
             }
         }
     }
-    */
-
 
     IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
     {
@@ -41,9 +39,12 @@ public class PlatformSpawnManager : MonoBehaviour
         GameObject platformSegment = platforms[Random.Range(0, platforms.Length)];
         SpawnPlatform(platformSegment);//Spawn a random platform from the array
     }
+    */
 
-    public void SpawnPlatform(GameObject platformSegment)
+
+    public GameObject SpawnPlatform(GameObject platformSegment)
     {
-        Instantiate(platformSegment, spawnSpot.position, Quaternion.identity);
+        Debug.Log("Spawn ran");
+        return (GameObject)Instantiate(platformSegment, spawnSpot.position, Quaternion.identity);
     }
 }
