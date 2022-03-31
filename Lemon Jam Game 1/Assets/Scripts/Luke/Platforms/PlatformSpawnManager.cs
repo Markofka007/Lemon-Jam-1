@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlatformSpawnManager : MonoBehaviour
 {
-    // bool shouldSpawn = false;
-    // private float timeSinceLastSpawn = 0;
-
     public float timeToSpawn;
     public GameObject[] platforms;
     public Transform spawnSpot;
@@ -16,31 +13,6 @@ public class PlatformSpawnManager : MonoBehaviour
     {
         //Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
     }
-
-    /*
-    // Update is called once per frame
-    void //Update()
-    {
-       if(doSpawn)
-        {
-            timeSinceLastSpawn += Time.deltaTime;//Increment the timer after the last spawn
-
-            if (timeSinceLastSpawn > timeToSpawn)//True after timeToSpawn seconds since last spawn
-            {
-                StartCoroutine("WaitSpawn");//Begin delayed spawn
-                timeSinceLastSpawn = 0;//Reset clock
-            }
-        }
-    }
-
-    IEnumerator WaitSpawn()//Begin the SpawnRand() function after a random delay
-    {
-        yield return new WaitForSeconds(0);
-        GameObject platformSegment = platforms[Random.Range(0, platforms.Length)];
-        SpawnPlatform(platformSegment);//Spawn a random platform from the array
-    }
-    */
-
 
     public GameObject SpawnPlatform(GameObject platformSegment)
     {
