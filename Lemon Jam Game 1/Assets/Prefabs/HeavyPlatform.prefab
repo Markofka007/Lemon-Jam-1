@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowestY: -10
-  weight: 1
+  weight: 5
 --- !u!61 &8475525186799304224
 BoxCollider2D:
   m_ObjectHideFlags: 0
