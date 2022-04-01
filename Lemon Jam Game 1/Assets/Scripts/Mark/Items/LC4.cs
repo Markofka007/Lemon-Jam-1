@@ -14,6 +14,8 @@ public class LC4 : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    [SerializeField] private LayerMask rayignore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class LC4 : MonoBehaviour
     {
         if (this.enabled)
         {
-            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad), Mathf.Sin(angleCorrected * Mathf.Deg2Rad)), 100);
+            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad), Mathf.Sin(angleCorrected * Mathf.Deg2Rad)), 100, rayignore);
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
