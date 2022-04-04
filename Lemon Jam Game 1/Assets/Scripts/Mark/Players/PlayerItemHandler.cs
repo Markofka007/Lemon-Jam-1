@@ -8,6 +8,8 @@ public class PlayerItemHandler : MonoBehaviour
     private Transform container;
     private bool containerFull;
 
+    private GameObject item;
+
     [SerializeField] private int playerID;
 
 
@@ -19,15 +21,24 @@ public class PlayerItemHandler : MonoBehaviour
         containerFull = false;
     }
 
+    private void LateUpdate()
+    {
+        if (containerFull)
+        {
+            item.transform.localPosition = Vector3.back;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Equipable") && !containerFull)
         {
-            EquipItem(collision.gameObject);
+            item = collision.gameObject;
+            EquipItem();
         }
     }
 
-    public void EquipItem(GameObject item)
+    public void EquipItem()
     {
         containerFull = true;
 
@@ -112,7 +123,7 @@ public class PlayerItemHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            GameObject item = container.GetChild(0).gameObject;
+            //GameObject item = container.GetChild(0).gameObject;
 
             containerFull = false;
 
