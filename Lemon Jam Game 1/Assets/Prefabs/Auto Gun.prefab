@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 7281389306984495354}
   - component: {fileID: -3090952909357908939}
   - component: {fileID: 3604401807733572870}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Auto Gun
   m_TagString: Equipable
   m_Icon: {fileID: 0}

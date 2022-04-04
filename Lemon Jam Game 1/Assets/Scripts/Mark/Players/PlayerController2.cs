@@ -113,4 +113,15 @@ public class PlayerController2 : MonoBehaviour
             }
         }
     }
+
+    public void Charge(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (equipedItem.name.Contains("LaserCannon"))
+            {
+                equipedItem.GetComponent<LC2>().Fire();
+            }
+        }
+    }
 }

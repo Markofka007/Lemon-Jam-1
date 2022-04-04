@@ -206,6 +206,42 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Charge1"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8716fc3-41f1-40c4-ab1a-92bb19aed3b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Charge2"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d364d36-86a5-4b21-831d-c48f45bdd781"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Charge3"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec95d18e-4783-4332-a1ce-870bf5f2cfbe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Charge4"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f73f688-42b7-49df-9056-cdae14e82691"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -692,6 +728,50 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e3f57f7-2200-4a2e-ba34-8d83d9c8644e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Charge1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af8814bf-5aef-40cb-8f5a-058fe96f36d5"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Charge2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbd12442-36b6-4515-a786-35e015717b1e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""Controller3"",
+                    ""action"": ""Charge3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00caabca-6adc-463c-8d0d-29a9b1ecc548"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""Controller4"",
+                    ""action"": ""Charge4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -765,6 +845,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
         m_Player_Fire3 = m_Player.FindAction("Fire3", throwIfNotFound: true);
         m_Player_Fire4 = m_Player.FindAction("Fire4", throwIfNotFound: true);
+        m_Player_Charge1 = m_Player.FindAction("Charge1", throwIfNotFound: true);
+        m_Player_Charge2 = m_Player.FindAction("Charge2", throwIfNotFound: true);
+        m_Player_Charge3 = m_Player.FindAction("Charge3", throwIfNotFound: true);
+        m_Player_Charge4 = m_Player.FindAction("Charge4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -844,6 +928,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire2;
     private readonly InputAction m_Player_Fire3;
     private readonly InputAction m_Player_Fire4;
+    private readonly InputAction m_Player_Charge1;
+    private readonly InputAction m_Player_Charge2;
+    private readonly InputAction m_Player_Charge3;
+    private readonly InputAction m_Player_Charge4;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -868,6 +956,10 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
         public InputAction @Fire3 => m_Wrapper.m_Player_Fire3;
         public InputAction @Fire4 => m_Wrapper.m_Player_Fire4;
+        public InputAction @Charge1 => m_Wrapper.m_Player_Charge1;
+        public InputAction @Charge2 => m_Wrapper.m_Player_Charge2;
+        public InputAction @Charge3 => m_Wrapper.m_Player_Charge3;
+        public InputAction @Charge4 => m_Wrapper.m_Player_Charge4;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -937,6 +1029,18 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Fire4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire4;
                 @Fire4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire4;
                 @Fire4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire4;
+                @Charge1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge1;
+                @Charge1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge1;
+                @Charge1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge1;
+                @Charge2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge2;
+                @Charge2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge2;
+                @Charge2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge2;
+                @Charge3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge3;
+                @Charge3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge3;
+                @Charge3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge3;
+                @Charge4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge4;
+                @Charge4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge4;
+                @Charge4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCharge4;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1001,6 +1105,18 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Fire4.started += instance.OnFire4;
                 @Fire4.performed += instance.OnFire4;
                 @Fire4.canceled += instance.OnFire4;
+                @Charge1.started += instance.OnCharge1;
+                @Charge1.performed += instance.OnCharge1;
+                @Charge1.canceled += instance.OnCharge1;
+                @Charge2.started += instance.OnCharge2;
+                @Charge2.performed += instance.OnCharge2;
+                @Charge2.canceled += instance.OnCharge2;
+                @Charge3.started += instance.OnCharge3;
+                @Charge3.performed += instance.OnCharge3;
+                @Charge3.canceled += instance.OnCharge3;
+                @Charge4.started += instance.OnCharge4;
+                @Charge4.performed += instance.OnCharge4;
+                @Charge4.canceled += instance.OnCharge4;
             }
         }
     }
@@ -1063,5 +1179,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnFire2(InputAction.CallbackContext context);
         void OnFire3(InputAction.CallbackContext context);
         void OnFire4(InputAction.CallbackContext context);
+        void OnCharge1(InputAction.CallbackContext context);
+        void OnCharge2(InputAction.CallbackContext context);
+        void OnCharge3(InputAction.CallbackContext context);
+        void OnCharge4(InputAction.CallbackContext context);
     }
 }

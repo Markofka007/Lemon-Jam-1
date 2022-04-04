@@ -20,6 +20,9 @@ public class Bellow3 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         wind = GetComponent<PolygonCollider2D>();
+
+        wind.enabled = false;
+        this.enabled = false;
     }
 
     void Update()
@@ -30,6 +33,15 @@ public class Bellow3 : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
         transform.localScale = new Vector3(1, Mathf.Abs(p3.controllerAngle) / p3.controllerAngle, 1);
+
+        if (isActive)
+        {
+            wind.enabled = true;
+        }
+        else
+        {
+            wind.enabled = false;
+        }
     }
 
     public void StartWind()
