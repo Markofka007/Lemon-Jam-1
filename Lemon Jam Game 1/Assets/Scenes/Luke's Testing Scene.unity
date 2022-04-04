@@ -739,10 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToSpawn: 14.5
   platforms:
-  - {fileID: 5752571204623900533, guid: 7057b2323e15da340909c73c809a4b0a, type: 3}
-  - {fileID: 1542119737142170787, guid: 54d9a1f72cce93849806f9c961aac72b, type: 3}
-  - {fileID: 7406491576467630143, guid: 9c50bae6e78668a46bc4eff500993d7f, type: 3}
-  - {fileID: 9191012441258090359, guid: 974b11d262eb07949b32c9e459e7da14, type: 3}
+  - {fileID: 2399703490242013536, guid: 20775c16fe8882443b3522f8cf164b0e, type: 3}
   spawnSpot: {fileID: 113454134}
   doSpawn: 1
 --- !u!4 &737103679
