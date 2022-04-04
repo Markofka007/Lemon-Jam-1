@@ -110,4 +110,15 @@ public class PlayerController4 : MonoBehaviour
             }
         }
     }
+
+    public void Charge(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (equipedItem.name.Contains("LaserCannon"))
+            {
+                equipedItem.GetComponent<LC4>().Fire();
+            }
+        }
+    }
 }

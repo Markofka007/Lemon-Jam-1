@@ -32,7 +32,7 @@ public class PlayerItemHandler : MonoBehaviour
         containerFull = true;
 
         item.transform.SetParent(container);
-        item.transform.localPosition = Vector3.forward * -1;
+        item.transform.localPosition = Vector3.back;
         item.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
         item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -85,6 +85,27 @@ public class PlayerItemHandler : MonoBehaviour
                     break;
             }
         }
+        else if (item.name.Contains("LaserCannon"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<LC>().enabled = true;
+                    break;
+
+                case 2:
+                    item.GetComponent<LC2>().enabled = true;
+                    break;
+
+                case 3:
+                    item.GetComponent<LC3>().enabled = true;
+                    break;
+
+                case 4:
+                    item.GetComponent<LC4>().enabled = true;
+                    break;
+            }
+        }
     }
 
     public void Dropitem(InputAction.CallbackContext context)
@@ -134,6 +155,27 @@ public class PlayerItemHandler : MonoBehaviour
 
                     case 4:
                         item.GetComponent<Bellow4>().enabled = false;
+                        break;
+                }
+            }
+            else if (item.name.Contains("LaserCannon"))
+            {
+                switch (playerID)
+                {
+                    case 1:
+                        item.GetComponent<LC>().enabled = false;
+                        break;
+
+                    case 2:
+                        item.GetComponent<LC2>().enabled = false;
+                        break;
+
+                    case 3:
+                        item.GetComponent<LC3>().enabled = false;
+                        break;
+
+                    case 4:
+                        item.GetComponent<LC4>().enabled = false;
                         break;
                 }
             }
