@@ -5,6 +5,9 @@ using UnityEngine;
 public class BackgroundMover : MonoBehaviour
 {
     public float velo;
+    public GameObject background;
+    public GameManager GoBack;
+
     private float maxDistance = 87.04f;
 
     private float distance;
@@ -17,7 +20,7 @@ public class BackgroundMover : MonoBehaviour
 
         if(distance > maxDistance)
         {
-            transform.localPosition = new Vector3(68, 4, 10);
+            Instantiate(background, new Vector3(transform.position.x + 173.5f, transform.position.y), Quaternion.identity, GameObject.FindGameObjectWithTag("Go Back please").transform);
             distance = 0;
         }
     }
