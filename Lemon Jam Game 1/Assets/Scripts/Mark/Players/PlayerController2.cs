@@ -103,6 +103,14 @@ public class PlayerController2 : MonoBehaviour
             {
                 equipedItem.GetComponent<Bellow2>().StartWind();
             }
+            else if (equipedItem.name.Contains("RocketLauncher"))
+            {
+                equipedItem.GetComponent<RL2>().Fire();
+            }
+            else if (equipedItem.name.Contains("Bat"))
+            {
+                equipedItem.GetComponent<Bat2>().Fire();
+            }
         }
 
         if (context.canceled)

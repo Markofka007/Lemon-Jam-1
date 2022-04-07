@@ -117,6 +117,48 @@ public class PlayerItemHandler : MonoBehaviour
                     break;
             }
         }
+        else if (item.name.Contains("RocketLauncher"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<RL>().enabled = true;
+                    break;
+
+                case 2:
+                    item.GetComponent<RL2>().enabled = true;
+                    break;
+
+                case 3:
+                    item.GetComponent<RL3>().enabled = true;
+                    break;
+
+                case 4:
+                    item.GetComponent<RL4>().enabled = true;
+                    break;
+            }
+        }
+        else if (item.name.Contains("Bat"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<Bat>().enabled = true;
+                    break;
+
+                case 2:
+                    item.GetComponent<Bat2>().enabled = true;
+                    break;
+
+                case 3:
+                    item.GetComponent<Bat3>().enabled = true;
+                    break;
+
+                case 4:
+                    item.GetComponent<Bat4>().enabled = true;
+                    break;
+            }
+        }
     }
 
     public void Dropitem(InputAction.CallbackContext context)
@@ -187,6 +229,48 @@ public class PlayerItemHandler : MonoBehaviour
 
                     case 4:
                         item.GetComponent<LC4>().enabled = false;
+                        break;
+                }
+            }
+            else if (item.name.Contains("RocketLauncher"))
+            {
+                switch (playerID)
+                {
+                    case 1:
+                        item.GetComponent<RL>().enabled = false;
+                        break;
+
+                    case 2:
+                        item.GetComponent<RL2>().enabled = false;
+                        break;
+
+                    case 3:
+                        item.GetComponent<RL3>().enabled = false;
+                        break;
+
+                    case 4:
+                        item.GetComponent<RL4>().enabled = false;
+                        break;
+                }
+            }
+            else if (item.name.Contains("Bat"))
+            {
+                switch (playerID)
+                {
+                    case 1:
+                        item.GetComponent<Bat>().enabled = false;
+                        break;
+
+                    case 2:
+                        item.GetComponent<Bat2>().enabled = false;
+                        break;
+
+                    case 3:
+                        item.GetComponent<Bat3>().enabled = false;
+                        break;
+
+                    case 4:
+                        item.GetComponent<Bat4>().enabled = false;
                         break;
                 }
             }
