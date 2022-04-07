@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class Reset : MonoBehaviour
 {
-    public float velo;
-    public GameObject background;
-    public GameManager GoBack;
-    public Transform point;
+    public Vector3 origin;
 
-    private float maxDistance = 87.04f;
-
-    private float distance;
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.position += Vector3.left * velo * Time.deltaTime;
-        distance += 1 * velo * Time.deltaTime;
-
-        if (distance > maxDistance)
-        {
-            Instantiate(background, new Vector3(transform.position.x + 173.5f, transform.position.y), Quaternion.identity);//GameObject.FindGameObjectWithTag("Go Back please").transform)
-            distance = 0;
-        }
+        origin = transform.position;
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "MainCamera")
+        {
+            transform.position = origin;
+        }
+    }
 }
