@@ -44,7 +44,7 @@ public class RL : MonoBehaviour
         if (this.enabled)
         {
             GameObject rocket = Instantiate(rocketPrefab, gunTip.position, Quaternion.Euler(0, 0, angleCorrected));
-            rocket.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 25f;
+            rocket.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 20f;
         }
     }
 }

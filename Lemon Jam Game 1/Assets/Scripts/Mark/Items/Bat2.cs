@@ -27,8 +27,6 @@ public class Bat2 : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
         transform.localScale = new Vector3(1, Mathf.Abs(p2.controllerAngle) / p2.controllerAngle, 1);
-
-        Debug.Log(isActive);
     }
 
     public void Fire()

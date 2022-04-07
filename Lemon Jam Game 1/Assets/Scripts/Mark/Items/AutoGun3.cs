@@ -10,20 +10,22 @@ public class AutoGun3 : MonoBehaviour
 
     float angleCorrected;
 
-    private LineRenderer lr;
-
     private Rigidbody2D rb;
 
-    //private bool canShoot;
+    private bool canShoot;
+
+    private bool activated;
+
+    [SerializeField] private GameObject popcornPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
-
         rb = GetComponent<Rigidbody2D>();
 
-        //canShoot = true;
+        canShoot = true;
+
+        activated = false;
     }
 
     // Update is called once per frame
@@ -35,37 +37,35 @@ public class AutoGun3 : MonoBehaviour
 
         gunTip = transform.GetChild(4).gameObject.transform;
 
-        //myRB.rotation = -p2.controllerAngle + 90f;
+        //myRB.rotation = -p1.controllerAngle + 90f;
 
         transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
         transform.localScale = new Vector3(1, Mathf.Abs(p3.controllerAngle) / p3.controllerAngle, 1);
+
+        if (canShoot && activated)
+        {
+            if (this.enabled)
+            {
+                canShoot = false;
+
+                GameObject popcorn = Instantiate(popcornPrefab, gunTip.position, Quaternion.Euler(0, 0, angleCorrected));
+                popcorn.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 25f;
+
+                this.Wait(0.2f, () =>
+                {
+                    canShoot = true;
+                });
+            }
+        }
     }
 
-    public void Fire()
+    public void StartFire()
     {
-        if (this.enabled)
-        {
-            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad), Mathf.Sin(angleCorrected * Mathf.Deg2Rad)), 100);
+        activated = true;
+    }
 
-            lr.positionCount = 2;
-            lr.SetPosition(0, gunTip.position);
-            
-            if (ray)
-            {
-                lr.SetPosition(1, ray.point);
-
-                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 5f, ForceMode2D.Impulse);
-            }
-            else
-            {
-                lr.SetPosition(1, transform.position + new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad) * 100, Mathf.Sin(angleCorrected * Mathf.Deg2Rad) * 100, 0));
-            }
-            
-
-            this.Wait(0.1f, () =>
-            {
-                lr.positionCount = 0;
-            });
-        }
+    public void StopFire()
+    {
+        activated = false;
     }
 }

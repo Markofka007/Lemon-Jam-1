@@ -95,7 +95,7 @@ public class PlayerController3 : MonoBehaviour
         {
             if (equipedItem.name.Contains("Auto Gun"))
             {
-                equipedItem.GetComponent<AutoGun3>().Fire();
+                equipedItem.GetComponent<AutoGun3>().StartFire();
             }
             else if (equipedItem.name.Contains("Bellow"))
             {
@@ -116,6 +116,10 @@ public class PlayerController3 : MonoBehaviour
             if (equipedItem.name.Contains("Bellow"))
             {
                 equipedItem.GetComponent<Bellow3>().StopWind();
+            }
+            else if (equipedItem.name.Contains("Auto Gun"))
+            {
+                equipedItem.GetComponent<AutoGun3>().StopFire();
             }
         }
     }

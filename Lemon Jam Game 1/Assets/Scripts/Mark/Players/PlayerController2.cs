@@ -97,7 +97,7 @@ public class PlayerController2 : MonoBehaviour
         {
             if (equipedItem.name.Contains("Auto Gun"))
             {
-                equipedItem.GetComponent<AutoGun2>().Fire();
+                equipedItem.GetComponent<AutoGun2>().StartFire();
             }
             else if (equipedItem.name.Contains("Bellow"))
             {
@@ -118,6 +118,10 @@ public class PlayerController2 : MonoBehaviour
             if (equipedItem.name.Contains("Bellow"))
             {
                 equipedItem.GetComponent<Bellow2>().StopWind();
+            }
+            else if (equipedItem.name.Contains("Auto Gun"))
+            {
+                equipedItem.GetComponent<AutoGun2>().StopFire();
             }
         }
     }
