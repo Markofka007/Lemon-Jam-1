@@ -5,17 +5,22 @@ using UnityEngine;
 public class Reset : MonoBehaviour
 {
     public Vector3 origin;
+    public GameObject yerr;
+
+    public float hufgh;
 
     private void Start()
     {
-        origin = transform.position;
+        origin = yerr.transform.position;
+        origin -= new Vector3(hufgh, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "MainCamera")
         {
-            transform.position = origin;
+            Debug.Log("Yerr");
+            yerr.transform.position = origin;
         }
     }
 }

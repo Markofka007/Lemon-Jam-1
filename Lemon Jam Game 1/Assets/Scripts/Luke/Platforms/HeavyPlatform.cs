@@ -36,7 +36,7 @@ public class HeavyPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
             numPlayers++;
-            Debug.Log("Yerr");
+            //Debug.Log("Yerr");
         }
     }
 
