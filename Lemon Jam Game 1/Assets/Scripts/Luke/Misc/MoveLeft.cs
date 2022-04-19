@@ -7,8 +7,8 @@ public class MoveLeft : MonoBehaviour
     public float Velo = 7;
 
     // Update is called once per frame
-    private void Update()
+    private void Start()
     {
-        transform.position += Time.deltaTime * Velo * Vector3.left;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Velo, 0);
     }
 }

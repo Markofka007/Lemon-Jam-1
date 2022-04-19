@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeleteObject : MonoBehaviour
 {
+    public bool didDel = false;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ending Platform"))
@@ -15,6 +17,8 @@ public class DeleteObject : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        didDel = true;
     }
 }
 
