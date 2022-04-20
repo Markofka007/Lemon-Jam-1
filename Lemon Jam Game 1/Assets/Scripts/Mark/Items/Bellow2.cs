@@ -6,37 +6,48 @@ public class Bellow2 : MonoBehaviour
 {
     PlayerController2 p2;
 
-    Rigidbody2D rb;
+    Arm2 arm;
 
     PolygonCollider2D wind;
 
-    float angleCorrected;
-
     private bool isActive;
 
+    [SerializeField] private float maxAmmo; //ammo
+
+    private float ammoCount;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
+
+        arm = transform.parent.parent.GetComponent<Arm2>();
 
         wind = GetComponent<PolygonCollider2D>();
 
-        wind.enabled = false;
-        this.enabled = false;
+        ammoCount = maxAmmo;
     }
 
     void Update()
     {
-        p2 = transform.parent.parent.GetComponent<PlayerController2>();
+        if (p2.controllerAngle < 0)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+        }
 
-        angleCorrected = -p2.controllerAngle + 90f;
-
-        transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
-        transform.localScale = new Vector3(1, Mathf.Abs(p2.controllerAngle) / p2.controllerAngle, 1);
+        if (ammoCount <= 0)
+        {
+            transform.parent.parent.parent.GetComponent<PlayerItemHandler>().DestroyItem(); //ammo
+        }
 
         if (isActive)
         {
             wind.enabled = true;
+
+            ammoCount -= Time.deltaTime;
         }
         else
         {
@@ -58,7 +69,7 @@ public class Bellow2 : MonoBehaviour
     {
         if (isActive && !collision.CompareTag("Player2"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 1f, ForceMode2D.Impulse);
+            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f, ForceMode2D.Impulse);
         }
     }
 }

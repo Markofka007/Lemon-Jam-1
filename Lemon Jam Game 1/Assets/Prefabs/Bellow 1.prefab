@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3555060626073392688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.368, y: 0.042, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.76, y: 6.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3555060626478502287}
   - component: {fileID: 3555060626478502286}
   - component: {fileID: 4802332707429708032}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bellow 1
   m_TagString: Equipable
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.31773967, y: -0.039059877}
+  m_Offset: {x: -0.0015335083, y: -0.37093186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -169,7 +169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.84379745, y: 0.7291322}
+  m_Size: {x: 0.7249985, y: 0.83600426}
   m_EdgeRadius: 0
 --- !u!60 &3555060626478502282
 PolygonCollider2D:
@@ -196,11 +196,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 4.639932, y: 1.0001844}
-      - {x: 1.4938395, y: -0.003702253}
-      - {x: 4.6968226, y: -1.0750467}
-      - {x: 5.047306, y: -0.4618558}
-      - {x: 5.057219, y: 0.36478084}
+    - - {x: 1.6, y: -3.19808}
+      - {x: 0.7466309, y: -0.7871312}
+      - {x: 0, y: -3.1939657}
+      - {x: 0.45520344, y: -3.8290057}
+      - {x: 1.1, y: -3.8156662}
 --- !u!114 &3555060626478502289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106478505e2d4b1459989693f00c719a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxAmmo: 0
 --- !u!114 &3555060626478502288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d70f3c98079e440922a4dd1cdce23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxAmmo: 0
 --- !u!114 &3555060626478502287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c5d56b38f1c2d448dc1c03eb52d3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxAmmo: 0
 --- !u!114 &3555060626478502286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d73376abc39486458af9ea9e275190d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxAmmo: 0
 --- !u!114 &4802332707429708032
 MonoBehaviour:
   m_ObjectHideFlags: 0

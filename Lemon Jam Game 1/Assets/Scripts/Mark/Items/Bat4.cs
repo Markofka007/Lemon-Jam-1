@@ -6,32 +6,45 @@ public class Bat4 : MonoBehaviour
 {
     PlayerController4 p4;
 
-    float angleCorrected;
-
-    private Rigidbody2D rb;
+    Arm4 arm;
 
     private bool isActive = false;
 
-    // Start is called before the first frame update
+    [SerializeField] private int maxAmmo; //ammo
+
+    private int ammoCount;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
+
+        arm = transform.parent.parent.GetComponent<Arm4>();
+
+        ammoCount = maxAmmo;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        p4 = transform.parent.parent.GetComponent<PlayerController4>();
+        if (p4.controllerAngle < 0)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+        }
 
-        angleCorrected = -p4.controllerAngle + 90f;
-
-        transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
-        transform.localScale = new Vector3(1, Mathf.Abs(p4.controllerAngle) / p4.controllerAngle, 1);
+        if (ammoCount <= 0)
+        {
+            transform.parent.parent.parent.GetComponent<PlayerItemHandler>().DestroyItem(); //ammo
+        }
     }
 
     public void Fire()
     {
         isActive = true;
+
+        ammoCount--;
 
         this.Wait(0.1f, () =>
         {
@@ -41,9 +54,9 @@ public class Bat4 : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isActive && !collision.gameObject.CompareTag("Player4"))
+        if (isActive && !collision.gameObject.CompareTag("Player4") && !collision.gameObject.CompareTag("Platform"))
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 20f, ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f, ForceMode2D.Impulse);
         }
     }
 }

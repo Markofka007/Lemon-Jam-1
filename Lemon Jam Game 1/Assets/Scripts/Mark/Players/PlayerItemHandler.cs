@@ -11,13 +11,12 @@ public class PlayerItemHandler : MonoBehaviour
     private GameObject item;
 
     [SerializeField] private int playerID;
-
-
+    
     private AutoGun autoGunScript; //Will need to get and set item's equiped bool state, rb, and collider.
 
     void Start()
     {
-        container = transform.GetChild(0);
+        container = transform.GetChild(0).GetChild(0);
         containerFull = false;
     }
 
@@ -165,7 +164,6 @@ public class PlayerItemHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            //GameObject item = container.GetChild(0).gameObject;
 
             containerFull = false;
 
@@ -285,5 +283,129 @@ public class PlayerItemHandler : MonoBehaviour
             item.GetComponent<Rigidbody2D>().freezeRotation = false;
             item.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 2;
         }
+    }
+
+    public void DestroyItem()
+    {
+        if (item.name.Contains("Auto Gun"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<AutoGun>().enabled = false;
+                    break;
+
+                case 2:
+                    item.GetComponent<AutoGun2>().enabled = false;
+                    break;
+
+                case 3:
+                    item.GetComponent<AutoGun3>().enabled = false;
+                    break;
+
+                case 4:
+                    item.GetComponent<AutoGun4>().enabled = false;
+                    break;
+            }
+        }
+        else if (item.name.Contains("Bellow"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<Bellow>().enabled = false;
+                    break;
+
+                case 2:
+                    item.GetComponent<Bellow2>().enabled = false;
+                    break;
+
+                case 3:
+                    item.GetComponent<Bellow3>().enabled = false;
+                    break;
+
+                case 4:
+                    item.GetComponent<Bellow4>().enabled = false;
+                    break;
+            }
+        }
+        else if (item.name.Contains("LaserCannon"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<LC>().enabled = false;
+                    break;
+
+                case 2:
+                    item.GetComponent<LC2>().enabled = false;
+                    break;
+
+                case 3:
+                    item.GetComponent<LC3>().enabled = false;
+                    break;
+
+                case 4:
+                    item.GetComponent<LC4>().enabled = false;
+                    break;
+            }
+        }
+        else if (item.name.Contains("RocketLauncher"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<RL>().enabled = false;
+                    break;
+
+                case 2:
+                    item.GetComponent<RL2>().enabled = false;
+                    break;
+
+                case 3:
+                    item.GetComponent<RL3>().enabled = false;
+                    break;
+
+                case 4:
+                    item.GetComponent<RL4>().enabled = false;
+                    break;
+            }
+        }
+        else if (item.name.Contains("Bat"))
+        {
+            switch (playerID)
+            {
+                case 1:
+                    item.GetComponent<Bat>().enabled = false;
+                    break;
+
+                case 2:
+                    item.GetComponent<Bat2>().enabled = false;
+                    break;
+
+                case 3:
+                    item.GetComponent<Bat3>().enabled = false;
+                    break;
+
+                case 4:
+                    item.GetComponent<Bat4>().enabled = false;
+                    break;
+            }
+        }
+
+        containerFull = false;
+
+        item.transform.SetParent(null);
+
+        item.GetComponent<ItemRespawn>().enabled = false;
+
+        item.GetComponent<Rigidbody2D>().isKinematic = false;
+        item.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        GetComponent<FistAttack>().enabled = true;
+
+        item.GetComponent<Rigidbody2D>().freezeRotation = false;
+        item.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-4f, 4f), 15f);
+        item.GetComponent<Rigidbody2D>().AddTorque(Random.Range(-25, 25), ForceMode2D.Impulse);
     }
 }

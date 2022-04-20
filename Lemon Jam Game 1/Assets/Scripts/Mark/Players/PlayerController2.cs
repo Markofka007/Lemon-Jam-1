@@ -48,9 +48,9 @@ public class PlayerController2 : MonoBehaviour
         
         controllerAngle = Mathf.Rad2Deg * Mathf.Atan2(rightStick.x, rightStick.y);
 
-        if (transform.GetChild(0).childCount == 1)
+        if (transform.GetChild(0).GetChild(0).childCount == 1)
         {
-            equipedItem = transform.GetChild(0).GetChild(0).gameObject;
+            equipedItem = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
         }
     }
 
