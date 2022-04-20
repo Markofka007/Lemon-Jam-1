@@ -6,42 +6,55 @@ public class LC : MonoBehaviour
 {
     PlayerController p1;
 
+    Arm arm;
+
     private Transform gunTip;
 
-    float angleCorrected;
-
     private LineRenderer lr;
-
-    private Rigidbody2D rb;
-
+    
     [SerializeField] private LayerMask rayignore;
 
-    // Start is called before the first frame update
+    [SerializeField] private int maxAmmo; //ammo
+
+    private int ammoCount;
+    
     void Start()
     {
+        p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
+
+        arm = transform.parent.parent.GetComponent<Arm>();
+
         lr = GetComponent<LineRenderer>();
+        
+        ammoCount = maxAmmo; //ammo
 
-        rb = GetComponent<Rigidbody2D>();
+        gunTip = transform.GetChild(1).gameObject.transform;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        p1 = transform.parent.parent.GetComponent<PlayerController>();
+        if (p1.controllerAngle < 0)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+        }
 
-        angleCorrected = -p1.controllerAngle + 90f;
-
-        gunTip = transform.GetChild(3).gameObject.transform;
-
-        transform.localRotation = Quaternion.Euler(0, 0, angleCorrected);
-        transform.localScale = new Vector3(1, Mathf.Abs(p1.controllerAngle) / p1.controllerAngle, 1);
+        if (ammoCount <= 0)
+        {
+            transform.parent.parent.parent.GetComponent<PlayerItemHandler>().DestroyItem(); //ammo
+        }
     }
 
     public void Fire()
     {
         if (this.enabled)
         {
-            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad), Mathf.Sin(angleCorrected * Mathf.Deg2Rad)), 100, rayignore);
+            RaycastHit2D ray = Physics2D.Raycast(gunTip.position, new Vector3(Mathf.Cos(arm.angleCorrected * Mathf.Deg2Rad), Mathf.Sin(arm.angleCorrected * Mathf.Deg2Rad)), 100, rayignore);
+
+            ammoCount--;
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
@@ -50,11 +63,11 @@ public class LC : MonoBehaviour
             {
                 lr.SetPosition(1, ray.point);
 
-                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * angleCorrected), Mathf.Sin(Mathf.Deg2Rad * angleCorrected)) * 25f, ForceMode2D.Impulse);
+                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f, ForceMode2D.Impulse);
             }
             else
             {
-                lr.SetPosition(1, transform.position + new Vector3(Mathf.Cos(angleCorrected * Mathf.Deg2Rad) * 100, Mathf.Sin(angleCorrected * Mathf.Deg2Rad) * 100, 0));
+                lr.SetPosition(1, transform.position + new Vector3(Mathf.Cos(arm.angleCorrected * Mathf.Deg2Rad) * 100, Mathf.Sin(arm.angleCorrected * Mathf.Deg2Rad) * 100, 0));
             }
             
 

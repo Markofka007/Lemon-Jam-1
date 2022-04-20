@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4859710624504810285}
   - component: {fileID: 4859710624504810286}
   - component: {fileID: 4859710624504810274}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: RocketLauncher
   m_TagString: Equipable
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49731332, y: -0.0050361305}
+  m_Offset: {x: 0.0014638901, y: -0.5664085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85,7 +85,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1938893, y: 0.51149976}
+  m_Size: {x: 0.5138674, y: 1.2021472}
   m_EdgeRadius: 0
 --- !u!114 &4859710624504810287
 MonoBehaviour:
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
+  maxAmmo: 0
 --- !u!114 &4859710624504810284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
+  maxAmmo: 0
 --- !u!114 &4859710624504810285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
+  maxAmmo: 0
 --- !u!114 &4859710624504810286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
+  maxAmmo: 0
 --- !u!114 &4859710624504810274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4859710625134351203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.104, y: 0, z: 0}
+  m_LocalPosition: {x: 0.011, y: -1.176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4859710625316654788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.484, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,7 +264,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.352, y: 1.352}
+  m_Size: {x: 6.76, y: 6.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
