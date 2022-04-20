@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DeleteObject : MonoBehaviour
 {
-    public bool didDel = false;
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Ending Platform"))
         {
             Destroy(collision.transform.parent.gameObject);
@@ -15,10 +14,11 @@ public class DeleteObject : MonoBehaviour
         }
         else
         {
-            Destroy(collision.gameObject);
+            if (collision.CompareTag("Platform"))
+            {
+                Destroy(collision.gameObject);
+            }    
         }
-
-        didDel = true;
     }
 }
 

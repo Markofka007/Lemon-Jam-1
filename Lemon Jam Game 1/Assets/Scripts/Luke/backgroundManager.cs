@@ -5,19 +5,18 @@ using UnityEngine;
 public class backgroundManager : MonoBehaviour
 {
     public Transform endingSpot;
-    public DeleteObject DelObj;
+    public BackgroundDeleter BackObj;
     public bool doFlip = true;
     public GameObject background;
-
-    private Vector3 offset = new Vector3(14.69f, 0, 0);
+    public Vector3 Offset;
 
     // Update is called once per frame
     void Update()
     {
-        if(DelObj.didDel)
+        if(BackObj.didDel)
         {
-            endingSpot = spawnNewBackground(endingSpot.position + offset, background).transform.Find("EndingTranform");
-            DelObj.didDel = false;
+            endingSpot = spawnNewBackground(endingSpot.position + Offset, background).transform.Find("EndingTranform");
+            BackObj.didDel = false;
         }
     }
 

@@ -749,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 762296502}
   - component: {fileID: 762296501}
-  - component: {fileID: 762296500}
+  - component: {fileID: 762296503}
   m_Layer: 0
   m_Name: Deletion Square
   m_TagString: Untagged
@@ -757,19 +757,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &762296500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762296499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd18db4997fa274d914b329e1b4b129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didDel: 0
 --- !u!61 &762296501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -804,13 +791,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762296499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -140, y: 4.53, z: 2.3384972}
+  m_LocalPosition: {x: -90, y: 4.53, z: 2.3384972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1952087050}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762296503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762296499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c9c432279969f4eaa8581183b8c3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  didDel: 0
 --- !u!4 &801666925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3227645839399918856, guid: 549591aaf8141ac4d9c8c1c813fe346a, type: 3}
@@ -1177,9 +1177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingSpot: {fileID: 801666925}
-  DelObj: {fileID: 762296500}
+  BackObj: {fileID: 762296503}
   doFlip: 1
   background: {fileID: 6007927766089936866, guid: 549591aaf8141ac4d9c8c1c813fe346a, type: 3}
+  Offset: {x: 14.69, y: 0, z: 0}
 --- !u!50 &1952087048
 Rigidbody2D:
   serializedVersion: 4

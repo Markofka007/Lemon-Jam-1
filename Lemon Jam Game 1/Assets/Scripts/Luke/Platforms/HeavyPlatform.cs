@@ -26,8 +26,6 @@ public class HeavyPlatform : MonoBehaviour
         {
             rb.velocity = Vector2.zero;//stop movement
         }
-
-        //Debug.Log(numPlayers);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,12 +34,12 @@ public class HeavyPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
             numPlayers++;
-            //Debug.Log("Yerr");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        //A player has left the platform
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
         {
             numPlayers--;
