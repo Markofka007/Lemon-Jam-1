@@ -9,20 +9,18 @@ public class backgroundManager : MonoBehaviour
     public bool doFlip = true;
     public GameObject background;
     public Vector3 Offset;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(BackObj.didDel)
-        {
-            endingSpot = spawnNewBackground(endingSpot.position + Offset, background).transform.Find("EndingTranform");
-            BackObj.didDel = false;
-        }
-    }
+    public GameObject ParentalGuardian;
 
     public GameObject spawnNewBackground(Vector3 transf, GameObject BG)
     {
-        return (GameObject)Instantiate(BG, transf, Quaternion.identity);
+        GameObject backgroundamundo = (GameObject)Instantiate(BG, transf, Quaternion.identity);
+        backgroundamundo.transform.parent = ParentalGuardian.transform;
+        return backgroundamundo;
+    }
+
+    public void SummonBackground()
+    {
+        endingSpot = spawnNewBackground(endingSpot.position + Offset, background).transform.Find("EndingTranform");
     }
 
 }

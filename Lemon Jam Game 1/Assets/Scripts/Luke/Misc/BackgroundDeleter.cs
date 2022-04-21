@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BackgroundDeleter : MonoBehaviour
 {
-    public bool didDel = false;//bool for background management
+    public backgroundManager BackgroundManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        didDel = true;
+        Debug.Log("My dad");
+        BackgroundManager.SummonBackground();
         Destroy(collision.transform.parent.gameObject);
         Destroy(collision.gameObject);
     }
