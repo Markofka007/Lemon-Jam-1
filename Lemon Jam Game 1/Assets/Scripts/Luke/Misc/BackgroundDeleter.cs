@@ -8,7 +8,6 @@ public class BackgroundDeleter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("My dad");
         BackgroundManager.SummonBackground();
         Destroy(collision.transform.parent.gameObject);
         Destroy(collision.gameObject);
