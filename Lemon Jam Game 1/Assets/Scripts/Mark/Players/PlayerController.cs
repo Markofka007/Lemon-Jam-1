@@ -8,13 +8,22 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    private float H_Input;
     public float moveSpeed;
     public float maxSpeed;
+
+    public float speedMultiplier;
+    public float speedM_Delta;
+
     public float jumpForce;
     private bool canJump;
     private bool canDoubleJump;
-    private float H_Input;
     [SerializeField] private LayerMask canJumpOn;
+
+    public float jumpMultiplier;
+    public float jumpM_Delta;
+    
+    public float powerM_Delta;
 
     private Vector2 rightStick;
     public float controllerAngle;
@@ -56,9 +65,60 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (H_Input > 0 && rb.velocity.x < maxSpeed || H_Input < 0 && rb.velocity.x > -maxSpeed)
+        if (H_Input > 0 && rb.velocity.x < maxSpeed || H_Input < 0 && rb.velocity.x > -maxSpeed || speedMultiplier > 1f)
         {
-            rb.AddForce(new Vector2(H_Input * moveSpeed, 0f), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(H_Input * moveSpeed * speedMultiplier, 0f), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("JumpBean"))
+        {
+            Destroy(collision.gameObject);
+
+            jumpMultiplier += jumpM_Delta;
+
+            this.Wait(5.0f, () =>
+            {
+                jumpMultiplier -= jumpM_Delta;
+            });
+        }
+        else if (collision.CompareTag("SpeedBean"))
+        {
+            Destroy(collision.gameObject);
+
+            speedMultiplier += speedM_Delta;
+
+            this.Wait(5.0f, () =>
+            {
+                speedMultiplier -= speedM_Delta;
+            });
+        }
+        else if (collision.CompareTag("PowerBean"))
+        {
+            Destroy(collision.gameObject);
+
+            if (equipedItem.name.Contains("Auto Gun"))
+            {
+                equipedItem.GetComponent<AutoGun>().MultiplyPower(powerM_Delta);
+            }
+            else if (equipedItem.name.Contains("Bellow"))
+            {
+                equipedItem.GetComponent<Bellow>().MultiplyPower(powerM_Delta);
+            }
+            else if (equipedItem.name.Contains("RocketLauncher"))
+            {
+                equipedItem.GetComponent<RL>().MultiplyPower(powerM_Delta);
+            }
+            else if (equipedItem.name.Contains("Bat"))
+            {
+                equipedItem.GetComponent<Bat>().MultiplyPower(powerM_Delta);
+            }
+            else if (equipedItem.name.Contains("LaserCannon"))
+            {
+                equipedItem.GetComponent<LC>().MultiplyPower(powerM_Delta);
+            }
         }
     }
 
@@ -80,12 +140,12 @@ public class PlayerController : MonoBehaviour
         {
             if (canJump)
             {
-                rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canJump = false;
             }
             else if (canDoubleJump)
             {
-                rb.AddForce(new Vector2(0, jumpForce - rb.velocity.y), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canDoubleJump = false;
             }
         }

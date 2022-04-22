@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+    public float powerMultiplier;
+
     private void Start()
     {
         this.Wait(3.0f, () =>
@@ -27,6 +29,6 @@ public class Rocket : MonoBehaviour
     {
         Vector2 relPos = collision.transform.position - transform.position;
 
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos / 2.5f * 20f, ForceMode2D.Impulse);
+        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos / 50f * powerMultiplier, ForceMode2D.Impulse);
     }
 }

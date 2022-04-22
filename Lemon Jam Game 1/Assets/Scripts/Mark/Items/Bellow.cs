@@ -16,6 +16,8 @@ public class Bellow : MonoBehaviour
 
     private float ammoCount;
 
+    private float powerMultiplier; //power
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -25,6 +27,8 @@ public class Bellow : MonoBehaviour
         wind = GetComponent<PolygonCollider2D>();
 
         ammoCount = maxAmmo;
+
+        powerMultiplier = 1.0f;
     }
     
     void Update()
@@ -69,7 +73,17 @@ public class Bellow : MonoBehaviour
     {
         if (isActive && !collision.CompareTag("Player1"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f, ForceMode2D.Impulse);
+            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f * powerMultiplier, ForceMode2D.Impulse);
         }
+    }
+
+    public void MultiplyPower(float PowerM_Delta)
+    {
+        powerMultiplier += PowerM_Delta;
+
+        this.Wait(5.0f, () =>
+        {
+            powerMultiplier -= PowerM_Delta;
+        });
     }
 }

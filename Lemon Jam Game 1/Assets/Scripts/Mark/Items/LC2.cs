@@ -18,6 +18,8 @@ public class LC2 : MonoBehaviour
 
     private int ammoCount;
 
+    private float powerMultiplier; //power
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -29,6 +31,8 @@ public class LC2 : MonoBehaviour
         ammoCount = maxAmmo; //ammo
 
         gunTip = transform.GetChild(1).gameObject.transform;
+
+        powerMultiplier = 1.0f; //power
     }
     
     void Update()
@@ -63,7 +67,7 @@ public class LC2 : MonoBehaviour
             {
                 lr.SetPosition(1, ray.point);
 
-                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f, ForceMode2D.Impulse);
+                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f * powerMultiplier, ForceMode2D.Impulse);
             }
             else
             {
@@ -76,5 +80,15 @@ public class LC2 : MonoBehaviour
                 lr.positionCount = 0;
             });
         }
+    }
+
+    public void MultiplyPower(float PowerM_Delta)
+    {
+        powerMultiplier += PowerM_Delta;
+
+        this.Wait(5.0f, () =>
+        {
+            powerMultiplier -= PowerM_Delta;
+        });
     }
 }

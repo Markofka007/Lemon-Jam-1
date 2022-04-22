@@ -14,6 +14,8 @@ public class Bat2 : MonoBehaviour
 
     private int ammoCount;
 
+    private float powerMultiplier; //power
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -21,6 +23,8 @@ public class Bat2 : MonoBehaviour
         arm = transform.parent.parent.GetComponent<Arm2>();
 
         ammoCount = maxAmmo;
+
+        powerMultiplier = 1.0f; //power
     }
 
     void Update()
@@ -56,7 +60,17 @@ public class Bat2 : MonoBehaviour
     {
         if (isActive && !collision.gameObject.CompareTag("Player2") && !collision.gameObject.CompareTag("Platform"))
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f, ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f * powerMultiplier, ForceMode2D.Impulse);
         }
+    }
+
+    public void MultiplyPower(float PowerM_Delta)
+    {
+        powerMultiplier += PowerM_Delta;
+
+        this.Wait(5.0f, () =>
+        {
+            powerMultiplier -= PowerM_Delta;
+        });
     }
 }

@@ -20,6 +20,8 @@ public class AutoGun4 : MonoBehaviour
 
     private int ammoCount;
 
+    private float powerMultiplier; //power
+
     void Start()
     {
         p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
@@ -33,6 +35,8 @@ public class AutoGun4 : MonoBehaviour
         activated = false;
 
         ammoCount = maxAmmo; //ammo
+
+        powerMultiplier = 1.0f; //power
     }
 
     void Update()
@@ -56,6 +60,7 @@ public class AutoGun4 : MonoBehaviour
 
                 GameObject popcorn = Instantiate(popcornPrefab, gunTip.position, Quaternion.Euler(0, 0, arm.angleCorrected));
                 popcorn.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f;
+                popcorn.GetComponent<Popcorn>().powerMulitplier = powerMultiplier;
 
                 this.Wait(0.2f, () =>
                 {
@@ -78,5 +83,15 @@ public class AutoGun4 : MonoBehaviour
     public void StopFire()
     {
         activated = false;
+    }
+
+    public void MultiplyPower(float PowerM_Delta)
+    {
+        powerMultiplier += PowerM_Delta;
+
+        this.Wait(5.0f, () =>
+        {
+            powerMultiplier -= PowerM_Delta;
+        });
     }
 }

@@ -16,6 +16,9 @@ TagManager:
   - Platform
   - Ending Platform
   - Go Back please
+  - JumpBean
+  - SpeedBean
+  - PowerBean
   layers:
   - Default
   - TransparentFX
