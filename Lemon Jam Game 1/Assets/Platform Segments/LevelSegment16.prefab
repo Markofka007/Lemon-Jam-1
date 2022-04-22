@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakawayPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3809110835306680362, guid: a5b678f131140d648bbd23531549593a, type: 3}
+      propertyPath: m_TagString
+      value: Ending Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 4163600084921378112, guid: a5b678f131140d648bbd23531549593a, type: 3}
       propertyPath: m_RootOrder
       value: 8

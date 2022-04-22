@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player2;
     public GameObject Player3;
     public GameObject Player4;
+    public GameObject Ceiling;
 
     public float Velo = 7;
     public float FinalX = 95;
@@ -18,6 +19,15 @@ public class GameManager : MonoBehaviour
 
     private bool oneSpawn;
     private int i = 0;
+
+    private void Start()
+    {
+        Ceiling.gameObject.SetActive(false);
+        this.Wait(5f, () =>
+        {
+            Ceiling.gameObject.SetActive(true);
+        });
+    }
 
     // Update is called once per frame
     void Update()
