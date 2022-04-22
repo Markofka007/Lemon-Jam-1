@@ -19,8 +19,6 @@ public class Hover : MonoBehaviour
     {
         totalTime += Time.deltaTime;
 
-        Debug.Log(totalTime);
-
         transform.position =  initialPos + new Vector3(0, Mathf.Sin(totalTime * 5f) * 0.25f, 0);
     }
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
-  maxAmmo: 0
+  maxAmmo: 5
 --- !u!114 &4859710624504810284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
-  maxAmmo: 0
+  maxAmmo: 5
 --- !u!114 &4859710624504810285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
-  maxAmmo: 0
+  maxAmmo: 5
 --- !u!114 &4859710624504810286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 7792945475709131248, guid: 567bf5e4caa58ed4da0c38d73d68e94a, type: 3}
-  maxAmmo: 0
+  maxAmmo: 5
 --- !u!114 &4859710624504810274
 MonoBehaviour:
   m_ObjectHideFlags: 0
