@@ -9,10 +9,15 @@ public class MainMenu : MonoBehaviour
     private int menuSelection;
     private int maxMenuSelection;
 
+    public GameObject indicator;
+    public GameObject[] menuItems;
+
     void Start()
     {
         menuSelection = 1;
-        maxMenuSelection = 2;
+        maxMenuSelection = menuItems.Length;
+
+        UpdateIndicator();
     }
     
     void Update()
@@ -25,9 +30,10 @@ public class MainMenu : MonoBehaviour
         if (ctx.performed && menuSelection > 1)
         {
             menuSelection--;
+            UpdateIndicator();
         }
 
-        Debug.Log("Scrolled Up" + menuSelection);
+        
     }
 
     public void ScrollDown(InputAction.CallbackContext ctx)
@@ -35,9 +41,32 @@ public class MainMenu : MonoBehaviour
         if (ctx.performed && menuSelection < maxMenuSelection)
         {
             menuSelection++;
+            UpdateIndicator();
         }
 
-        Debug.Log("Scrolled Down" + menuSelection);
+        
+    }
+
+    private void UpdateIndicator()
+    {
+        indicator.transform.position = menuItems[menuSelection - 1].transform.position + Vector3.back;
+    }
+
+    public void Select(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            switch (menuSelection)
+            {
+                case 1:
+                    LoadScene(3);
+                    break;
+
+                case 2:
+                    LoadScene(4);
+                    break;
+            }
+        }
     }
 
     public void LoadScene(int sceneDex)
