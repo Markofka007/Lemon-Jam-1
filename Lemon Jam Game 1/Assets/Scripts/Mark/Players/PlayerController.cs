@@ -38,11 +38,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        /*
         if (transform.position.y < -10)
         {
             transform.position = new Vector3(0, -3.25f, 0);
             rb.velocity = new Vector2(0, 0);
         }
+        */
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
         {
