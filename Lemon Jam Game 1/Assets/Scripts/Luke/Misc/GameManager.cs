@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject Player4;
     public GameObject Ceiling;
 
-    public RespawnPlatform RespawnPlatform;
+    public RespawnPlatform RespawnPlatform1;
+    public RespawnPlatform RespawnPlatform2;
+    public RespawnPlatform RespawnPlatform3;
+    public RespawnPlatform RespawnPlatform4;
 
     public float Velo = 7;
     private float FinalX = 95;
@@ -100,21 +103,51 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath(GameObject Player)
     {
-        if(Player == Player1) { Player1Lives--; }
-        if(Player == Player2) { Player2Lives--; }
-        if(Player == Player3) { Player3Lives--; }
-        if(Player == Player4) { Player4Lives--; }
+        if(Player == Player1) 
+        { 
+            Player1Lives--;
+            Player.transform.position.Set(0, 30, 0);
 
-        Player.transform.position.Set(0, 30, 0);
-
-        this.Wait(2f, () =>
+            this.Wait(2f, () =>
+            {
+                SpawnPlayer(Player, RespawnPlatform1);
+            });
+        }
+        if(Player == Player2) 
         {
-            SpawnPlayer(Player);
-        });
+            Player2Lives--;
+            Player.transform.position.Set(0, 30, 0);
 
+            this.Wait(2f, () =>
+            {
+                SpawnPlayer(Player, RespawnPlatform2);
+            });
+        }
+        
+        if(Player == Player3) 
+        {
+            Player3Lives--;
+            Player.transform.position.Set(0, 30, 0);
+
+            this.Wait(2f, () =>
+            {
+                SpawnPlayer(Player, RespawnPlatform3);
+            });
+        }
+        
+        if(Player == Player4) 
+        {
+            Player4Lives--;
+            Player.transform.position.Set(0, 30, 0);
+
+            this.Wait(2f, () =>
+            {
+                SpawnPlayer(Player, RespawnPlatform4);
+            });
+        }
     }
 
-    void SpawnPlayer(GameObject Player)
+    void SpawnPlayer(GameObject Player, RespawnPlatform platform)
     {
         
     }
