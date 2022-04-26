@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject Player4;
     public GameObject Ceiling;
 
+    public RespawnPlatform RespawnPlatform;
+
     public float Velo = 7;
     private float FinalX = 95;
 
@@ -103,8 +105,17 @@ public class GameManager : MonoBehaviour
         if(Player == Player3) { Player3Lives--; }
         if(Player == Player4) { Player4Lives--; }
 
-        Player
+        Player.transform.position.Set(0, 30, 0);
+
+        this.Wait(2f, () =>
+        {
+            SpawnPlayer(Player);
+        });
+
     }
 
-    void SpawnPlayer()
+    void SpawnPlayer(GameObject Player)
+    {
+        
+    }
 }
