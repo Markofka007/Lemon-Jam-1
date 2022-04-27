@@ -11,7 +11,7 @@ public class ItemRespawn : MonoBehaviour
     {
         if (transform.position.y < -12)
         {
-            transform.position = new Vector3(Random.Range(-20, 20), 15, 0);
+            transform.position = new Vector3(Random.Range(-20, 20), 21, 0);
 
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }

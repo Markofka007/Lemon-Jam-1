@@ -18,6 +18,8 @@ public class RL4 : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    private AudioSource pop;
+
     void Start()
     {
         p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
@@ -29,6 +31,8 @@ public class RL4 : MonoBehaviour
         ammoCount = maxAmmo; //ammo
 
         powerMultiplier = 1.0f; //power
+
+        pop = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -57,6 +61,8 @@ public class RL4 : MonoBehaviour
             GameObject rocket = Instantiate(rocketPrefab, gunTip.position, Quaternion.Euler(0, 0, arm.angleCorrected));
             rocket.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f;
             rocket.GetComponent<Rocket>().powerMultiplier = powerMultiplier;
+
+            pop.Play();
         }
     }
 
