@@ -20,13 +20,13 @@ public class RespawnPlatform : MonoBehaviour
 
         if(!SpawnPlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, origin.position, Time.deltaTime * speed * 1.8f);
+            transform.position = Vector3.MoveTowards(transform.position, origin.position, Time.deltaTime * speed * 2);
         }
     }
 
     IEnumerator DelayedBack()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.2f);
         SpawnPlayer = false;
     }
 }

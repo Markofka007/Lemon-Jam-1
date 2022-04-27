@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public float Velo = 7;
     private float FinalX = 95;
+    private Vector3 posOffset = new Vector3(0, 2, 0);
 
     public GameObject platformSegment;
 
@@ -39,11 +40,11 @@ public class GameManager : MonoBehaviour
         Player3Lives = StartingLives;
         Player4Lives = StartingLives;
 
-        Ceiling.gameObject.SetActive(false);
-        this.Wait(5f, () =>
-        {
-            Ceiling.gameObject.SetActive(true);
-        });
+        //Ceiling.gameObject.SetActive(false);
+        //this.Wait(5f, () =>
+        //{
+           // Ceiling.gameObject.SetActive(true);
+        //});
     }
 
     // Update is called once per frame
@@ -104,51 +105,82 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath(GameObject Player)
     {
         if(Player == Player1) 
-        { 
-            Player1Lives--;
-            Player.transform.position.Set(0, 30, 0);
+        {
+            if (Player1Lives < 0) { return; }
 
-            this.Wait(2f, () =>
+            Player1Lives--;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Player.transform.position = RespawnPlatform1.transform.position + posOffset;
+            Player.transform.parent = RespawnPlatform1.transform;
+            
+            SpawnPlayer(Player, RespawnPlatform1);
+            Player.GetComponent<PlayerController>().enabled = false;
+            this.Wait(1.8f, () =>
             {
-                SpawnPlayer(Player, RespawnPlatform1);
+                Player.GetComponent<PlayerController>().enabled = true;
             });
         }
+        
         if(Player == Player2) 
         {
-            Player2Lives--;
-            Player.transform.position.Set(0, 30, 0);
+            if (Player2Lives < 0) { return; }
 
-            this.Wait(2f, () =>
-            {
+            Player2Lives--;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Player.transform.position = RespawnPlatform2.transform.position + posOffset;
+            Player.transform.parent = RespawnPlatform2.transform;
+           
                 SpawnPlayer(Player, RespawnPlatform2);
-            });
+                Player.GetComponent<PlayerController2>().enabled = false;
+                this.Wait(1.8f, () =>
+                {
+                    Player.GetComponent<PlayerController2>().enabled = true;
+                });
         }
         
         if(Player == Player3) 
         {
-            Player3Lives--;
-            Player.transform.position.Set(0, 30, 0);
+            if (Player3Lives < 0) { return; }
 
-            this.Wait(2f, () =>
-            {
+            Player3Lives--;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Player.transform.position = RespawnPlatform3.transform.position + posOffset;
+            Player.transform.parent = RespawnPlatform3.transform;
+
+       
                 SpawnPlayer(Player, RespawnPlatform3);
-            });
+                Player.GetComponent<PlayerController3>().enabled = false;
+                this.Wait(1.8f, () =>
+                {
+                    Player.GetComponent<PlayerController3>().enabled = true;
+                });
+            
         }
         
         if(Player == Player4) 
         {
-            Player4Lives--;
-            Player.transform.position.Set(0, 30, 0);
+            if (Player4Lives < 0) { return; }
 
-            this.Wait(2f, () =>
-            {
+            Player4Lives--;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Player.transform.position = RespawnPlatform4.transform.position + posOffset;
+            Player.transform.parent = RespawnPlatform4.transform;
+
                 SpawnPlayer(Player, RespawnPlatform4);
-            });
+                Player.GetComponent<PlayerController4>().enabled = false;
+                this.Wait(1.8f, () =>
+                {
+                    Player.GetComponent<PlayerController4>().enabled = true;
+                });
         }
     }
 
     void SpawnPlayer(GameObject Player, RespawnPlatform platform)
     {
-        
+        platform.SpawnPlayer = true;
+        this.Wait(2f, () =>
+        {
+            Player.transform.parent = null;
+        });
     }
 }
