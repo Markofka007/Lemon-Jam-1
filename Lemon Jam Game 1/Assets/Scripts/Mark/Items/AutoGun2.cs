@@ -22,6 +22,8 @@ public class AutoGun2 : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    private AudioSource pop;
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -37,6 +39,8 @@ public class AutoGun2 : MonoBehaviour
         ammoCount = maxAmmo; //ammo
 
         powerMultiplier = 1.0f; //power
+
+        pop = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -61,6 +65,8 @@ public class AutoGun2 : MonoBehaviour
                 GameObject popcorn = Instantiate(popcornPrefab, gunTip.position, Quaternion.Euler(0, 0, arm.angleCorrected));
                 popcorn.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f;
                 popcorn.GetComponent<Popcorn>().powerMulitplier = powerMultiplier;
+
+                pop.Play();
 
                 this.Wait(0.2f, () =>
                 {
