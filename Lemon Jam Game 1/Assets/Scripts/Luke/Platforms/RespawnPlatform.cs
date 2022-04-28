@@ -27,6 +27,6 @@ public class RespawnPlatform : MonoBehaviour
     IEnumerator DelayedBack()
     {
         yield return new WaitForSeconds(3.2f);
-        SpawnPlayer = false;
+        Destroy(gameObject);
     }
 }

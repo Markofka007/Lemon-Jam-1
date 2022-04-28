@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject Player4;
     public GameObject Ceiling;
 
+    public GameObject JamRespawnPlatform;
+    private GameObject TempSpawn;
+
     public RespawnPlatform RespawnPlatform1;
     public RespawnPlatform RespawnPlatform2;
     public RespawnPlatform RespawnPlatform3;
@@ -112,7 +115,9 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.transform.position = RespawnPlatform1.transform.position + posOffset;
             Player.transform.parent = RespawnPlatform1.transform;
-            
+
+            TempSpawn = (GameObject)Instantiate(JamRespawnPlatform, RespawnPlatform1.transform.position, Quaternion.identity);
+
             SpawnPlayer(Player, RespawnPlatform1);
             Player.GetComponent<PlayerController>().enabled = false;
             this.Wait(1.8f, () =>
