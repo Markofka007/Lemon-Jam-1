@@ -9,8 +9,12 @@ public class SpawnManager : MonoBehaviour
     public float minSpawnTime;
     public float maxSpawnTime;
 
+    private AudioSource sound;
+
     void Start()
     {
+        sound = GetComponent<AudioSource>();
+
         SpawnItem();
     }
 
@@ -20,6 +24,8 @@ public class SpawnManager : MonoBehaviour
 
         newItem.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-4f, 4f), 0f);
         newItem.GetComponent<Rigidbody2D>().AddTorque(Random.Range(-5, 5), ForceMode2D.Impulse);
+
+        sound.Play();
 
         this.Wait(Random.Range(minSpawnTime, maxSpawnTime), () =>
         {

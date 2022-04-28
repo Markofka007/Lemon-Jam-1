@@ -16,6 +16,8 @@ public class Bat : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    private AudioSource sound;
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -25,6 +27,8 @@ public class Bat : MonoBehaviour
         ammoCount = maxAmmo;
 
         powerMultiplier = 1.0f; //power
+
+        sound = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -61,6 +65,8 @@ public class Bat : MonoBehaviour
         if (isActive && !collision.gameObject.CompareTag("Player1") && !collision.gameObject.CompareTag("Platform"))
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f * powerMultiplier, ForceMode2D.Impulse);
+
+            sound.Play();
         }
     }
 

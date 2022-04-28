@@ -12,12 +12,17 @@ public class MainMenu : MonoBehaviour
     public GameObject indicator;
     public GameObject[] menuItems;
 
+    private AudioSource blip;
+    public AudioClip selectSound;
+
     void Start()
     {
         menuSelection = 1;
         maxMenuSelection = menuItems.Length;
 
         UpdateIndicator();
+
+        blip = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -31,6 +36,8 @@ public class MainMenu : MonoBehaviour
         {
             menuSelection--;
             UpdateIndicator();
+
+            blip.Play();
         }
 
         
@@ -42,6 +49,8 @@ public class MainMenu : MonoBehaviour
         {
             menuSelection++;
             UpdateIndicator();
+
+            blip.Play();
         }
 
         
@@ -56,6 +65,14 @@ public class MainMenu : MonoBehaviour
     {
         if (ctx.performed)
         {
+            DontDestroyOnLoad(gameObject); //This might cause issues. Let's hope it doesn't.
+            blip.clip = selectSound;
+            blip.Play();
+
+            this.Wait(0.1f, () =>
+            {
+                Destroy(gameObject);
+            });
             switch (menuSelection)
             {
                 case 1:
