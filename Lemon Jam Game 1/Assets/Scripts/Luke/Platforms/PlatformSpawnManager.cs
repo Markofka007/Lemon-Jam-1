@@ -16,7 +16,7 @@ public class PlatformSpawnManager : MonoBehaviour
 
     public GameObject SpawnPlatform(GameObject platformSegment)
     {
-        Debug.Log("Spawn ran");
+        //Debug.Log("Spawn ran");
         return (GameObject)Instantiate(platformSegment, spawnSpot.position, Quaternion.identity);
     }
 }

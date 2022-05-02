@@ -30,6 +30,7 @@ public class SpawnManager : MonoBehaviour
         this.Wait(Random.Range(minSpawnTime, maxSpawnTime), () =>
         {
             SpawnItem(); //I KNOW THAT THIS IS A RECURSION BUT THIS IS THE MOST EFFECTIVE AND SIMPLE SOLUTION I COULD THINK OF PLEASE DONT FIRE ME
+            //Mark has been fired.
         });
     }
 }
