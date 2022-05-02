@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject platformSegment;
 
     private bool oneSpawn;
-    private int i = 0;
+    private int numDed = 0;
 
     public int StartingLives;
 
@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
         if(Player2Lives < 0) { Destroy(Player2); }
         if(Player3Lives < 0) { Destroy(Player3); }
         if(Player4Lives < 0) { Destroy(Player4); }
+    }
+
+    void PlayerWin()
+    {
+
     }
 
     //Removes a life and starts the respawn procedure for the player who died
@@ -192,6 +197,9 @@ public class GameManager : MonoBehaviour
                 Player.GetComponent<PlayerController4>().enabled = true;
             });
         }
+
+        PlayerWin();
+
     }
 
     void SpawnPlayer(GameObject Player, GameObject platform)
