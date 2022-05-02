@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (H_Input > 0 && rb.velocity.x < maxSpeed || H_Input < 0 && rb.velocity.x > -maxSpeed || speedMultiplier > 1f)
+        if (H_Input > 0 && rb.velocity.x < maxSpeed * speedMultiplier || H_Input < 0 && rb.velocity.x > -maxSpeed * speedMultiplier)
         {
             rb.AddForce(new Vector2(H_Input * moveSpeed * speedMultiplier, 0f), ForceMode2D.Impulse);
         }
