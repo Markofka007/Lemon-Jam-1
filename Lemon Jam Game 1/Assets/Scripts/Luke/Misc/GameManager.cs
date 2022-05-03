@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject platformSegment;
 
     private bool oneSpawn;
-    private int numDed = 0;
+    public int numDed = 0;
 
     public int StartingLives;
 
@@ -52,10 +53,12 @@ public class GameManager : MonoBehaviour
         CheckLives();//Checks if any of the players need to be destroyed
 
         //Keeps track of whether or not the GoBack setup has passed a checkpoint
-        if(GoBack.transform.position.x > 10 && GoBack.transform.position.x < 20)
+        if (GoBack.transform.position.x > 10 && GoBack.transform.position.x < 20)
         {
             oneSpawn = true;
         }
+
+        Debug.Log(numDed);
 
         //Checks if the GoBack setup has gone past the screen limit and it has passed the checkpoint
         if(GoBack.transform.position.x >= FinalX - 0.1f && oneSpawn)
@@ -96,15 +99,42 @@ public class GameManager : MonoBehaviour
 
     void CheckLives()
     {
-        if(Player1Lives < 0) { Destroy(Player1); }
-        if(Player2Lives < 0) { Destroy(Player2); }
-        if(Player3Lives < 0) { Destroy(Player3); }
-        if(Player4Lives < 0) { Destroy(Player4); }
+        if(Player1Lives < 0 && Player1 != null) 
+        {
+            numDed++;
+            Destroy(Player1); 
+        }
+        
+        if(Player2Lives < 0 && Player2 != null) 
+        {
+            numDed++;
+            Destroy(Player2); 
+        }
+        
+        if(Player3Lives < 0 && Player3 != null) 
+        {
+            numDed++;
+            Destroy(Player3); 
+        }
+        
+        if(Player4Lives < 0 && Player4 != null) 
+        {
+            numDed++;
+            Destroy(Player4); 
+        }
+
+        if (numDed >= 3)
+        {
+            PlayerWin();
+        }
     }
 
     void PlayerWin()
     {
-
+        if(Player1 != null) { SceneManager.LoadScene("JamWinScreen"); Debug.Log("Jam"); }
+        if(Player2 != null) { SceneManager.LoadScene("BubbaWinScreen"); Debug.Log("Bubba"); }
+        if(Player3 != null) { SceneManager.LoadScene("AddieWinScreen"); Debug.Log("Addie"); }
+        if(Player4 != null) { SceneManager.LoadScene("BonnieWinScreen"); Debug.Log("Bonnie"); }   
     }
 
     //Removes a life and starts the respawn procedure for the player who died
@@ -197,9 +227,6 @@ public class GameManager : MonoBehaviour
                 Player.GetComponent<PlayerController4>().enabled = true;
             });
         }
-
-        PlayerWin();
-
     }
 
     void SpawnPlayer(GameObject Player, GameObject platform)

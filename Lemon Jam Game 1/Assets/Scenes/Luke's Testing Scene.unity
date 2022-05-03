@@ -1524,7 +1524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440563335485982618, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_RootOrder
@@ -1695,7 +1695,8 @@ MonoBehaviour:
   SpawnSpot4: {fileID: 942031264}
   Velo: 4
   platformSegment: {fileID: 1188175303}
-  StartingLives: 3
+  numDed: 0
+  StartingLives: 1
   Player1Lives: 0
   Player2Lives: 0
   Player3Lives: 0
@@ -2386,7 +2387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6580469820074345093, guid: ff17213e169896647bc7af3523115467, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff17213e169896647bc7af3523115467, type: 3}
@@ -2707,7 +2708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330768, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330857, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_RootOrder

@@ -23,5 +23,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Static Lives.unity
     guid: 3c5e8a6a1aaf67c48a738f94fe3e1b88
+  - enabled: 1
+    path: Assets/Scenes/WinScreens/JamWinScreen.unity
+    guid: 6a5fa4d6a973d8544ad49bf92b0c3a34
+  - enabled: 1
+    path: Assets/Scenes/WinScreens/BubbaWinScreen.unity
+    guid: d17038e24a785624f93177ff26d4e09f
+  - enabled: 1
+    path: Assets/Scenes/WinScreens/BonnieWinScreen.unity
+    guid: d7b5076146f4ced4d9b4961bb1ba0074
+  - enabled: 1
+    path: Assets/Scenes/WinScreens/AddieWinScreen.unity
+    guid: a2b1808c4e16df644813724c26e9a79a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 88f80853afd2349449e64f3da88a26aa, type: 2}
