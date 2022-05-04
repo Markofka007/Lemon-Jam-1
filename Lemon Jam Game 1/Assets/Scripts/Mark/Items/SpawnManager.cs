@@ -14,8 +14,11 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         sound = GetComponent<AudioSource>();
-
-        SpawnItem();
+        
+        this.Wait(3f, () =>
+        {
+            SpawnItem();
+        });
     }
 
     public void SpawnItem()

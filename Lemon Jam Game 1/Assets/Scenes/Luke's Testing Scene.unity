@@ -1312,37 +1312,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5073625504121994077, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
   m_PrefabInstance: {fileID: 1325488029}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &882154641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 882154642}
-  m_Layer: 0
-  m_Name: Looker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &882154642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882154641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.8, y: 33, z: -5.5437913}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &936929050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1685,6 +1654,7 @@ MonoBehaviour:
   Player2: {fileID: 2059322703}
   Player3: {fileID: 596158360}
   Player4: {fileID: 827687869}
+  PlayerList: []
   JamRespawnPlatform: {fileID: 1672310025808987161, guid: 901bb4a17de3308488c2db0f0f27fef9, type: 3}
   BubbaRespawnPlatform: {fileID: 1672310025808987161, guid: 98141da6ef6459e4b95f9e8b428efae4, type: 3}
   AddieRespawnPlatform: {fileID: 1672310025808987161, guid: 6908cffd9cee78e43b2944d2bf8e1e38, type: 3}
@@ -1695,7 +1665,7 @@ MonoBehaviour:
   SpawnSpot4: {fileID: 942031264}
   Velo: 4
   platformSegment: {fileID: 1188175303}
-  numDed: 0
+  numPlayersAlive: 4
   StartingLives: 1
   Player1Lives: 0
   Player2Lives: 0

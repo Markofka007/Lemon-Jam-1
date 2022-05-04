@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5945498609159550172}
   - component: {fileID: 5945498609159550175}
   m_Layer: 8
-  m_Name: Player3
+  m_Name: Addie
   m_TagString: Player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 86c9176ac828bc042947b9ee61b2b950, type: 3}
-  m_Color: {r: 0.90588236, g: 0.5256861, b: 0.31372547, a: 1}
+  m_Color: {r: 0.9811321, g: 0.85211766, b: 0.124955505, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

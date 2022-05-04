@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3163754182076330856}
   - component: {fileID: 3163754182076330771}
   m_Layer: 7
-  m_Name: Player2
+  m_Name: Bubba
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 86c9176ac828bc042947b9ee61b2b950, type: 3}
-  m_Color: {r: 0.3946963, g: 0.8867924, b: 0.29699183, a: 1}
+  m_Color: {r: 1, g: 0.43867922, b: 0.85436296, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

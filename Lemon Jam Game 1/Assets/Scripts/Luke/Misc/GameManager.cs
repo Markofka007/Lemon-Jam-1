@@ -134,10 +134,10 @@ public class GameManager : MonoBehaviour
 
     void PlayerScreen(GameObject player)
     {
-        if (player = Player1) { SceneManager.LoadScene("JamWinScreen"); Debug.Log("Jam"); return; }
-        if (player = Player2) { SceneManager.LoadScene("BubbaWinScreen"); Debug.Log("Bubba"); return; }
-        if (player = Player3) { SceneManager.LoadScene("AddieWinScreen"); Debug.Log("Addie"); return; }
-        if (player = Player4) { SceneManager.LoadScene("BonnieWinScreen"); Debug.Log("Bonnie"); return; }
+        if (player.name == "Jam") { SceneManager.LoadScene("JamWinScreen"); return; }
+        if (player.name == "Bubba") { SceneManager.LoadScene("BubbaWinScreen"); return; }
+        if (player.name == "Addie") { SceneManager.LoadScene("AddieWinScreen"); return; }
+        if (player.name == "Bonnie") { SceneManager.LoadScene("BonnieWinScreen"); return; }
     }
 
     void PlayerWin()
