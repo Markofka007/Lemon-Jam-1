@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformSpawnManager : MonoBehaviour
 {
+    public GameManager gm;
     public float timeToSpawn;
     public GameObject[] platforms;
     public Transform spawnSpot;
@@ -11,7 +12,7 @@ public class PlatformSpawnManager : MonoBehaviour
 
     private void Start()
     {
-        //Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
+        gm.platformSegment = (GameObject)Instantiate(platforms[Random.Range(0, platforms.Length)], spawnSpot.position, Quaternion.identity);
     }
 
     public GameObject SpawnPlatform(GameObject platformSegment)

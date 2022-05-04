@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efd79c5a49ae1e4187a5d2bb26a664a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 35
+  bounceForce: 32
