@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject Player3;
     public GameObject Player4;
 
+    public List<GameObject> PlayerList = new List<GameObject>();
+
     public GameObject JamRespawnPlatform;
     public GameObject BubbaRespawnPlatform;
     public GameObject AddieRespawnPlatform;
@@ -30,8 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject platformSegment;
 
     private bool oneSpawn;
-    public int numDed = 0;
-
+    public int numPlayersAlive = 4;
     public int StartingLives;
 
     public int Player1Lives;
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerList.Add(Player1);
+        PlayerList.Add(Player2);
+        PlayerList.Add(Player3);
+        PlayerList.Add(Player4);
+
         Player1Lives = StartingLives;
         Player2Lives = StartingLives;
         Player3Lives = StartingLives;
@@ -52,13 +58,13 @@ public class GameManager : MonoBehaviour
     {
         CheckLives();//Checks if any of the players need to be destroyed
 
+        //Debug.Log(PlayerList.Count);
+            
         //Keeps track of whether or not the GoBack setup has passed a checkpoint
         if (GoBack.transform.position.x > 10 && GoBack.transform.position.x < 20)
         {
             oneSpawn = true;
         }
-
-        Debug.Log(numDed);
 
         //Checks if the GoBack setup has gone past the screen limit and it has passed the checkpoint
         if(GoBack.transform.position.x >= FinalX - 0.1f && oneSpawn)
@@ -101,40 +107,46 @@ public class GameManager : MonoBehaviour
     {
         if(Player1Lives < 0 && Player1 != null) 
         {
-            numDed++;
+            PlayerList.Remove(Player1);
             Destroy(Player1); 
         }
         
         if(Player2Lives < 0 && Player2 != null) 
         {
-            numDed++;
+            PlayerList.Remove(Player2);
             Destroy(Player2); 
         }
         
         if(Player3Lives < 0 && Player3 != null) 
         {
-            numDed++;
+            PlayerList.Remove(Player3);
             Destroy(Player3); 
         }
         
         if(Player4Lives < 0 && Player4 != null) 
         {
-            numDed++;
+            PlayerList.Remove(Player4);
             Destroy(Player4); 
         }
 
-        if (numDed >= 3)
-        {
-            PlayerWin();
-        }
+        PlayerWin();
+    }
+
+    void PlayerScreen(GameObject player)
+    {
+        if (player = Player1) { SceneManager.LoadScene("JamWinScreen"); Debug.Log("Jam"); return; }
+        if (player = Player2) { SceneManager.LoadScene("BubbaWinScreen"); Debug.Log("Bubba"); return; }
+        if (player = Player3) { SceneManager.LoadScene("AddieWinScreen"); Debug.Log("Addie"); return; }
+        if (player = Player4) { SceneManager.LoadScene("BonnieWinScreen"); Debug.Log("Bonnie"); return; }
     }
 
     void PlayerWin()
     {
-        if(Player1 != null) { SceneManager.LoadScene("JamWinScreen"); Debug.Log("Jam"); }
-        if(Player2 != null) { SceneManager.LoadScene("BubbaWinScreen"); Debug.Log("Bubba"); }
-        if(Player3 != null) { SceneManager.LoadScene("AddieWinScreen"); Debug.Log("Addie"); }
-        if(Player4 != null) { SceneManager.LoadScene("BonnieWinScreen"); Debug.Log("Bonnie"); }   
+        if(PlayerList.Count == 1)
+        {
+            PlayerScreen(PlayerList[0]);
+            Debug.Log(PlayerList[0].name);
+        }
     }
 
     //Removes a life and starts the respawn procedure for the player who died
