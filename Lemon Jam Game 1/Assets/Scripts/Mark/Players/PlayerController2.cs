@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerController2 : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -30,10 +29,14 @@ public class PlayerController2 : MonoBehaviour
 
     public GameObject equipedItem;
 
+    private FistAttack2 fist;
+
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        fist = transform.GetChild(0).GetComponent<FistAttack2>();
     }
 
     void Update()
@@ -157,7 +160,11 @@ public class PlayerController2 : MonoBehaviour
     {
         if (context.performed)
         {
-            if (equipedItem.name.Contains("Auto Gun"))
+            if (transform.GetChild(0).GetChild(0).childCount == 0)
+            {
+                fist.Punch();
+            }
+            else if (equipedItem.name.Contains("Auto Gun"))
             {
                 equipedItem.GetComponent<AutoGun2>().StartFire();
             }

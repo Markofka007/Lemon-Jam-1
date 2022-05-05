@@ -490,7 +490,7 @@ MonoBehaviour:
   canPunch:
     serializedVersion: 2
     m_Bits: 832
-  punchDistance: 0.5
+  punchDistance: 1
   punchPower: 10
 --- !u!1 &3163754183386828610
 GameObject:

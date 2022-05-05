@@ -521,5 +521,5 @@ MonoBehaviour:
   canPunch:
     serializedVersion: 2
     m_Bits: 704
-  punchDistance: 0.5
+  punchDistance: 1
   punchPower: 10

@@ -29,10 +29,14 @@ public class PlayerController4 : MonoBehaviour
 
     public GameObject equipedItem;
 
+    private FistAttack4 fist;
+
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        fist = transform.GetChild(0).GetComponent<FistAttack4>();
     }
 
     void Update()
@@ -156,7 +160,11 @@ public class PlayerController4 : MonoBehaviour
     {
         if (context.performed)
         {
-            if (equipedItem.name.Contains("Auto Gun"))
+            if (transform.GetChild(0).GetChild(0).childCount == 0)
+            {
+                fist.Punch();
+            }
+            else if (equipedItem.name.Contains("Auto Gun"))
             {
                 equipedItem.GetComponent<AutoGun4>().StartFire();
             }
