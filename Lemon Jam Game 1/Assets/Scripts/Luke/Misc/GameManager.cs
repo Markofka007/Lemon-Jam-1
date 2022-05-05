@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public PlatformSpawnManager PSM;
     public GameObject GoBack;
-    
+
+    public GameObject ItemParent;
+
     public GameObject Player1;
     public GameObject Player2;
     public GameObject Player3;
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
     public Transform SpawnSpot3;
     public Transform SpawnSpot4;
 
-    public float Velo = 7;
+    public float Velo = 4;
     private readonly float FinalX = 95;
     private Vector3 posOffset = new Vector3(0, 1.26f, 0);
 
@@ -69,11 +71,13 @@ public class GameManager : MonoBehaviour
         //Checks if the GoBack setup has gone past the screen limit and it has passed the checkpoint
         if(GoBack.transform.position.x >= FinalX - 0.1f && oneSpawn)
         {
+            ItemParent.transform.parent = GoBack.transform;
             platformSegment.transform.parent = GoBack.transform;//Grabs the platform segment
             ParentPlayer();//Grabs all the players
             
             GoBack.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);//Moves all the grabbed objects
 
+            ItemParent.transform.parent = null;
             platformSegment.transform.parent = null;//releases the platform segment
             DeParentPlayer();//releases all the players
 
@@ -81,6 +85,11 @@ public class GameManager : MonoBehaviour
             platformSegment = PSM.SpawnPlatform(platformSegment);//Instantiates the selected segment
             
             oneSpawn = false;//updated the checkpoint flag for the GoBack object
+
+            if (Velo < 7.5)
+            {
+                Velo += 0.1f;
+            }
         }
 
         GoBack.transform.position += Time.deltaTime * Velo * Vector3.right;//Move the GoBack object
