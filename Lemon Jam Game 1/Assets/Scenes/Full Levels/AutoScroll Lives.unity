@@ -153,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12834877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -46.5, z: 5.526369}
+  m_LocalPosition: {x: 0, y: -25.8, z: 5.526369}
   m_LocalScale: {x: 1.4125, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,10 +193,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2025857860}
     m_Modifications:
-    - target: {fileID: 1539788135772339474, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
-      propertyPath: punchDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Name
       value: Addie
@@ -301,10 +297,6 @@ PrefabInstance:
     - target: {fileID: 3163754182076330857, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4554855385967776520, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
-      propertyPath: punchDistance
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
@@ -1191,10 +1183,6 @@ PrefabInstance:
     - target: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1220604615928526248, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
-      propertyPath: punchDistance
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
@@ -2413,7 +2401,7 @@ Transform:
   - {fileID: 1892432513}
   - {fileID: 2115153333}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548831621
 GameObject:
@@ -2792,7 +2780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1804679856 stripped
 Transform:
@@ -2852,10 +2840,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2025857860}
     m_Modifications:
-    - target: {fileID: 513300517930683945, guid: ff17213e169896647bc7af3523115467, type: 3}
-      propertyPath: punchDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6580469820074345088, guid: ff17213e169896647bc7af3523115467, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2903,10 +2887,6 @@ PrefabInstance:
     - target: {fileID: 6580469820074345093, guid: ff17213e169896647bc7af3523115467, type: 3}
       propertyPath: m_Name
       value: Jam
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: KBM (Debug)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff17213e169896647bc7af3523115467, type: 3}

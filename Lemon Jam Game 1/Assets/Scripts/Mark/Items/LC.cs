@@ -18,6 +18,8 @@ public class LC : MonoBehaviour
 
     private int ammoCount;
 
+    public float power;
+
     private float powerMultiplier; //power
 
     void Start()
@@ -67,7 +69,7 @@ public class LC : MonoBehaviour
             {
                 lr.SetPosition(1, ray.point);
 
-                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 25f * powerMultiplier, ForceMode2D.Impulse);
+                ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * power * powerMultiplier, ForceMode2D.Impulse);
             }
             else
             {

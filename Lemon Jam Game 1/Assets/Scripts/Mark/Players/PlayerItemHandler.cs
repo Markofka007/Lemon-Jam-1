@@ -41,6 +41,8 @@ public class PlayerItemHandler : MonoBehaviour
     {
         containerFull = true;
 
+        item.layer = 0;
+
         item.transform.SetParent(container);
         item.transform.localPosition = Vector3.back;
         item.transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -310,6 +312,8 @@ public class PlayerItemHandler : MonoBehaviour
             }
 
             item.transform.SetParent(null);
+
+            item.layer = 17;
 
             item.GetComponent<Rigidbody2D>().isKinematic = false;
             item.GetComponent<BoxCollider2D>().isTrigger = false;

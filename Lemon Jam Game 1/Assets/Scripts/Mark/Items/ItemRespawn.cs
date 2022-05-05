@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ItemRespawn : MonoBehaviour
 {
-    //This is a temporary feature for the demo and testing purposes.
-    //Spawning will be added in the final build and respawning will not be present.
+    //sike, there is no respawn. the item will die when falling into the void.
 
     void Update()
     {
-        if (transform.position.y < -12)
+        if (transform.position.y < -25)
         {
-            transform.position = new Vector3(Random.Range(-20, 20), 21, 0);
-
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            Destroy(gameObject);
         }
     }
 }

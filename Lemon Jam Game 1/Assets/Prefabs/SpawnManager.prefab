@@ -51,8 +51,9 @@ MonoBehaviour:
   - {fileID: 3555060626478502281, guid: 4fb4390294bb8464dba89ead2efd3fa6, type: 3}
   - {fileID: 6421496243218026331, guid: 61c727e20838a33429128108a5df9ab2, type: 3}
   - {fileID: 4859710624504810277, guid: 840ecc83593d43740aa333ee055f827e, type: 3}
+  parental: {fileID: 0}
   minSpawnTime: 5
-  maxSpawnTime: 15
+  maxSpawnTime: 10
 --- !u!82 &3566347093681946014
 AudioSource:
   m_ObjectHideFlags: 0

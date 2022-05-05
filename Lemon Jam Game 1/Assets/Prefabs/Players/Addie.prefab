@@ -246,18 +246,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1539788135772339474}
-        m_TargetAssemblyTypeName: FistAttack3, Assembly-CSharp
-        m_MethodName: Punch
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: a7d8947f-4437-4396-aa13-67a2f5429cd4
     m_ActionName: Player/Fire3[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]
   - m_PersistentCalls:
@@ -521,5 +509,5 @@ MonoBehaviour:
   canPunch:
     serializedVersion: 2
     m_Bits: 704
-  punchDistance: 1
-  punchPower: 10
+  punchDistance: 1.5
+  punchPower: 15

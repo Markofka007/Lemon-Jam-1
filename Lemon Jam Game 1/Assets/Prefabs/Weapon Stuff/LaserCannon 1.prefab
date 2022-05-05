@@ -102,8 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayignore:
     serializedVersion: 2
-    m_Bits: 16375
+    m_Bits: 896
   maxAmmo: 5
+  power: 35
 --- !u!114 &6421496243218026339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayignore:
     serializedVersion: 2
-    m_Bits: 16375
+    m_Bits: 832
   maxAmmo: 5
+  power: 35
 --- !u!114 &6421496243218026336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayignore:
     serializedVersion: 2
-    m_Bits: 16375
+    m_Bits: 704
   maxAmmo: 5
+  power: 35
 --- !u!114 &6421496243218026337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,8 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayignore:
     serializedVersion: 2
-    m_Bits: 16375
+    m_Bits: 448
   maxAmmo: 5
+  power: 35
 --- !u!114 &6421496243218026333
 MonoBehaviour:
   m_ObjectHideFlags: 0
