@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 440563333893792326}
   - component: {fileID: 440563333893792320}
   - component: {fileID: 440563333893792327}
+  - component: {fileID: 1220604615928526248}
   m_Layer: 9
   m_Name: PlayerArm4
   m_TagString: Untagged
@@ -130,6 +131,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleCorrected: 0
+--- !u!114 &1220604615928526248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440563333893792325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6598c33c8c45fe7429661bb0cf883ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPunch:
+    serializedVersion: 2
+    m_Bits: 448
+  punchDistance: 0.5
+  punchPower: 10
 --- !u!1 &440563335485982618
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +163,6 @@ GameObject:
   - component: {fileID: 440563335485982630}
   - component: {fileID: 440563335485982627}
   - component: {fileID: 440563335485982628}
-  - component: {fileID: 440563335485982619}
   m_Layer: 9
   m_Name: Bonnie
   m_TagString: Player4
@@ -417,6 +434,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1220604615928526248}
+        m_TargetAssemblyTypeName: FistAttack4, Assembly-CSharp
+        m_MethodName: Punch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
     m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger,/XInputControllerWindows4/rightTrigger]
   - m_PersistentCalls:
@@ -494,15 +523,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 4
---- !u!114 &440563335485982619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440563335485982618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

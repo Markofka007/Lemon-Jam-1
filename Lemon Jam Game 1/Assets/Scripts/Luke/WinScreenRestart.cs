@@ -2,22 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class WinScreenRestart : MonoBehaviour
 {
     public GameObject text;
     
-    // Start is called before the first frame update
     void Start()
     {
         this.Wait(5f, () =>
         {
             text.SetActive(true);
 
-            this.Wait(25f, () =>
+            this.Wait(30f, () =>
             {
                 SceneManager.LoadScene("MainMenu");
             });
         });
+    }
+
+    public void GoToMainMenu(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

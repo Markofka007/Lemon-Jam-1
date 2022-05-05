@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6580469819673872139}
   - component: {fileID: 6580469819673872137}
   - component: {fileID: 6580469819673872138}
+  - component: {fileID: 513300517930683945}
   m_Layer: 6
   m_Name: PlayerArm1
   m_TagString: Untagged
@@ -130,6 +131,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleCorrected: 0
+--- !u!114 &513300517930683945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580469819673872140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPunch:
+    serializedVersion: 2
+    m_Bits: 896
+  punchDistance: 0.5
+  punchPower: 10
 --- !u!1 &6580469820074345093
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +163,6 @@ GameObject:
   - component: {fileID: 6580469820074345102}
   - component: {fileID: 6580469820074345092}
   - component: {fileID: 6580469820074345100}
-  - component: {fileID: 6580469820074345101}
   m_Layer: 6
   m_Name: Jam
   m_TagString: Player1
@@ -304,6 +321,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6580469820074345092}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 513300517930683945}
+        m_TargetAssemblyTypeName: FistAttack, Assembly-CSharp
+        m_MethodName: Punch
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -494,15 +523,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
---- !u!114 &6580469820074345101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6580469820074345093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

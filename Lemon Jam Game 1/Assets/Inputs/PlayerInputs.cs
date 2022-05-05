@@ -257,7 +257,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""AD"",
+                    ""name"": ""LeftStickX"",
                     ""id"": ""efa548e6-2dcd-4a40-b657-edb3de3a4d5a"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -290,12 +290,67 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""AD"",
+                    ""id"": ""2279b580-3401-4121-8cef-650fde080afa"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c7a48087-ce24-4203-8580-646746e26629"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug)"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""f7304084-4bb7-4042-8064-47f6e7a36b71"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug)"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""d72ae9f4-00cc-447a-b6ba-7e2aa195180e"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebad2868-996d-4cfb-a1f4-8a2caa82c8a9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96ff2431-6ac3-4db5-ab99-48d7544a14f6"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug)"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -772,6 +827,39 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""action"": ""Charge4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3e02670-3725-4117-8c79-7b2b2fe4aed5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller2"",
+                    ""action"": ""Jump2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8465e7ae-dc97-441d-8083-e90aa80099ca"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller3"",
+                    ""action"": ""Jump3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a81620e5-5a08-4223-9cd6-c2a66b639143"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller4"",
+                    ""action"": ""Jump4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -816,6 +904,17 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""KBM (Debug)"",
+            ""bindingGroup"": ""KBM (Debug)"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": true,
                     ""isOR"": false
                 }
@@ -1155,6 +1254,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         {
             if (m_Controller4SchemeIndex == -1) m_Controller4SchemeIndex = asset.FindControlSchemeIndex("Controller4");
             return asset.controlSchemes[m_Controller4SchemeIndex];
+        }
+    }
+    private int m_KBMDebugSchemeIndex = -1;
+    public InputControlScheme KBMDebugScheme
+    {
+        get
+        {
+            if (m_KBMDebugSchemeIndex == -1) m_KBMDebugSchemeIndex = asset.FindControlSchemeIndex("KBM (Debug)");
+            return asset.controlSchemes[m_KBMDebugSchemeIndex];
         }
     }
     public interface IPlayerActions

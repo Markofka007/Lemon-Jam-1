@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5945498609159550170}
   - component: {fileID: 5945498609159550183}
   - component: {fileID: 5945498609159550172}
-  - component: {fileID: 5945498609159550175}
   m_Layer: 8
   m_Name: Addie
   m_TagString: Player3
@@ -247,6 +246,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1539788135772339474}
+        m_TargetAssemblyTypeName: FistAttack3, Assembly-CSharp
+        m_MethodName: Punch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a7d8947f-4437-4396-aa13-67a2f5429cd4
     m_ActionName: Player/Fire3[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]
   - m_PersistentCalls:
@@ -364,18 +375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 3
---- !u!114 &5945498609159550175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945498609159550174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5945498609564296184
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +417,7 @@ GameObject:
   - component: {fileID: 5945498610572386531}
   - component: {fileID: 5945498610572386529}
   - component: {fileID: 5945498610572386528}
+  - component: {fileID: 1539788135772339474}
   m_Layer: 8
   m_Name: PlayerArm3
   m_TagString: Untagged
@@ -506,3 +506,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleCorrected: 0
+--- !u!114 &1539788135772339474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5945498610572386530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43931f359f4c6f844bc994534afc5313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPunch:
+    serializedVersion: 2
+    m_Bits: 704
+  punchDistance: 0.5
+  punchPower: 10

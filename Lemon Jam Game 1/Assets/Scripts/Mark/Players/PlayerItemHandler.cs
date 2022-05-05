@@ -48,10 +48,27 @@ public class PlayerItemHandler : MonoBehaviour
         item.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         item.GetComponent<Rigidbody2D>().freezeRotation = true;
 
-        GetComponent<FistAttack>().enabled = false;
-
         item.GetComponent<Rigidbody2D>().isKinematic = true;
         item.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        switch (playerID)
+        {
+            case 1:
+                transform.GetChild(0).GetComponent<FistAttack>().enabled = false;
+                break;
+
+            case 2:
+                transform.GetChild(0).GetComponent<FistAttack2>().enabled = false;
+                break;
+
+            case 3:
+                transform.GetChild(0).GetComponent<FistAttack3>().enabled = false;
+                break;
+
+            case 4:
+                transform.GetChild(0).GetComponent<FistAttack4>().enabled = false;
+                break;
+        }
 
         if (item.name.Contains("Auto Gun"))
         {
@@ -166,6 +183,25 @@ public class PlayerItemHandler : MonoBehaviour
         {
 
             containerFull = false;
+
+            switch (playerID)
+            {
+                case 1:
+                    transform.GetChild(0).GetComponent<FistAttack>().enabled = true;
+                    break;
+
+                case 2:
+                    transform.GetChild(0).GetComponent<FistAttack2>().enabled = true;
+                    break;
+
+                case 3:
+                    transform.GetChild(0).GetComponent<FistAttack3>().enabled = true;
+                    break;
+
+                case 4:
+                    transform.GetChild(0).GetComponent<FistAttack4>().enabled = true;
+                    break;
+            }
 
             if (item.name.Contains("Auto Gun"))
             {

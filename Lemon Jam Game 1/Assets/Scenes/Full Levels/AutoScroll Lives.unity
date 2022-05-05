@@ -2792,6 +2792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jam
       objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: KBM (Debug)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff17213e169896647bc7af3523115467, type: 3}
 --- !u!1001 &1965275560

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3163754182076330773}
   - component: {fileID: 3163754182076330859}
   - component: {fileID: 3163754182076330856}
-  - component: {fileID: 3163754182076330771}
   m_Layer: 7
   m_Name: Bubba
   m_TagString: Player2
@@ -231,6 +230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4554855385967776520}
+        m_TargetAssemblyTypeName: FistAttack2, Assembly-CSharp
+        m_MethodName: Punch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2924d106-0f24-4320-a92a-f63dd55eb7e3
     m_ActionName: Player/Fire2[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
@@ -364,18 +375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 2
---- !u!114 &3163754182076330771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163754182076330768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41af4629db9398b40a3455aeb415ede7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3163754182828768394
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +386,7 @@ GameObject:
   - component: {fileID: 3163754182828768397}
   - component: {fileID: 3163754182828768399}
   - component: {fileID: 3163754182828768396}
+  - component: {fileID: 4554855385967776520}
   m_Layer: 7
   m_Name: PlayerArm2
   m_TagString: Untagged
@@ -475,6 +475,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleCorrected: 0
+--- !u!114 &4554855385967776520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163754182828768394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0946a9012993a4faa462981635a11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPunch:
+    serializedVersion: 2
+    m_Bits: 832
+  punchDistance: 0.5
+  punchPower: 10
 --- !u!1 &3163754183386828610
 GameObject:
   m_ObjectHideFlags: 0

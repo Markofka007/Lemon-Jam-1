@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FistAttack : MonoBehaviour
+public class FistAttack3 : MonoBehaviour
 {
-    Arm arm;
+    Arm3 arm;
 
     public LayerMask canPunch;
 
@@ -14,7 +14,7 @@ public class FistAttack : MonoBehaviour
 
     void Start()
     {
-        arm = GetComponent<Arm>();
+        arm = GetComponent<Arm3>();
     }
 
     public void Punch(InputAction.CallbackContext ctx)
