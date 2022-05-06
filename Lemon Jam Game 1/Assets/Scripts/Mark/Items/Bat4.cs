@@ -35,11 +35,13 @@ public class Bat4 : MonoBehaviour
     {
         if (p4.controllerAngle < 0)
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
+            //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;  //this had issues, leaving this in just in case...
         }
         else
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+            transform.localScale = Vector3.one;
+            //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (ammoCount <= 0)

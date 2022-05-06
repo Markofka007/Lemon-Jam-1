@@ -35,11 +35,13 @@ public class Bat3 : MonoBehaviour
     {
         if (p3.controllerAngle < 0)
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
+            //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;  LUKE IS SUSSY BAKA
         }
         else
         {
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+            transform.localScale = Vector3.one;
+            //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (ammoCount <= 0)
