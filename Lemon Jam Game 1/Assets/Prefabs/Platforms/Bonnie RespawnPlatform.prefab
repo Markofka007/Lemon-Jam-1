@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8143340137781673143}
   - component: {fileID: 1202121288355008285}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bonnie RespawnPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 6047002385290985360}
   - component: {fileID: 6047002385290985363}
   - component: {fileID: 6047002385290985362}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RespawnPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6047002386254359317}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RespawnPlatformOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6047002386737960946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RespawnPlatformEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}

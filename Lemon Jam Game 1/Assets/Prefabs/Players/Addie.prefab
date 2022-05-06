@@ -337,11 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31186c0c1e155874bac42b979b41c892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 0.85
   maxSpeed: 10
   speedMultiplier: 1
   speedM_Delta: 0.5
-  jumpForce: 16
+  jumpForce: 18
   canJumpOn:
     serializedVersion: 2
     m_Bits: 131784
