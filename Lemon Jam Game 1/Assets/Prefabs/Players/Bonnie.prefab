@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440563333893792325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.01}
+  m_LocalPosition: {x: 0.11, y: -0.1, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: f5684a64952c0b34b8345229833f1442, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec82c1c7443f2784e98b4e062f49656c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 440563335485982630}
   - component: {fileID: 440563335485982627}
   - component: {fileID: 440563335485982628}
+  - component: {fileID: 262129802}
   m_Layer: 9
   m_Name: Bonnie
   m_TagString: Player4
@@ -226,9 +227,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 86c9176ac828bc042947b9ee61b2b950, type: 3}
-  m_Color: {r: 0.36811623, g: 0.7169812, b: 0.21306516, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 808165a2d7b131b40a380fd3037ae250, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -498,6 +499,7 @@ MonoBehaviour:
   powerM_Delta: 0
   controllerAngle: 0
   equipedItem: {fileID: 0}
+  myAnimator: {fileID: 262129802}
 --- !u!114 &440563335485982628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,3 +513,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 4
+--- !u!95 &262129802
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440563335485982618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b966d6251df04684f872d296d3ae5187, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
