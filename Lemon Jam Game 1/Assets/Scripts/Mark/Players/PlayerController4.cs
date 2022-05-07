@@ -177,6 +177,7 @@ public class PlayerController4 : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
+                //myAnimator.Play("Str Melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {

@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popcornPrefab: {fileID: 2351300953134403621, guid: 4f868bd6164004244822027932a8aba3, type: 3}
   maxAmmo: 30
+  myAnimator: {fileID: 9202513811388170418}
 --- !u!114 &5987758116892332986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popcornPrefab: {fileID: 2351300953134403621, guid: 4f868bd6164004244822027932a8aba3, type: 3}
   maxAmmo: 30
+  myAnimator: {fileID: 9202513811388170418}
 --- !u!114 &5722416531541125804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popcornPrefab: {fileID: 2351300953134403621, guid: 4f868bd6164004244822027932a8aba3, type: 3}
   maxAmmo: 30
+  myAnimator: {fileID: 9202513811388170418}
 --- !u!114 &1220267318559478393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popcornPrefab: {fileID: 2351300953134403621, guid: 4f868bd6164004244822027932a8aba3, type: 3}
   maxAmmo: 30
+  myAnimator: {fileID: 9202513811388170418}
 --- !u!114 &2376010416659633846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5180997810161749410}
   - component: {fileID: 5180997810161749421}
+  - component: {fileID: 9202513811388170418}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -356,8 +361,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1c752aa6b7e359b4daa660b607be2e22, type: 3}
-  m_Color: {r: 0.13016196, g: 0.13201644, b: 0.14150941, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fa7639617d9463c4494ca56bc2b2b91e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -367,3 +372,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9202513811388170418
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180997810161749411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6487a66c83835ec4e887a7fd0b1c37e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

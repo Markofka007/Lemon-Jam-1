@@ -6,8 +6,18 @@ public class Popcorn : MonoBehaviour
 {
     public float powerMulitplier;
 
+    public SpriteRenderer Kernel;
+    public Sprite PoppedKernel;
+
     private void Start()
     {
+        Kernel.GetComponent<SpriteRenderer>();
+
+        this.Wait(0.5f, () =>
+        {
+            Kernel.sprite = PoppedKernel;
+        });
+
         this.Wait(3.0f, () =>
         {
             Destroy(gameObject);

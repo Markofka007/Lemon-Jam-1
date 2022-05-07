@@ -24,6 +24,8 @@ public class AutoGun4 : MonoBehaviour
 
     private AudioSource pop;
 
+    public Animator myAnimator;
+
     void Start()
     {
         p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
@@ -41,6 +43,8 @@ public class AutoGun4 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         pop = GetComponent<AudioSource>();
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -86,6 +90,7 @@ public class AutoGun4 : MonoBehaviour
     public void StartFire()
     {
         activated = true;
+        myAnimator.Play("Popcorn Gun", -1, 0f);
     }
 
     public void StopFire()
