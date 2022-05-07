@@ -31,10 +31,13 @@ public class PlayerController2 : MonoBehaviour
 
     private FistAttack2 fist;
 
+    public Animator myAnimator;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        myAnimator.GetComponent<Animator>();
 
         fist = transform.GetChild(0).GetComponent<FistAttack2>();
     }
@@ -48,6 +51,7 @@ public class PlayerController2 : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
         }
         */
+
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
         {
@@ -130,6 +134,16 @@ public class PlayerController2 : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         H_Input = context.ReadValue<float>();
+
+        //Walk Animation
+        if (Mathf.Abs(H_Input) > 0)
+        {
+            myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
+        }
+        else
+        {
+            myAnimator.SetFloat("areyouWalking", 0);
+        }
     }
 
     public void Aim(InputAction.CallbackContext context)
@@ -147,6 +161,7 @@ public class PlayerController2 : MonoBehaviour
             {
                 rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canJump = false;
+                //myAnimator.Play("Bub fall", -1, 0f);
             }
             else if (canDoubleJump)
             {

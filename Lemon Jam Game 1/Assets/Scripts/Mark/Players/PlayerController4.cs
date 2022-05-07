@@ -31,12 +31,15 @@ public class PlayerController4 : MonoBehaviour
 
     private FistAttack4 fist;
 
+    public Animator myAnimator;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         fist = transform.GetChild(0).GetComponent<FistAttack4>();
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -65,6 +68,17 @@ public class PlayerController4 : MonoBehaviour
         if (transform.GetChild(0).GetChild(0).childCount == 1)
         {
             equipedItem = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+        }
+
+
+        //Walk Animation
+        if (Mathf.Abs(H_Input) > 0)
+        {
+            myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
+        }
+        else
+        {
+            myAnimator.SetFloat("areyouWalking", 0);
         }
     }
 
