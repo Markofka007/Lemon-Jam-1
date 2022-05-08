@@ -18,6 +18,8 @@ public class Bellow : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    public Animator myAnimator;
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -29,6 +31,8 @@ public class Bellow : MonoBehaviour
         ammoCount = maxAmmo;
 
         powerMultiplier = 1.0f;
+
+        myAnimator.GetComponent<Animator>();
     }
     
     void Update()
@@ -64,6 +68,9 @@ public class Bellow : MonoBehaviour
     public void StartWind()
     {
         isActive = true;
+        myAnimator.Play("Kettle", -1, 0f);
+
+        //maybe instantiate a cloud here and it rides the wind and waits and destroys??
     }
 
     public void StopWind()

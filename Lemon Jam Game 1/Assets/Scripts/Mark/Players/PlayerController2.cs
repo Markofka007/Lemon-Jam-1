@@ -52,6 +52,15 @@ public class PlayerController2 : MonoBehaviour
         }
         */
 
+        //flip
+        if (H_Input < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
         {

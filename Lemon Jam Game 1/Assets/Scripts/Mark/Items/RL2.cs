@@ -20,6 +20,8 @@ public class RL2 : MonoBehaviour
 
     private AudioSource pop;
 
+    public Animator myAnimator;
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -33,6 +35,8 @@ public class RL2 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         pop = GetComponent<AudioSource>();
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -64,6 +68,7 @@ public class RL2 : MonoBehaviour
             rocket.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 20f;
             rocket.GetComponent<Rocket>().powerMultiplier = powerMultiplier;
 
+            myAnimator.Play("Candy Launcher", -1, 0f);
             pop.Play();
         }
     }

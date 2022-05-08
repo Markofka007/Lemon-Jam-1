@@ -18,6 +18,8 @@ public class Bat4 : MonoBehaviour
 
     private AudioSource sound;
 
+    public Animator myAnimator;
+
     void Start()
     {
         p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
@@ -29,6 +31,8 @@ public class Bat4 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         sound = GetComponent<AudioSource>();
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -55,6 +59,8 @@ public class Bat4 : MonoBehaviour
         isActive = true;
 
         ammoCount--;
+
+        myAnimator.Play("Popsicle", -1, 0f);
 
         this.Wait(0.1f, () =>
         {

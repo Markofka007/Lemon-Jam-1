@@ -20,6 +20,8 @@ public class RL3 : MonoBehaviour
 
     private AudioSource pop;
 
+    public Animator myAnimator;
+
     void Start()
     {
         p3 = transform.parent.parent.parent.GetComponent<PlayerController3>();
@@ -33,6 +35,8 @@ public class RL3 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         pop = GetComponent<AudioSource>();
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -65,6 +69,7 @@ public class RL3 : MonoBehaviour
             rocket.GetComponent<Rocket>().powerMultiplier = powerMultiplier;
 
             pop.Play();
+            myAnimator.Play("Candy Launcher", -1, 0f);
         }
     }
 

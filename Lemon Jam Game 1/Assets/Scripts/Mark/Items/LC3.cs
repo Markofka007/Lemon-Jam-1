@@ -22,6 +22,8 @@ public class LC3 : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    public Animator myAnimator;
+
     void Start()
     {
         p3 = transform.parent.parent.parent.GetComponent<PlayerController3>();
@@ -35,6 +37,8 @@ public class LC3 : MonoBehaviour
         gunTip = transform.GetChild(1).gameObject.transform;
 
         powerMultiplier = 1.0f; //power
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -66,6 +70,8 @@ public class LC3 : MonoBehaviour
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
+
+            myAnimator.Play("Soda Blast", -1, 0f);
 
             if (ray)
             {
