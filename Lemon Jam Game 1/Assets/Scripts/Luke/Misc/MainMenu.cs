@@ -76,11 +76,15 @@ public class MainMenu : MonoBehaviour
             switch (menuSelection)
             {
                 case 1:
-                    LoadScene(3);
+                    LoadScene(2);
                     break;
 
                 case 2:
-                    LoadScene(4);
+                    LoadScene(3);
+                    break;
+
+                case 3:
+                    LoadScene(1);
                     break;
             }
         }

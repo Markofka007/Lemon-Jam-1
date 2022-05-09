@@ -318,8 +318,6 @@ public class PlayerItemHandler : MonoBehaviour
             item.GetComponent<Rigidbody2D>().isKinematic = false;
             item.GetComponent<BoxCollider2D>().isTrigger = false;
 
-            GetComponent<FistAttack>().enabled = true;
-
             item.GetComponent<Rigidbody2D>().freezeRotation = false;
             item.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 2;
         }
@@ -441,8 +439,6 @@ public class PlayerItemHandler : MonoBehaviour
 
         item.GetComponent<Rigidbody2D>().isKinematic = false;
         item.GetComponent<BoxCollider2D>().isTrigger = true;
-
-        GetComponent<FistAttack>().enabled = true;
 
         item.GetComponent<Rigidbody2D>().freezeRotation = false;
         item.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-4f, 4f), 15f);

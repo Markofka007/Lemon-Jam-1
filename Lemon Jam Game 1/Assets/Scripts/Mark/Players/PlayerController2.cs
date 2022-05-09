@@ -33,6 +33,8 @@ public class PlayerController2 : MonoBehaviour
 
     public Animator myAnimator;
 
+    private Vector2 colliderOffset;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -40,6 +42,8 @@ public class PlayerController2 : MonoBehaviour
         myAnimator.GetComponent<Animator>();
 
         fist = transform.GetChild(0).GetComponent<FistAttack2>();
+
+        colliderOffset = GetComponent<CapsuleCollider2D>().offset;
     }
 
     void Update()
@@ -55,14 +59,16 @@ public class PlayerController2 : MonoBehaviour
         //flip
         if (H_Input < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<CapsuleCollider2D>().offset = colliderOffset * new Vector2(-1, 1);
         }
-        else
+        else if (H_Input > 0)
         {
-            transform.localScale = Vector3.one;
+            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<CapsuleCollider2D>().offset = colliderOffset;
         }
 
-        if (Physics2D.Raycast(transform.position + new Vector3(0, -0.75f, 0), Vector2.down, 0.1f, canJumpOn))
+        if (Physics2D.Raycast(transform.position + new Vector3(0, GetComponent<CapsuleCollider2D>().offset.y - GetComponent<CapsuleCollider2D>().size.y / 2, 0), Vector2.down, 0.1f, canJumpOn))
         {
             canJump = true;
             canDoubleJump = true;
