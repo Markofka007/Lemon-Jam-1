@@ -170,16 +170,17 @@ public class GameManager : MonoBehaviour
 
             GameObject spawnPlat = (GameObject)Instantiate(JamRespawnPlatform, SpawnSpot1.position, Quaternion.identity);//Gets a reference to a newly instantiated respawn platform
             spawnPlat.transform.parent = GoBack.transform;//Applies it to the GoBack object
-            
+
+            Player.GetComponent<PlayerController>().enabled = false;//Stop the player from moving around
+
             Player.transform.position = spawnPlat.transform.position + posOffset;//Puts the player on top of the respawn platform
             Player.transform.parent = spawnPlat.transform;//parents the player to the repsawn platform for the descent (doesn't work?) 
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;//Cancels any momentum the player had before dying
 
             SpawnPlayer(Player, spawnPlat);//spawn the player using the instantiated spawn platform
-            Player.GetComponent<PlayerController3>().enabled = false;//Stop the player from moving around
-            this.Wait(1.8f, () =>
+            this.Wait(1, () =>
             {
-                Player.GetComponent<PlayerController3>().enabled = true;//allow the player to move around after a delay
+                Player.GetComponent<PlayerController>().enabled = true;//allow the player to move around after a delay
             });
         }
 
@@ -193,13 +194,14 @@ public class GameManager : MonoBehaviour
             GameObject spawnPlat = (GameObject)Instantiate(BubbaRespawnPlatform, SpawnSpot2.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
+            Player.GetComponent<PlayerController2>().enabled = false;//Stop the player from moving around
+
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
 
             SpawnPlayer(Player, spawnPlat);
-            Player.GetComponent<PlayerController2>().enabled = false;
-            this.Wait(1.8f, () =>
+            this.Wait(1, () =>
             {
                 Player.GetComponent<PlayerController2>().enabled = true;
             });
@@ -215,13 +217,14 @@ public class GameManager : MonoBehaviour
             GameObject spawnPlat = (GameObject)Instantiate(AddieRespawnPlatform, SpawnSpot3.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
+            Player.GetComponent<PlayerController3>().enabled = false;//Stop the player from moving around
+
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
 
             SpawnPlayer(Player, spawnPlat);
-            Player.GetComponent<PlayerController3>().enabled = false;
-            this.Wait(1.8f, () =>
+            this.Wait(1, () =>
             {
                 Player.GetComponent<PlayerController3>().enabled = true;
             });
@@ -237,13 +240,14 @@ public class GameManager : MonoBehaviour
             GameObject spawnPlat = (GameObject)Instantiate(BonnieRespawnPlatform, SpawnSpot4.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
+            Player.GetComponent<PlayerController4>().enabled = false;//Stop the player from moving around
+
             Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
 
             SpawnPlayer(Player, spawnPlat);
-            Player.GetComponent<PlayerController4>().enabled = false;
-            this.Wait(1.8f, () =>
+            this.Wait(1, () =>
             {
                 Player.GetComponent<PlayerController4>().enabled = true;
             });
