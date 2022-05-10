@@ -18,24 +18,25 @@ public class RespawnPlatform : MonoBehaviour
         if(SpawnPlayer)
         {
             platform.gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            platform.transform.position = Vector3.SmoothDamp(platform.transform.position, spot.position, ref velo, Time.deltaTime * speed);
+            platform.transform.position = Vector3.SmoothDamp(platform.transform.position, spot.position, ref velo, speed);
             StartCoroutine("DelayedBack");
         }
 
         if(!SpawnPlayer)
         {
             platform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            platform.transform.position = Vector3.SmoothDamp(platform.transform.position, origin.position, ref velo, Time.deltaTime * speed * 2.5f);
-            if(platform.transform.position == origin.position)
+            platform.transform.position = Vector3.SmoothDamp(platform.transform.position, origin.position, ref velo, speed);
+
+            this.Wait(2, () =>
             {
                 Destroy(gameObject);
-            }
+            });
         }
     }
 
     IEnumerator DelayedBack()
     {
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(2.75f);
         SpawnPlayer = false;
     }
 }

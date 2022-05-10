@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject GoBack;
 
     public GameObject ItemParent;
+
+    public TextMeshProUGUI JamLivesText;
+    public TextMeshProUGUI BubbaLivesText;
+    public TextMeshProUGUI AddieLivesText;
+    public TextMeshProUGUI BonnieLivesText;
 
     public GameObject Player1;
     public GameObject Player2;
@@ -59,6 +65,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckLives();//Checks if any of the players need to be destroyed
+        UpdateLivesText();
 
         //Debug.Log(PlayerList.Count);
             
@@ -114,31 +121,59 @@ public class GameManager : MonoBehaviour
 
     void CheckLives()
     {
-        if(Player1Lives < 0 && Player1 != null) 
+        if(Player1Lives < 1 && Player1 != null) 
         {
             PlayerList.Remove(Player1);
             Destroy(Player1); 
         }
         
-        if(Player2Lives < 0 && Player2 != null) 
+        if(Player2Lives < 1 && Player2 != null) 
         {
             PlayerList.Remove(Player2);
             Destroy(Player2); 
         }
         
-        if(Player3Lives < 0 && Player3 != null) 
+        if(Player3Lives < 1 && Player3 != null) 
         {
             PlayerList.Remove(Player3);
             Destroy(Player3); 
         }
         
-        if(Player4Lives < 0 && Player4 != null) 
+        if(Player4Lives < 1 && Player4 != null) 
         {
             PlayerList.Remove(Player4);
             Destroy(Player4); 
         }
 
         PlayerWin();
+    }
+
+    void UpdateLivesText()
+    {
+        JamLivesText.text = "Jam: " + Player1Lives;
+        BubbaLivesText.text = "Bubba: " + Player2Lives;
+        AddieLivesText.text = "Addie: " + Player3Lives;
+        BonnieLivesText.text = "Bonnie: " + Player4Lives;
+
+        if(Player1Lives < 1)
+        {
+            JamLivesText.text = "Jam: Dead";
+        }
+
+        if (Player2Lives < 1)
+        {
+            JamLivesText.text = "Bubba: Dead";
+        }
+
+        if (Player3Lives < 1)
+        {
+            JamLivesText.text = "Addie: Dead";
+        }
+
+        if (Player4Lives < 1)
+        {
+            JamLivesText.text = "Bonnie: Dead";
+        }
     }
 
     void PlayerScreen(GameObject player)
@@ -166,7 +201,7 @@ public class GameManager : MonoBehaviour
         {
             Player1Lives--;
 
-            if (Player1Lives < 0) { return; }//Exits the function if the player is dead
+            if (Player1Lives < 1) { return; }//Exits the function if the player is dead
 
             GameObject spawnPlat = (GameObject)Instantiate(JamRespawnPlatform, SpawnSpot1.position, Quaternion.identity);//Gets a reference to a newly instantiated respawn platform
             spawnPlat.transform.parent = GoBack.transform;//Applies it to the GoBack object
@@ -189,16 +224,16 @@ public class GameManager : MonoBehaviour
         {
             Player2Lives--;
 
-            if (Player2Lives < 0) { return; }
+            if (Player2Lives < 1) { return; }
 
             GameObject spawnPlat = (GameObject)Instantiate(BubbaRespawnPlatform, SpawnSpot2.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
             Player.GetComponent<PlayerController2>().enabled = false;//Stop the player from moving around
 
-            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             SpawnPlayer(Player, spawnPlat);
             this.Wait(1, () =>
@@ -212,16 +247,16 @@ public class GameManager : MonoBehaviour
         {
             Player3Lives--;
 
-            if (Player3Lives < 0) { return; }
+            if (Player3Lives < 1) { return; }
 
             GameObject spawnPlat = (GameObject)Instantiate(AddieRespawnPlatform, SpawnSpot3.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
             Player.GetComponent<PlayerController3>().enabled = false;//Stop the player from moving around
-
-            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             SpawnPlayer(Player, spawnPlat);
             this.Wait(1, () =>
@@ -235,16 +270,16 @@ public class GameManager : MonoBehaviour
         {
             Player4Lives--;
 
-            if (Player4Lives < 0) { return; }
+            if (Player4Lives < 1) { return; }
 
             GameObject spawnPlat = (GameObject)Instantiate(BonnieRespawnPlatform, SpawnSpot4.position, Quaternion.identity);
             spawnPlat.transform.parent = GoBack.transform;
 
             Player.GetComponent<PlayerController4>().enabled = false;//Stop the player from moving around
-
-            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            
             Player.transform.position = spawnPlat.transform.position + posOffset;
             Player.transform.parent = spawnPlat.transform;
+            Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             SpawnPlayer(Player, spawnPlat);
             this.Wait(1, () =>
