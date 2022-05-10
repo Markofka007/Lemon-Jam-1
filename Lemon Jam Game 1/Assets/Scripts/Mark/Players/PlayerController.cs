@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 colliderOffset;  //offset
 
+    public GameObject armSprite;
+
 
     void Start()
     {
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         fist = transform.GetChild(0).GetComponent<FistAttack>();
 
         colliderOffset = GetComponent<CapsuleCollider2D>().offset;  //offset
+
     }
 
     void Update()
@@ -193,6 +196,7 @@ public class PlayerController : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
+                myAnimator.Play("Jam Melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {
@@ -234,5 +238,15 @@ public class PlayerController : MonoBehaviour
                 equipedItem.GetComponent<LC>().Fire();
             }
         }
+    }
+
+    public void removeArm()
+    {
+        armSprite.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void returnArm()
+    {
+        armSprite.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
