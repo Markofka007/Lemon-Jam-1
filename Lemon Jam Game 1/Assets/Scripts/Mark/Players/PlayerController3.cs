@@ -203,6 +203,7 @@ public class PlayerController3 : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
+                myAnimator.Play("Lem Melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {
@@ -244,5 +245,15 @@ public class PlayerController3 : MonoBehaviour
                 equipedItem.GetComponent<LC3>().Fire();
             }
         }
+    }
+
+    public void removeArm()
+    {
+        lemonArm.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void returnArm()
+    {
+        lemonArm.GetComponent<SpriteRenderer>().enabled = true;
     }
 }

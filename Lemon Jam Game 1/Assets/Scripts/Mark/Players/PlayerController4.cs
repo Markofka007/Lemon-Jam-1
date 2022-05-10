@@ -35,6 +35,8 @@ public class PlayerController4 : MonoBehaviour
 
     private Vector2 colliderOffset;
 
+    public GameObject bonArm;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -193,7 +195,7 @@ public class PlayerController4 : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
-                //myAnimator.Play("Str Melee", -1, 0f);
+                myAnimator.Play("Str Melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {
@@ -235,5 +237,15 @@ public class PlayerController4 : MonoBehaviour
                 equipedItem.GetComponent<LC4>().Fire();
             }
         }
+    }
+
+    public void removeArm()
+    {
+        bonArm.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void returnArm()
+    {
+        bonArm.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
