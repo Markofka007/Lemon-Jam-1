@@ -64,6 +64,7 @@ public class PlayerController3 : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset * new Vector2(-1, 1);
             lemonArm.transform.localPosition = new Vector3(0.25f, -0.4f, 0f);
+            myAnimator.SetBool("areyouIdle", false);
 
         }
         else if (H_Input > 0)
@@ -71,13 +72,13 @@ public class PlayerController3 : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset;
             lemonArm.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+            myAnimator.SetBool("areyouIdle", false);
         }
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, GetComponent<CapsuleCollider2D>().offset.y - GetComponent<CapsuleCollider2D>().size.y / 2, 0), Vector2.down, 0.1f, canJumpOn))
         {
             canJump = true;
             canDoubleJump = true;
-            myAnimator.SetBool("areyouIdle", true);
         }
         else
         {
@@ -96,11 +97,36 @@ public class PlayerController3 : MonoBehaviour
         if (Mathf.Abs(H_Input) > 0)
         {
             myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
+            myAnimator.SetBool("areyouIdle", false);
+            myAnimator.SetBool("areyouRising", false);
         }
         else
         {
             myAnimator.SetFloat("areyouWalking", 0);
             lemonArm.transform.localPosition = new Vector3(0.167f, -0.34f, 0f);
+            myAnimator.SetBool("areyouIdle", true);
+        }
+
+        //Jump Animation
+
+        if (rb.velocity.y > 0.5)
+        {
+            myAnimator.SetBool("areyouRising", true);
+            myAnimator.SetBool("areyouIdle", false);
+
+        }
+
+        if(rb.velocity.y < 0)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", true);
+            myAnimator.SetBool("areyouIdle", false);
+        }
+
+        if(rb.velocity.y == 0)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", false);
         }
     }
 
@@ -184,14 +210,14 @@ public class PlayerController3 : MonoBehaviour
                 rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canJump = false;
 
-                myAnimator.Play("Lem Rise", -1, 0f);
+             //   myAnimator.Play("Lem Rise", -1, 0f);
 
             }
             else if (canDoubleJump)
             {
                 rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canDoubleJump = false;
-                myAnimator.Play("Lem Rise", -1, 0f);
+             //   myAnimator.Play("Lem Rise", -1, 0f);
             }
         }
     }
