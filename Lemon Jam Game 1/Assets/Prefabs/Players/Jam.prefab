@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6580469819673872140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -0.45, z: -0.01}
+  m_LocalPosition: {x: -0.1, y: -0.48, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -148,7 +148,6 @@ MonoBehaviour:
     m_Bits: 896
   punchDistance: 1.5
   punchPower: 15
-  thisArm: {fileID: 6580469819673872137}
 --- !u!1 &6580469820074345093
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +501,7 @@ MonoBehaviour:
   equipedItem: {fileID: 0}
   myAnimator: {fileID: 2085964698}
   armSprite: {fileID: 6580469819673872140}
+  jamSprite: {fileID: 6580469820074345089}
 --- !u!114 &6580469820074345100
 MonoBehaviour:
   m_ObjectHideFlags: 0
