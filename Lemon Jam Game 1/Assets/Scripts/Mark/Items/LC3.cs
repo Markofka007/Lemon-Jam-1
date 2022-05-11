@@ -46,11 +46,13 @@ public class LC3 : MonoBehaviour
         if (p3.controllerAngle < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            myAnimator.SetBool("sodaShake", true);
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;  //this had issues, leaving this in just in case...
         }
         else
         {
             transform.localScale = Vector3.one;
+            myAnimator.SetBool("sodaShake", false);
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
 

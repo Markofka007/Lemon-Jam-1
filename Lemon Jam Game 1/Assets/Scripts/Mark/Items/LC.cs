@@ -22,6 +22,8 @@ public class LC : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    public Animator myAnimator;
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -39,15 +41,18 @@ public class LC : MonoBehaviour
     
     void Update()
     {
+
         if (p1.controllerAngle < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            myAnimator.SetBool("sodaShake", true);
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;  //this had issues, leaving this in just in case...
         }
         else
         {
             transform.localScale = Vector3.one;
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+            myAnimator.SetBool("sodaShake", false);
         }
 
         if (ammoCount <= 0)
@@ -66,6 +71,7 @@ public class LC : MonoBehaviour
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
+            myAnimator.Play("Soda Blast", -1, 0f);
             
             if (ray)
             {
