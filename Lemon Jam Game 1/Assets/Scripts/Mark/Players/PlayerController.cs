@@ -75,14 +75,12 @@ public class PlayerController : MonoBehaviour
 
             if(jamSprite.flipX == true && canJump == true)
             {
-                Debug.Log("bebebehhh");
                 armSprite.transform.localPosition = new Vector3(0.089f, -0.514f, 0f);
             }
 
             if (jamSprite.flipX == true && canJump == false)
             {
                 armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
-                Debug.Log("wawoo");
             }
 
         }
@@ -96,13 +94,11 @@ public class PlayerController : MonoBehaviour
             if(jamSprite.flipX == false && canJump == true)
             {
                 armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
-                Debug.Log("hohoo");
             }
 
             if (jamSprite.flipX == false && canJump == false)
             {
                 armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f);
-                Debug.Log("lol");
             }
 
         }
