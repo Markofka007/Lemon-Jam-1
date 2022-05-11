@@ -61,11 +61,15 @@ public class PlayerController2 : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = true;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset * new Vector2(-1, 1);
+            myAnimator.SetBool("areyouIdle", false);
         }
         else if (H_Input > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset;
+            myAnimator.SetBool("areyouIdle", false);
+
+
         }
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, GetComponent<CapsuleCollider2D>().offset.y - GetComponent<CapsuleCollider2D>().size.y / 2, 0), Vector2.down, 0.1f, canJumpOn))
@@ -84,6 +88,32 @@ public class PlayerController2 : MonoBehaviour
         if (transform.GetChild(0).GetChild(0).childCount == 1)
         {
             equipedItem = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+        }
+
+
+        if (rb.velocity.y > 0.5)
+        {
+            myAnimator.SetBool("areyouRising", true);
+            myAnimator.SetBool("areyouIdle", false);
+
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", true);
+            myAnimator.SetBool("areyouIdle", false);
+        }
+
+        if (rb.velocity.y == 0)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", false);
+        }
+
+        if (rb.velocity.y == 0 && myAnimator.GetFloat("areyouWalking") < 0.1)
+        {
+            myAnimator.SetBool("areyouIdle", true);
         }
     }
 
@@ -154,11 +184,15 @@ public class PlayerController2 : MonoBehaviour
         if (Mathf.Abs(H_Input) > 0)
         {
             myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
+            myAnimator.SetBool("areyouIdle", false);
+            myAnimator.SetBool("areyouRising", false);
         }
         else
         {
             myAnimator.SetFloat("areyouWalking", 0);
+            myAnimator.SetBool("areyouIdle", true);
         }
+
     }
 
     public void Aim(InputAction.CallbackContext context)
@@ -193,7 +227,7 @@ public class PlayerController2 : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
-                myAnimator.Play("Bub Melee", -1, 0f);
+                myAnimator.Play("Bub melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {

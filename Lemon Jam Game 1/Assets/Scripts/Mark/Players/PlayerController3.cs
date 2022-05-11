@@ -93,7 +93,7 @@ public class PlayerController3 : MonoBehaviour
             equipedItem = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
         }
 
-        //Walk Animation
+        //Animations
         if (Mathf.Abs(H_Input) > 0)
         {
             myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
@@ -106,8 +106,6 @@ public class PlayerController3 : MonoBehaviour
             lemonArm.transform.localPosition = new Vector3(0.167f, -0.34f, 0f);
             myAnimator.SetBool("areyouIdle", true);
         }
-
-        //Jump Animation
 
         if (rb.velocity.y > 0.5)
         {
@@ -209,15 +207,11 @@ public class PlayerController3 : MonoBehaviour
             {
                 rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canJump = false;
-
-             //   myAnimator.Play("Lem Rise", -1, 0f);
-
             }
             else if (canDoubleJump)
             {
                 rb.AddForce(new Vector2(0, jumpForce * jumpMultiplier - rb.velocity.y), ForceMode2D.Impulse);
                 canDoubleJump = false;
-             //   myAnimator.Play("Lem Rise", -1, 0f);
             }
         }
     }
