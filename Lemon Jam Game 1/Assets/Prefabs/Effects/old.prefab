@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 163599571287559327}
   - component: {fileID: 163599571287559326}
   m_Layer: 0
-  m_Name: Green Blast
+  m_Name: old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

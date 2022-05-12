@@ -162,17 +162,17 @@ public class GameManager : MonoBehaviour
 
         if (Player2Lives < 1)
         {
-            JamLivesText.text = "Bubba: Dead";
+            BubbaLivesText.text = "Bubba: Dead";
         }
 
         if (Player3Lives < 1)
         {
-            JamLivesText.text = "Addie: Dead";
+            AddieLivesText.text = "Addie: Dead";
         }
 
         if (Player4Lives < 1)
         {
-            JamLivesText.text = "Bonnie: Dead";
+            BonnieLivesText.text = "Bonnie: Dead";
         }
     }
 

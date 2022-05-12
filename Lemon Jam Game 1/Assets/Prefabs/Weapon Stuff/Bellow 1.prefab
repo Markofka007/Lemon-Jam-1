@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 393fc597a0f08fe42945945eca546847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   myAnimator: {fileID: 1404446574569586271}
+  steam: {fileID: 2873474418767868837, guid: ef5b3e7ea21c5ed4cb9aa0795d49b26c, type: 3}
 --- !u!114 &3555060626478502288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   myAnimator: {fileID: 1404446574569586271}
+  steam: {fileID: 2873474418767868837, guid: ef5b3e7ea21c5ed4cb9aa0795d49b26c, type: 3}
 --- !u!114 &3555060626478502287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   myAnimator: {fileID: 1404446574569586271}
+  steam: {fileID: 2873474418767868837, guid: ef5b3e7ea21c5ed4cb9aa0795d49b26c, type: 3}
 --- !u!114 &3555060626478502286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   myAnimator: {fileID: 1404446574569586271}
+  steam: {fileID: 2873474418767868837, guid: ef5b3e7ea21c5ed4cb9aa0795d49b26c, type: 3}
 --- !u!114 &4802332707429708032
 MonoBehaviour:
   m_ObjectHideFlags: 0

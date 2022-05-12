@@ -22,6 +22,8 @@ public class LC4 : MonoBehaviour
 
     private float powerMultiplier; //power
 
+    public Animator myAnimator;
+
     void Start()
     {
         p4 = transform.parent.parent.parent.GetComponent<PlayerController4>();
@@ -35,6 +37,8 @@ public class LC4 : MonoBehaviour
         gunTip = transform.GetChild(1).gameObject.transform;
 
         powerMultiplier = 1.0f;
+
+        myAnimator.GetComponent<Animator>();
     }
 
     void Update()
@@ -42,11 +46,13 @@ public class LC4 : MonoBehaviour
         if (p4.controllerAngle < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            myAnimator.SetBool("sodaShake", true);
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;  //this had issues, leaving this in just in case...
         }
         else
         {
             transform.localScale = Vector3.one;
+            myAnimator.SetBool("sodaShake", false);
             //transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
 
@@ -66,6 +72,8 @@ public class LC4 : MonoBehaviour
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
+
+            myAnimator.Play("Soda Blast", -1, 0f);
 
             if (ray)
             {

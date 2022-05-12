@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 colliderOffset;  //offset
 
+    public GameObject armSprite;
+
+    public SpriteRenderer jamSprite;
+
 
     void Start()
     {
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour
         fist = transform.GetChild(0).GetComponent<FistAttack>();
 
         colliderOffset = GetComponent<CapsuleCollider2D>().offset;  //offset
+
+        jamSprite.GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
@@ -58,21 +65,81 @@ public class PlayerController : MonoBehaviour
         */
 
         //flip
+
+
         if (H_Input < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset * new Vector2(-1, 1);
+            myAnimator.SetBool("areyouIdle", false);
+
+            if(jamSprite.flipX == true && canJump == true)
+            {
+                armSprite.transform.localPosition = new Vector3(0.089f, -0.514f, 0f);
+            }
+
+            if (jamSprite.flipX == true && canJump == false)
+            {
+                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
+            }
+
         }
+
         else if (H_Input > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
             GetComponent<CapsuleCollider2D>().offset = colliderOffset;
+            myAnimator.SetBool("areyouIdle", false);
+
+            if(jamSprite.flipX == false && canJump == true)
+            {
+                armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+            }
+
+            if (jamSprite.flipX == false && canJump == false)
+            {
+                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f);
+            }
+
+        }
+
+        else if (H_Input == 0)
+        {
+            if (jamSprite.flipX == true && canJump == false)
+            {
+                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
+                if (rb.velocity.y == 0)
+                {
+                    armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f);
+                }
+            }
+
+            if (jamSprite.flipX == false && canJump == false)
+            {
+                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f);
+                if(rb.velocity.y == 0)
+                {
+                    armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+                }
+            }
+
+
         }
 
         if (Physics2D.Raycast(transform.position + new Vector3(0, GetComponent<CapsuleCollider2D>().offset.y - GetComponent<CapsuleCollider2D>().size.y / 2, 0), Vector2.down, 0.1f, canJumpOn))
         {
             canJump = true;
             canDoubleJump = true;
+            if(jamSprite.flipX == true)
+            {
+                armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f);
+            }
+
+            else
+            {
+                armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+            }    
+
         }
         else
         {
@@ -87,14 +154,42 @@ public class PlayerController : MonoBehaviour
             equipedItem = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
         }
 
-        //Walk Animation
+        //Animations
         if (Mathf.Abs(H_Input) > 0)
         {
             myAnimator.SetFloat("areyouWalking", Mathf.Abs(H_Input));
+            myAnimator.SetBool("areyouIdle", false);
+            myAnimator.SetBool("areyouRising", false);
         }
         else
         {
             myAnimator.SetFloat("areyouWalking", 0);
+            myAnimator.SetBool("areyouIdle", true);
+        }
+
+        if (Mathf.Abs(rb.velocity.y) > 0.5)
+        {
+            myAnimator.SetBool("areyouRising", true);
+            myAnimator.SetBool("areyouIdle", false);
+
+        }
+
+        if (rb.velocity.y < 0.5)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", true);
+            myAnimator.SetBool("areyouIdle", false);
+
+
+
+
+
+        }
+
+        if (rb.velocity.y == 0)
+        {
+            myAnimator.SetBool("areyouRising", false);
+            myAnimator.SetBool("areyouFalling", false);
         }
     }
 
@@ -193,6 +288,7 @@ public class PlayerController : MonoBehaviour
             if (transform.GetChild(0).GetChild(0).childCount == 0)
             {
                 fist.Punch();
+                myAnimator.Play("Jam Melee", -1, 0f);
             }
             else if (equipedItem.name.Contains("Auto Gun"))
             {
@@ -234,5 +330,15 @@ public class PlayerController : MonoBehaviour
                 equipedItem.GetComponent<LC>().Fire();
             }
         }
+    }
+
+    public void removeArm()
+    {
+        armSprite.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void returnArm()
+    {
+        armSprite.GetComponent<SpriteRenderer>().enabled = true;
     }
 }

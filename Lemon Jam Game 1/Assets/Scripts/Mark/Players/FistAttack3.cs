@@ -11,9 +11,11 @@ public class FistAttack3 : MonoBehaviour
     public float punchDistance;
     public float punchPower;
 
+
     void Start()
     {
         arm = GetComponent<Arm3>();
+
     }
 
     public void Punch()
@@ -24,5 +26,6 @@ public class FistAttack3 : MonoBehaviour
         {
             ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * punchPower, ForceMode2D.Impulse);
         }
+
     }
 }

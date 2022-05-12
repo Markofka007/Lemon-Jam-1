@@ -500,6 +500,7 @@ MonoBehaviour:
   controllerAngle: 0
   equipedItem: {fileID: 0}
   myAnimator: {fileID: 262129802}
+  bonArm: {fileID: 440563333893792325}
 --- !u!114 &440563335485982628
 MonoBehaviour:
   m_ObjectHideFlags: 0

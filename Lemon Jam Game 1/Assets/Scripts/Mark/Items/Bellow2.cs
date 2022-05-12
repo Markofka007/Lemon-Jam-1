@@ -20,6 +20,10 @@ public class Bellow2 : MonoBehaviour
 
     public Animator myAnimator;
 
+    public GameObject steam;
+
+    private Vector3 kettlepos;
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -37,6 +41,8 @@ public class Bellow2 : MonoBehaviour
 
     void Update()
     {
+        kettlepos = transform.position;
+
         if (p2.controllerAngle < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -69,6 +75,10 @@ public class Bellow2 : MonoBehaviour
     {
         isActive = true;
         myAnimator.Play("Kettle", -1, 0f);
+
+        //maybe instantiate a cloud here and it rides the wind and waits and destroys??
+        Instantiate(steam, kettlepos, Quaternion.identity);
+        steam.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f * powerMultiplier, ForceMode2D.Impulse);
     }
 
     public void StopWind()
