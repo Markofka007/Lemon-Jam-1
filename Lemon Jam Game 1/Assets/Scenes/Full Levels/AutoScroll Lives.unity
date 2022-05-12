@@ -197,6 +197,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubba
       objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330857, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -250,13 +258,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2025857860}
     m_Modifications:
+    - target: {fileID: 5945498609159550170, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945498609159550170, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Name
       value: Addie
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550182, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_RootOrder
@@ -1438,6 +1450,14 @@ PrefabInstance:
     - target: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller4
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
@@ -3369,8 +3389,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jam
       objectReference: {fileID: 0}
-    - target: {fileID: 6580469820074345093, guid: ff17213e169896647bc7af3523115467, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

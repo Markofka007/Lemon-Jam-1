@@ -332,6 +332,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5945498609159550170, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945498609159550170, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550172, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -339,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Name
       value: Addie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550175, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Enabled
@@ -1502,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: fe67fd5b24bf94c4cbde946229bde765, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: d886a1cc0e6586141b220cdaa452a0d0, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1516,37 +1528,101 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1913701383}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ScrollUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: cbef72f9-0823-47f5-a570-14a77d66c1e9
-    m_ActionName: Menu/Up[/XInputControllerWindows/leftStick/up,/XInputControllerWindows1/leftStick/up]
+      m_Calls: []
+    m_ActionId: e6f8723f-386b-4b0c-a703-f67b35f5948b
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right,/XInputControllerWindows2/leftStick/right,/XInputControllerWindows3/leftStick/right,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1913701383}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ScrollDown
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: cc6a43fb-1385-4652-a925-55920ae1c100
-    m_ActionName: Menu/Down[/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/down]
+      m_Calls: []
+    m_ActionId: 135829f2-281c-455e-bcca-8b541ded65cb
+    m_ActionName: Player/Move2[/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right,/XInputControllerWindows2/leftStick/right,/XInputControllerWindows3/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15c69c6f-c2c6-4e31-aee0-79064c6d97cd
+    m_ActionName: Player/Move3[/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right,/XInputControllerWindows2/leftStick/right,/XInputControllerWindows3/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cde3f25e-44c4-40f1-be1e-e570a4307b5c
+    m_ActionName: Player/Move4[/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right,/XInputControllerWindows2/leftStick/right,/XInputControllerWindows3/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 197c876d-0285-486f-9f6e-a26e47cfa208
+    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d9cb63df-ebfb-4545-a02d-3e1cc0050ab5
+    m_ActionName: Player/Aim2[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c6b2c27-6d08-4878-87cd-c1aa88c94b62
+    m_ActionName: Player/Aim3[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ca6f03a-3dd8-43cd-8f1a-dc757c321d78
+    m_ActionName: Player/Aim4[/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78e03480-e301-4f45-8443-a23e00c0c3b7
+    m_ActionName: Player/Jump[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger,/XInputControllerWindows2/leftTrigger,/XInputControllerWindows3/leftTrigger,/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/XInputControllerWindows3/buttonSouth,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b53a6da0-5704-4415-bac3-f79757ffe0e9
+    m_ActionName: Player/Jump2[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger,/XInputControllerWindows2/leftTrigger,/XInputControllerWindows3/leftTrigger,/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/XInputControllerWindows3/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 37c1c807-1c88-41c1-8091-802608412688
+    m_ActionName: Player/Jump3[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger,/XInputControllerWindows2/leftTrigger,/XInputControllerWindows3/leftTrigger,/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/XInputControllerWindows3/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b430fa7e-0789-414d-ba62-58ce2d74f1e2
+    m_ActionName: Player/Jump4[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger,/XInputControllerWindows2/leftTrigger,/XInputControllerWindows3/leftTrigger,/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/XInputControllerWindows3/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63bb4a02-ac4b-48e0-83e5-7c5830109c0c
+    m_ActionName: Player/Drop[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/XInputControllerWindows2/buttonWest,/XInputControllerWindows3/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9836f99f-0d48-4a2c-ba67-fae2f1b47366
+    m_ActionName: Player/Drop2[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/XInputControllerWindows2/buttonWest,/XInputControllerWindows3/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64938df4-cd95-4e02-9039-82abbd222c19
+    m_ActionName: Player/Drop3[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/XInputControllerWindows2/buttonWest,/XInputControllerWindows3/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 369edeaa-cddd-4989-8954-8178aebbb8fd
+    m_ActionName: Player/Drop4[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/XInputControllerWindows2/buttonWest,/XInputControllerWindows3/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e0a3044c-63db-420d-a6d3-7f90f771c7f5
+    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2924d106-0f24-4320-a92a-f63dd55eb7e3
+    m_ActionName: Player/Fire2[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7d8947f-4437-4396-aa13-67a2f5429cd4
+    m_ActionName: Player/Fire3[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e229b5f2-430e-464b-a093-4447e661593b
+    m_ActionName: Player/Fire4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8716fc3-41f1-40c4-ab1a-92bb19aed3b5
+    m_ActionName: Player/Charge1[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6d364d36-86a5-4b21-831d-c48f45bdd781
+    m_ActionName: Player/Charge2[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec95d18e-4783-4332-a1ce-870bf5f2cfbe
+    m_ActionName: Player/Charge3[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f73f688-42b7-49df-9056-cdae14e82691
+    m_ActionName: Player/Charge4[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1913701383}
@@ -1561,11 +1637,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: bc700da7-5f4f-41f6-bf43-7775c2b406e1
-    m_ActionName: Menu/Select[/Keyboard/enter]
+    m_ActionId: 7a1b5e8b-0685-444d-9bb5-26d1549f8b9d
+    m_ActionName: MenuNav/Select[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows2/buttonSouth,/XInputControllerWindows3/buttonSouth,/XInputControllerWindows/start,/XInputControllerWindows1/start,/XInputControllerWindows2/start,/XInputControllerWindows3/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1913701383}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ScrollDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c090e59b-47b3-42d0-93c7-00018a3eb84f
+    m_ActionName: MenuNav/Down[/XInputControllerWindows/dpad/down,/XInputControllerWindows1/dpad/down,/XInputControllerWindows2/dpad/down,/XInputControllerWindows3/dpad/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/down,/XInputControllerWindows2/leftStick/down,/XInputControllerWindows3/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1913701383}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ScrollUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a98b516d-c1ad-4e99-858f-b4a4468f53d0
+    m_ActionName: MenuNav/Up[/XInputControllerWindows/dpad/up,/XInputControllerWindows1/dpad/up,/XInputControllerWindows2/dpad/up,/XInputControllerWindows3/dpad/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows1/leftStick/up,/XInputControllerWindows2/leftStick/up,/XInputControllerWindows3/leftStick/up]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Menu
+  m_DefaultActionMap: MenuNav
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!82 &1913701385
@@ -1675,6 +1783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bonnie
       objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982618, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 440563335485982619, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1733,6 +1845,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1869,6 +1989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jam
       objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345093, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6580469820074345100, guid: ff17213e169896647bc7af3523115467, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1876,6 +2000,14 @@ PrefabInstance:
     - target: {fileID: 6580469820074345101, guid: ff17213e169896647bc7af3523115467, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff17213e169896647bc7af3523115467, type: 3}
@@ -1968,12 +2100,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubba
       objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330768, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330771, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330856, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
