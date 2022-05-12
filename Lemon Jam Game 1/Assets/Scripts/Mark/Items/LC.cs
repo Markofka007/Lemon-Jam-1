@@ -37,6 +37,8 @@ public class LC : MonoBehaviour
         gunTip = transform.GetChild(1).gameObject.transform;
 
         powerMultiplier = 1.0f; //power
+
+        myAnimator.GetComponent<Animator>();
     }
     
     void Update()

@@ -167,23 +167,18 @@ public class PlayerController : MonoBehaviour
             myAnimator.SetBool("areyouIdle", true);
         }
 
-        if (Mathf.Abs(rb.velocity.y) > 0.5)
+        if (rb.velocity.y > 0)
         {
             myAnimator.SetBool("areyouRising", true);
             myAnimator.SetBool("areyouIdle", false);
 
         }
 
-        if (rb.velocity.y < 0.5)
+        if (rb.velocity.y < 10)
         {
             myAnimator.SetBool("areyouRising", false);
             myAnimator.SetBool("areyouFalling", true);
             myAnimator.SetBool("areyouIdle", false);
-
-
-
-
-
         }
 
         if (rb.velocity.y == 0)

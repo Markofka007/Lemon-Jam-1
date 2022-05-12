@@ -123,6 +123,7 @@ MonoBehaviour:
     m_Bits: 131904
   maxAmmo: 5
   power: 35
+  myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
     m_Bits: 131520
   maxAmmo: 5
   power: 35
+  myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026333
 MonoBehaviour:
   m_ObjectHideFlags: 0
