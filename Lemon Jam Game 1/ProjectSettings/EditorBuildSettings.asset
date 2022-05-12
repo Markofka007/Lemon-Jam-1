@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Full Levels/AutoScroll Lives.unity
     guid: a0df13ac8726e2d46a2793d5bfb00e6f
   - enabled: 1
+    path: Assets/Scenes/Full Levels/Static stage.unity
+    guid: 278beeeed66fb56459bcb17d540e0eb5
+  - enabled: 1
     path: Assets/Scenes/Full Levels/Static Lives.unity
     guid: 3c5e8a6a1aaf67c48a738f94fe3e1b88
   - enabled: 1
