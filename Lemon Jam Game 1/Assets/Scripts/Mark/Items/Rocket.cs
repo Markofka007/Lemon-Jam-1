@@ -5,9 +5,12 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     public float powerMultiplier;
+    private Vector3 rocketPos;
+    public GameObject theExplosion;
 
     private void Start()
     {
+
         this.Wait(3.0f, () =>
         {
             Destroy(gameObject);
@@ -18,9 +21,11 @@ public class Rocket : MonoBehaviour
     {
         GetComponent<CircleCollider2D>().enabled = true;
         transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        rocketPos = transform.position;
 
         this.Wait(0.1f, () =>
         {
+            Instantiate(theExplosion, rocketPos, Quaternion.identity);
             Destroy(gameObject);
         });
     }

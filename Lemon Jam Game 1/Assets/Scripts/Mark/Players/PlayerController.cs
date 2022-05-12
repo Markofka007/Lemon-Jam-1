@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
                 if (rb.velocity.y == 0)
                 {
-                    armSprite.transform.localPosition = new Vector3(0.089f, -0.514f, 0f);
+                    armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f);
                 }
             }
 
@@ -130,6 +130,16 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
             canDoubleJump = true;
+            if(jamSprite.flipX == true)
+            {
+                armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f);
+            }
+
+            else
+            {
+                armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+            }    
+
         }
         else
         {

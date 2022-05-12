@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerMultiplier: 0
+  theExplosion: {fileID: 6148037309620614807, guid: 0f0a4a4eae32f3744b85c3facc97dee2, type: 3}
 --- !u!1 &7792945475789800958
 GameObject:
   m_ObjectHideFlags: 0
