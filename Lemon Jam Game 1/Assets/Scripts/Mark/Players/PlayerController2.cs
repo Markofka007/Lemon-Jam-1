@@ -32,8 +32,13 @@ public class PlayerController2 : MonoBehaviour
     private FistAttack2 fist;
 
     public Animator myAnimator;
+    public GameObject jumpBoostFx;
+    public GameObject speedBoostFx;
+    public GameObject powerBoostFx;
 
+    public Vector3 myPos;
     private Vector2 colliderOffset;
+
 
     void Start()
     {
@@ -55,7 +60,7 @@ public class PlayerController2 : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
         }
         */
-
+        myPos = transform.position;
         //flip
         if (H_Input < 0)
         {
@@ -130,6 +135,7 @@ public class PlayerController2 : MonoBehaviour
         if (collision.CompareTag("JumpBean"))
         {
             Destroy(collision.gameObject);
+            Instantiate(jumpBoostFx, myPos, Quaternion.identity, transform);
 
             jumpMultiplier += jumpM_Delta;
 
@@ -141,6 +147,7 @@ public class PlayerController2 : MonoBehaviour
         else if (collision.CompareTag("SpeedBean"))
         {
             Destroy(collision.gameObject);
+            Instantiate(speedBoostFx, myPos, Quaternion.identity, transform);
 
             speedMultiplier += speedM_Delta;
 
@@ -152,6 +159,7 @@ public class PlayerController2 : MonoBehaviour
         else if (collision.CompareTag("PowerBean"))
         {
             Destroy(collision.gameObject);
+            Instantiate(powerBoostFx, myPos, Quaternion.identity, transform);
 
             if (equipedItem.name.Contains("Auto Gun"))
             {

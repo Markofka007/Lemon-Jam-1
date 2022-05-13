@@ -40,7 +40,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -51,7 +51,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -62,7 +62,7 @@
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Down",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -73,7 +73,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Down",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -84,7 +84,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -95,7 +95,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -105,8 +105,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Controller",
-            "bindingGroup": "Controller",
+            "name": "Controller (Menu)",
+            "bindingGroup": "Controller (Menu)",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",

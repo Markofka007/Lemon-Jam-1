@@ -862,6 +862,107 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MenuNav"",
+            ""id"": ""0065c274-3726-4562-9f3f-3016ab45329e"",
+            ""actions"": [
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a1b5e8b-0685-444d-9bb5-26d1549f8b9d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""c090e59b-47b3-42d0-93c7-00018a3eb84f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""a98b516d-c1ad-4e99-858f-b4a4468f53d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d300ed67-7140-433f-959a-dc5655ad938e"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47e795e2-c8c3-42bb-b741-98d4c199cac4"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1561e4df-75fa-46d6-a5ac-f33f80da12d0"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""117f83e3-c8a5-4caf-abf5-f9c5459c996d"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c4aab92-8223-4544-9970-c54471fab545"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88d30278-6145-4809-87d9-7d1f13e9f0c1"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -882,7 +983,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -893,7 +994,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -904,18 +1005,18 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
         },
         {
-            ""name"": ""KBM (Debug)"",
-            ""bindingGroup"": ""KBM (Debug)"",
+            ""name"": ""Controller (Menu)"",
+            ""bindingGroup"": ""Controller (Menu)"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": true,
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -948,6 +1049,11 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Charge2 = m_Player.FindAction("Charge2", throwIfNotFound: true);
         m_Player_Charge3 = m_Player.FindAction("Charge3", throwIfNotFound: true);
         m_Player_Charge4 = m_Player.FindAction("Charge4", throwIfNotFound: true);
+        // MenuNav
+        m_MenuNav = asset.FindActionMap("MenuNav", throwIfNotFound: true);
+        m_MenuNav_Select = m_MenuNav.FindAction("Select", throwIfNotFound: true);
+        m_MenuNav_Down = m_MenuNav.FindAction("Down", throwIfNotFound: true);
+        m_MenuNav_Up = m_MenuNav.FindAction("Up", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1220,6 +1326,55 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // MenuNav
+    private readonly InputActionMap m_MenuNav;
+    private IMenuNavActions m_MenuNavActionsCallbackInterface;
+    private readonly InputAction m_MenuNav_Select;
+    private readonly InputAction m_MenuNav_Down;
+    private readonly InputAction m_MenuNav_Up;
+    public struct MenuNavActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public MenuNavActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Select => m_Wrapper.m_MenuNav_Select;
+        public InputAction @Down => m_Wrapper.m_MenuNav_Down;
+        public InputAction @Up => m_Wrapper.m_MenuNav_Up;
+        public InputActionMap Get() { return m_Wrapper.m_MenuNav; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuNavActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuNavActions instance)
+        {
+            if (m_Wrapper.m_MenuNavActionsCallbackInterface != null)
+            {
+                @Select.started -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnSelect;
+                @Down.started -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnDown;
+                @Up.started -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_MenuNavActionsCallbackInterface.OnUp;
+            }
+            m_Wrapper.m_MenuNavActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+            }
+        }
+    }
+    public MenuNavActions @MenuNav => new MenuNavActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -1256,13 +1411,13 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_Controller4SchemeIndex];
         }
     }
-    private int m_KBMDebugSchemeIndex = -1;
-    public InputControlScheme KBMDebugScheme
+    private int m_ControllerMenuSchemeIndex = -1;
+    public InputControlScheme ControllerMenuScheme
     {
         get
         {
-            if (m_KBMDebugSchemeIndex == -1) m_KBMDebugSchemeIndex = asset.FindControlSchemeIndex("KBM (Debug)");
-            return asset.controlSchemes[m_KBMDebugSchemeIndex];
+            if (m_ControllerMenuSchemeIndex == -1) m_ControllerMenuSchemeIndex = asset.FindControlSchemeIndex("Controller (Menu)");
+            return asset.controlSchemes[m_ControllerMenuSchemeIndex];
         }
     }
     public interface IPlayerActions
@@ -1291,5 +1446,11 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnCharge2(InputAction.CallbackContext context);
         void OnCharge3(InputAction.CallbackContext context);
         void OnCharge4(InputAction.CallbackContext context);
+    }
+    public interface IMenuNavActions
+    {
+        void OnSelect(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
     }
 }

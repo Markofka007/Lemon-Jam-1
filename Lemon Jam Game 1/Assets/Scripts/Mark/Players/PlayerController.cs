@@ -36,7 +36,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 colliderOffset;  //offset
 
     public GameObject armSprite;
-
+    public GameObject jumpBoostFx;
+    public GameObject speedBoostFx;
+    public GameObject powerBoostFx;
+    public Vector3 myPos;
     public SpriteRenderer jamSprite;
 
 
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
         */
 
         //flip
-
+        myPos = transform.position;
 
         if (H_Input < 0)
         {
@@ -201,7 +204,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("JumpBean"))
         {
             Destroy(collision.gameObject);
-
+            Instantiate(jumpBoostFx, myPos, Quaternion.identity, transform);
             jumpMultiplier += jumpM_Delta;
 
             this.Wait(5.0f, () =>
@@ -212,7 +215,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.CompareTag("SpeedBean"))
         {
             Destroy(collision.gameObject);
-
+            Instantiate(speedBoostFx, myPos, Quaternion.identity, transform);
             speedMultiplier += speedM_Delta;
 
             this.Wait(5.0f, () =>
@@ -223,7 +226,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.CompareTag("PowerBean"))
         {
             Destroy(collision.gameObject);
-
+            Instantiate(powerBoostFx, myPos, Quaternion.identity, transform);
             if (equipedItem.name.Contains("Auto Gun"))
             {
                 equipedItem.GetComponent<AutoGun>().MultiplyPower(powerM_Delta);

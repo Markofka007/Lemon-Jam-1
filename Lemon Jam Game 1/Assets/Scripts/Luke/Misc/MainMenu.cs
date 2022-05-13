@@ -65,28 +65,27 @@ public class MainMenu : MonoBehaviour
     {
         if (ctx.performed)
         {
-            DontDestroyOnLoad(gameObject); //This might cause issues. Let's hope it doesn't.
+            //DontDestroyOnLoad(gameObject);  //This might cause issues. Let's hope it doesn't.  //NVM IT BROKE THE GAME.
             blip.clip = selectSound;
             blip.Play();
 
-            this.Wait(0.1f, () =>
-            {
-                Destroy(gameObject);
-            });
-            switch (menuSelection)
-            {
-                case 1:
-                    LoadScene(2);
-                    break;
+            //this.Wait(0.1f, () =>
+            //{
+                switch (menuSelection)
+                {
+                    case 1:
+                        LoadScene(2);
+                        break;
 
-                case 2:
-                    LoadScene(3);
-                    break;
+                    case 2:
+                        LoadScene(3);
+                        break;
 
-                case 3:
-                    LoadScene(1);
-                    break;
-            }
+                    case 3:
+                        LoadScene(1);
+                        break;
+                }
+            //});
         }
     }
 
