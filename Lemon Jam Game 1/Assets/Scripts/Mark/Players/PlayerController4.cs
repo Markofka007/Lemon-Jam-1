@@ -35,7 +35,11 @@ public class PlayerController4 : MonoBehaviour
 
     private Vector2 colliderOffset;
 
+    public GameObject jumpBoostFx;
+    public GameObject speedBoostFx;
+    public GameObject powerBoostFx;
     public GameObject bonArm;
+    public Vector3 myPos;
 
     void Start()
     {
@@ -50,6 +54,7 @@ public class PlayerController4 : MonoBehaviour
 
     void Update()
     {
+        myPos = transform.position;
         /*
         if (transform.position.y < -10)
         {
@@ -143,6 +148,7 @@ public class PlayerController4 : MonoBehaviour
         if (collision.CompareTag("JumpBean"))
         {
             Destroy(collision.gameObject);
+            Instantiate(jumpBoostFx, myPos, Quaternion.identity, transform);
 
             jumpMultiplier += jumpM_Delta;
 
@@ -154,7 +160,7 @@ public class PlayerController4 : MonoBehaviour
         else if (collision.CompareTag("SpeedBean"))
         {
             Destroy(collision.gameObject);
-
+            Instantiate(speedBoostFx, myPos, Quaternion.identity, transform);
             speedMultiplier += speedM_Delta;
 
             this.Wait(5.0f, () =>
@@ -165,6 +171,7 @@ public class PlayerController4 : MonoBehaviour
         else if (collision.CompareTag("PowerBean"))
         {
             Destroy(collision.gameObject);
+            Instantiate(powerBoostFx, myPos, Quaternion.identity, transform);
 
             if (equipedItem.name.Contains("Auto Gun"))
             {
