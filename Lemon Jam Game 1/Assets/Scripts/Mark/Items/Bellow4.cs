@@ -77,7 +77,7 @@ public class Bellow4 : MonoBehaviour
 
         //maybe instantiate a cloud here and it rides the wind and waits and destroys??
         Instantiate(steam, kettlepos, Quaternion.identity);
-        steam.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f * powerMultiplier, ForceMode2D.Impulse);
+        steam.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 2.5f * powerMultiplier, ForceMode2D.Impulse);
 
     }
 
@@ -90,7 +90,7 @@ public class Bellow4 : MonoBehaviour
     {
         if (isActive && !collision.CompareTag("Player4"))
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 1.5f * powerMultiplier, ForceMode2D.Impulse);
+            collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 2.5f * powerMultiplier, ForceMode2D.Impulse);
         }
     }
 

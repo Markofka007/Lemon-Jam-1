@@ -103,7 +103,7 @@ MonoBehaviour:
   rayignore:
     serializedVersion: 2
     m_Bits: 131968
-  maxAmmo: 5
+  maxAmmo: 10
   power: 35
   myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026339
@@ -121,7 +121,7 @@ MonoBehaviour:
   rayignore:
     serializedVersion: 2
     m_Bits: 131904
-  maxAmmo: 5
+  maxAmmo: 10
   power: 35
   myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026336
@@ -139,7 +139,7 @@ MonoBehaviour:
   rayignore:
     serializedVersion: 2
     m_Bits: 131776
-  maxAmmo: 5
+  maxAmmo: 10
   power: 35
   myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026337
@@ -157,7 +157,7 @@ MonoBehaviour:
   rayignore:
     serializedVersion: 2
     m_Bits: 131520
-  maxAmmo: 5
+  maxAmmo: 10
   power: 35
   myAnimator: {fileID: 2095263540000724945}
 --- !u!114 &6421496243218026333
@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6421496244532786826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.129, z: 0}
+  m_LocalPosition: {x: 0, y: -0.717, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

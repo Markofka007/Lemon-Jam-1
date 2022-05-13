@@ -43,7 +43,6 @@ public class LC : MonoBehaviour
     
     void Update()
     {
-
         if (p1.controllerAngle < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -73,6 +72,7 @@ public class LC : MonoBehaviour
 
             lr.positionCount = 2;
             lr.SetPosition(0, gunTip.position);
+
             myAnimator.Play("Soda Blast", -1, 0f);
             
             if (ray)

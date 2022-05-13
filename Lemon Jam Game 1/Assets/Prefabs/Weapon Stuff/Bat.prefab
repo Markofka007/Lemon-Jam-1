@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddfeb0f2000feb4386e16e7e017329d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 10
   myAnimator: {fileID: 6525870271824508600}
 --- !u!114 &1238924980506722988
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c0d0f91ec91b34bbca9d6c11ce5ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 10
   myAnimator: {fileID: 6525870271824508600}
 --- !u!114 &1238924980506722989
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faeb974c2395bb24fa1f12f8de625bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 10
   myAnimator: {fileID: 6525870271824508600}
 --- !u!114 &1238924980506722978
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d1c487e28adb54bbb6dbf08dc5df10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 10
   myAnimator: {fileID: 6525870271824508600}
 --- !u!114 &1238924980506722979
 MonoBehaviour:
