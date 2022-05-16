@@ -6,9 +6,12 @@ public class BreakawayPlatform : MonoBehaviour
 {
     public Animator myAnimator;
 
+    private AudioSource Break;
+
     private void Start()
     {
-        myAnimator = gameObject.GetComponent<Animator>();    
+        myAnimator = gameObject.GetComponent<Animator>();
+        Break = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,6 +20,11 @@ public class BreakawayPlatform : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("IsSteppedOn", true);
             
+            this.Wait(0.15f, () =>
+            {
+                Break.Play();
+            });
+
             this.Wait(1f, () =>
             {
                 Destroy(gameObject);
