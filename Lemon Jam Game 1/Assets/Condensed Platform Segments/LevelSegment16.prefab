@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5439672888686808631, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
+      propertyPath: m_TagString
+      value: Ending Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15bfb6e7d5fd724a8166816b19fb639, type: 3}
 --- !u!4 &6756207016531650173 stripped
@@ -547,10 +551,6 @@ PrefabInstance:
     - target: {fileID: 3809110835306680362, guid: a5b678f131140d648bbd23531549593a, type: 3}
       propertyPath: m_Name
       value: BreakawayPlatform (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809110835306680362, guid: a5b678f131140d648bbd23531549593a, type: 3}
-      propertyPath: m_TagString
-      value: Ending Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4163600084921378112, guid: a5b678f131140d648bbd23531549593a, type: 3}
       propertyPath: m_RootOrder
