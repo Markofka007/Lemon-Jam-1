@@ -89,6 +89,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: areyouRising
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: areyouFalling
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2567166171778819763}
   m_Solo: 0

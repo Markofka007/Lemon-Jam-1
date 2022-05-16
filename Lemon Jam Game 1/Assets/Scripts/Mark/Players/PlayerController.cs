@@ -78,12 +78,12 @@ public class PlayerController : MonoBehaviour
 
             if(jamSprite.flipX == true && canJump == true)
             {
-                armSprite.transform.localPosition = new Vector3(0.089f, -0.514f, 0f);
+                armSprite.transform.localPosition = new Vector3(0.089f, -0.514f, 0f); //left ground
             }
 
             if (jamSprite.flipX == true && canJump == false)
             {
-                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
+                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f); //left jump
             }
 
         }
@@ -96,12 +96,12 @@ public class PlayerController : MonoBehaviour
 
             if(jamSprite.flipX == false && canJump == true)
             {
-                armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+                armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f); //right ground
             }
 
             if (jamSprite.flipX == false && canJump == false)
             {
-                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f);
+                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f); //right jump
             }
 
         }
@@ -110,19 +110,20 @@ public class PlayerController : MonoBehaviour
         {
             if (jamSprite.flipX == true && canJump == false)
             {
-                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f);
+                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f); //left jump
                 if (rb.velocity.y == 0)
                 {
-                    armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f);
+                    armSprite.transform.localPosition = new Vector3(0.089f, -0.5f, 0f); //left ground
                 }
             }
 
             if (jamSprite.flipX == false && canJump == false)
             {
-                armSprite.transform.localPosition = new Vector3(0.297f, -0.05f, 0f);
-                if(rb.velocity.y == 0)
+
+                armSprite.transform.localPosition = new Vector3(-0.235f, -0.114f, 0f); //right jump
+                if (rb.velocity.y == 0)
                 {
-                    armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f);
+                    armSprite.transform.localPosition = new Vector3(-0.128f, -0.5f, 0f); //right ground
                 }
             }
 
