@@ -8,9 +8,10 @@ public class Rocket : MonoBehaviour
     private Vector3 rocketPos;
     public GameObject theExplosion;
 
+    public float force;
+
     private void Start()
     {
-
         this.Wait(3.0f, () =>
         {
             Destroy(gameObject);
@@ -19,13 +20,16 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
         GetComponent<CircleCollider2D>().enabled = true;
         transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
         rocketPos = transform.position;
+        
+        Instantiate(theExplosion, rocketPos, Quaternion.identity);
 
         this.Wait(0.1f, () =>
         {
-            Instantiate(theExplosion, rocketPos, Quaternion.identity);
             Destroy(gameObject);
         });
     }
@@ -34,6 +38,6 @@ public class Rocket : MonoBehaviour
     {
         Vector2 relPos = collision.transform.position - transform.position;
 
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos / 50f * powerMultiplier, ForceMode2D.Impulse);
+        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos * force * powerMultiplier, ForceMode2D.Impulse);
     }
 }

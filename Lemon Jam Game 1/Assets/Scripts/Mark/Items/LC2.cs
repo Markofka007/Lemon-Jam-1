@@ -24,6 +24,8 @@ public class LC2 : MonoBehaviour
 
     public Animator myAnimator;
 
+    private AudioSource fireSound;
+
     void Start()
     {
         p2 = transform.parent.parent.parent.GetComponent<PlayerController2>();
@@ -39,6 +41,8 @@ public class LC2 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         myAnimator.GetComponent<Animator>();
+
+        fireSound = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -75,6 +79,8 @@ public class LC2 : MonoBehaviour
 
             myAnimator.Play("Soda Blast", -1, 0f);
 
+            fireSound.Play();
+
             if (ray)
             {
                 lr.SetPosition(1, ray.point);
@@ -90,6 +96,7 @@ public class LC2 : MonoBehaviour
             this.Wait(0.1f, () =>
             {
                 lr.positionCount = 0;
+                fireSound.Stop();
             });
         }
     }

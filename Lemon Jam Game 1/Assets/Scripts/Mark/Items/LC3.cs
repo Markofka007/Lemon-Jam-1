@@ -24,6 +24,8 @@ public class LC3 : MonoBehaviour
 
     public Animator myAnimator;
 
+    private AudioSource fireSound;
+
     void Start()
     {
         p3 = transform.parent.parent.parent.GetComponent<PlayerController3>();
@@ -39,6 +41,8 @@ public class LC3 : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         myAnimator.GetComponent<Animator>();
+
+        fireSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -75,6 +79,8 @@ public class LC3 : MonoBehaviour
 
             myAnimator.Play("Soda Blast", -1, 0f);
 
+            fireSound.Play();
+
             if (ray)
             {
                 lr.SetPosition(1, ray.point);
@@ -90,6 +96,7 @@ public class LC3 : MonoBehaviour
             this.Wait(0.1f, () =>
             {
                 lr.positionCount = 0;
+                fireSound.Stop();
             });
         }
     }

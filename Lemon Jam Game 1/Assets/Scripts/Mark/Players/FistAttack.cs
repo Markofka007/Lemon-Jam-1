@@ -11,11 +11,13 @@ public class FistAttack : MonoBehaviour
     public float punchDistance;
     public float punchPower;
 
-   // public SpriteRenderer thisArm;
+    private AudioSource hitsound;
 
     void Start()
     {
         arm = GetComponent<Arm>();
+
+        hitsound = GetComponent<AudioSource>();
     }
 
     public void Punch()
@@ -24,10 +26,9 @@ public class FistAttack : MonoBehaviour
 
         if (ray)
         {
+            hitsound.Play();
+
             ray.collider.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * punchPower, ForceMode2D.Impulse);
         }
-        //thisArm.enabled = true;
     }
-
-
 }

@@ -24,6 +24,8 @@ public class Bellow : MonoBehaviour
 
     private Vector3 kettlepos;
 
+    private AudioSource audio;
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -38,6 +40,7 @@ public class Bellow : MonoBehaviour
 
         myAnimator.GetComponent<Animator>();
 
+        audio = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -78,6 +81,8 @@ public class Bellow : MonoBehaviour
         isActive = true;
         myAnimator.Play("Kettle", -1, 0f);
 
+        audio.mute = false;
+
         //maybe instantiate a cloud here and it rides the wind and waits and destroys??
                 Instantiate(steam, kettlepos, Quaternion.identity);
                 steam.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Cos(Mathf.Deg2Rad * arm.angleCorrected), Mathf.Sin(Mathf.Deg2Rad * arm.angleCorrected)) * 2.5f * powerMultiplier, ForceMode2D.Impulse);
@@ -86,6 +91,8 @@ public class Bellow : MonoBehaviour
     public void StopWind()
     {
         isActive = false;
+
+        audio.mute = true;
     }
 
     void OnTriggerStay2D(Collider2D collision)

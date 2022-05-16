@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2807540157971452568}
   - component: {fileID: 2807540157971452569}
   - component: {fileID: 2807540157971452571}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Power Bean
   m_TagString: PowerBean
   m_Icon: {fileID: 0}

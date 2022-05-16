@@ -24,6 +24,8 @@ public class LC : MonoBehaviour
 
     public Animator myAnimator;
 
+    private AudioSource fireSound;
+
     void Start()
     {
         p1 = transform.parent.parent.parent.GetComponent<PlayerController>();
@@ -39,6 +41,8 @@ public class LC : MonoBehaviour
         powerMultiplier = 1.0f; //power
 
         myAnimator.GetComponent<Animator>();
+
+        fireSound = GetComponent<AudioSource>();
     }
     
     void Update()

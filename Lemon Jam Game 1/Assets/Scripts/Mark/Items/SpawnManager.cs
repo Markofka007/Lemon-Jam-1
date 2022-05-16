@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnItem()
     {
-        GameObject newItem = Instantiate(items[Random.Range(0, items.Length - 1)], new Vector3(Random.Range(-Width, Width) + transform.position.x, Height, 0), Quaternion.identity);
+        GameObject newItem = Instantiate(items[Random.Range(0, items.Length)], new Vector3(Random.Range(-Width, Width) + transform.position.x, Height, 0), Quaternion.identity);
         newItem.transform.parent = parental.transform;
 
         newItem.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-4f, 4f), 0f);

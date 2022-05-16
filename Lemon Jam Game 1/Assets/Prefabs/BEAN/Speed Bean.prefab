@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8361342895425049880}
   - component: {fileID: 8361342895425049881}
   - component: {fileID: 8361342895425049879}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: Speed Bean
   m_TagString: SpeedBean
   m_Icon: {fileID: 0}
