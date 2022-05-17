@@ -56,7 +56,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.55
   m_Material: {fileID: 6200000, guid: b8b0d5df00b6baf4d9fe4ec84dbf1463, type: 2}
   m_Interpolate: 2
   m_SleepingMode: 1
@@ -178,7 +178,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

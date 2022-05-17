@@ -4,41 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Full Levels/MainMenu.unity
-    guid: 46af94d5ba3e6014aa3630116ffb319b
-  - enabled: 1
-    path: Assets/Scenes/Full Levels/Credits.unity
-    guid: ea172c0f1b2141d4bb230b74df9daae3
-  - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/AutoScroll Lives.unity
-    guid: a0df13ac8726e2d46a2793d5bfb00e6f
-=======
-    path: Assets/Scenes/Full Levels/SmallerScreen.unity
-    guid: 0815dfa56063e94449c845073a9b91b8
->>>>>>> Stashed changes
-  - enabled: 1
-    path: Assets/Scenes/Full Levels/Static stage.unity
-    guid: 278beeeed66fb56459bcb17d540e0eb5
-  - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/Scenes/Static Lives.unity
-    guid: 3c5e8a6a1aaf67c48a738f94fe3e1b88
-  - enabled: 1
-=======
->>>>>>> Stashed changes
-    path: Assets/Scenes/WinScreens/JamWinScreen.unity
-    guid: 6a5fa4d6a973d8544ad49bf92b0c3a34
-  - enabled: 1
-    path: Assets/Scenes/WinScreens/BubbaWinScreen.unity
-    guid: d17038e24a785624f93177ff26d4e09f
-  - enabled: 1
-    path: Assets/Scenes/WinScreens/BonnieWinScreen.unity
-    guid: d7b5076146f4ced4d9b4961bb1ba0074
-  - enabled: 1
-    path: Assets/Scenes/WinScreens/AddieWinScreen.unity
-    guid: a2b1808c4e16df644813724c26e9a79a
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 88f80853afd2349449e64f3da88a26aa, type: 2}
+  m_Scenes: []
+  m_configObjects: {}

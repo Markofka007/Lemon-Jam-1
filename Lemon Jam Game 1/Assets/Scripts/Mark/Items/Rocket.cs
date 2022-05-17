@@ -38,6 +38,9 @@ public class Rocket : MonoBehaviour
     {
         Vector2 relPos = collision.transform.position - transform.position;
 
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos * force * powerMultiplier, ForceMode2D.Impulse);
+        if(collision.gameObject.GetComponent<Rigidbody2D>() != null)
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(relPos * force * powerMultiplier, ForceMode2D.Impulse);
+        }
     }
 }
