@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public PlatformSpawnManager PSM;
     public GameObject GoBack;
 
+    public SceneLoader SL;
     public GameObject ItemParent;
 
     public TextMeshProUGUI JamLivesText;
@@ -178,10 +179,10 @@ public class GameManager : MonoBehaviour
 
     void PlayerScreen(GameObject player)
     {
-        if (player.name == "Jam") { SceneManager.LoadScene("JamWinScreen"); return; }
-        if (player.name == "Bubba") { SceneManager.LoadScene("BubbaWinScreen"); return; }
-        if (player.name == "Addie") { SceneManager.LoadScene("AddieWinScreen"); return; }
-        if (player.name == "Bonnie") { SceneManager.LoadScene("BonnieWinScreen"); return; }
+        if (player.name == "Jam") { SL.LoadScene("JamWinScreen"); return; }
+        if (player.name == "Bubba") { SL.LoadScene("BubbaWinScreen"); return; }
+        if (player.name == "Addie") { SL.LoadScene("AddieWinScreen"); return; }
+        if (player.name == "Bonnie") { SL.LoadScene("BonnieWinScreen"); return; }
     }
 
     void PlayerWin()
