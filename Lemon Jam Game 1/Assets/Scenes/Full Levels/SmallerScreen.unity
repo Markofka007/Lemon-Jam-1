@@ -3898,11 +3898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PSM: {fileID: 834588824}
   GoBack: {fileID: 1548831621}
-<<<<<<< Updated upstream
-  SL: {fileID: 0}
-=======
   SL: {fileID: 125094129}
->>>>>>> Stashed changes
   ItemParent: {fileID: 1383422634}
   JamLivesText: {fileID: 92844079}
   BubbaLivesText: {fileID: 1244605540}
