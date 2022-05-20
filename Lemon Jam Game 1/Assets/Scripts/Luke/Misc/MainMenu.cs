@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     private int menuSelection;
     private int maxMenuSelection;
 
+    public SceneLoader SL;
+
     public GameObject indicator;
     public GameObject[] menuItems;
 
@@ -74,15 +76,15 @@ public class MainMenu : MonoBehaviour
                 switch (menuSelection)
                 {
                     case 1:
-                        LoadScene(1);
+                        SL.LoadScene(1);
                         break;
 
                     case 2:
-                        LoadScene(2);
+                        SL.LoadScene(2);
                         break;
 
                     case 3:
-                        LoadScene(3);
+                        SL.LoadScene(3);
                         break;
                 }
             //});

@@ -8,6 +8,8 @@ public class StaticStageGameManager : MonoBehaviour
 {
     public GameObject ItemParent;
 
+    public SceneLoader SL;
+
     public TextMeshProUGUI JamLivesText;
     public TextMeshProUGUI BubbaLivesText;
     public TextMeshProUGUI AddieLivesText;
@@ -119,10 +121,10 @@ public class StaticStageGameManager : MonoBehaviour
 
     void PlayerScreen(GameObject player)
     {
-        if (player.name == "Jam") { SceneManager.LoadScene("JamWinScreen"); return; }
-        if (player.name == "Bubba") { SceneManager.LoadScene("BubbaWinScreen"); return; }
-        if (player.name == "Addie") { SceneManager.LoadScene("AddieWinScreen"); return; }
-        if (player.name == "Bonnie") { SceneManager.LoadScene("BonnieWinScreen"); return; }
+        if (player.name == "Jam") { SL.LoadScene("JamWinScreen"); return; }
+        if (player.name == "Bubba") { SL.LoadScene("BubbaWinScreen"); return; }
+        if (player.name == "Addie") { SL.LoadScene("AddieWinScreen"); return; }
+        if (player.name == "Bonnie") { SL.LoadScene("BonnieWinScreen"); return; }
     }
 
     void PlayerWin()
