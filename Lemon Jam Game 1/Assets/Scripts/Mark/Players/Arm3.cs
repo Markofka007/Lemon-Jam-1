@@ -7,12 +7,12 @@ public class Arm3 : MonoBehaviour
     PlayerController3 p3;
 
     public float angleCorrected;
-    public Animator myAnimator;
+    //public Animator myAnimator;
 
     void Start()
     {
         p3 = transform.parent.GetComponent<PlayerController3>();
-        myAnimator.GetComponent<Animator>();
+        //myAnimator.GetComponent<Animator>();
     }
 
     void Update()

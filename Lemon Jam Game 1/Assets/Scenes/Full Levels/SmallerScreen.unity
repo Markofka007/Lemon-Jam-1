@@ -1144,7 +1144,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 440563335485982618, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
   m_PrefabInstance: {fileID: 693648396}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &374114667 stripped
+--- !u!4 &374114677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
   m_PrefabInstance: {fileID: 693648396}
@@ -1398,10 +1398,6 @@ PrefabInstance:
     - target: {fileID: 440563335485982618, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_Name
       value: Bonnie
-      objectReference: {fileID: 0}
-    - target: {fileID: 440563335485982618, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_RootOrder
@@ -1837,7 +1833,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3163754182076330768, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
   m_PrefabInstance: {fileID: 26853967}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &887137511 stripped
+--- !u!4 &887137518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3163754182076330857, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
   m_PrefabInstance: {fileID: 26853967}
@@ -3809,9 +3805,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 794042180}
-  - {fileID: 887137511}
+  - {fileID: 887137518}
   - {fileID: 542533722}
-  - {fileID: 374114667}
+  - {fileID: 374114677}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3846,6 +3842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PSM: {fileID: 834588824}
   GoBack: {fileID: 1548831621}
+  SL: {fileID: 0}
   ItemParent: {fileID: 1383422634}
   JamLivesText: {fileID: 92844079}
   BubbaLivesText: {fileID: 1244605540}
