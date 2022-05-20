@@ -100,6 +100,33 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Mouse1"",
+                    ""type"": ""Value"",
+                    ""id"": ""76db9c92-14e2-469c-a97f-2796c19ae3f9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mouse2"",
+                    ""type"": ""Value"",
+                    ""id"": ""920ad09a-94b5-43c9-af44-40f8328f7745"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mouse3"",
+                    ""type"": ""Value"",
+                    ""id"": ""bd1b11d7-7aee-42e9-ad79-7ee72e50e41a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Mouse4"",
                     ""type"": ""Value"",
                     ""id"": ""ddd2731d-9fa4-4d7e-af99-cef12de1cff2"",
@@ -315,7 +342,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM (Debug)"",
+                    ""groups"": ""KBM (Debug);KBM"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -326,7 +353,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM (Debug)"",
+                    ""groups"": ""KBM (Debug);KBM"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -359,7 +386,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM (Debug)"",
+                    ""groups"": ""KBM (Debug);KBM"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -667,7 +694,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Move4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -678,7 +705,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Move4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -766,7 +793,18 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""879052be-9665-4171-8ae0-1219d6a87729"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
                     ""action"": ""Drop4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -788,7 +826,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Fire4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -898,7 +936,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Charge4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -942,7 +980,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Jump4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -953,7 +991,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Jump4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -964,8 +1002,294 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controller4"",
+                    ""groups"": ""KBM"",
                     ""action"": ""Mouse4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f9804db-140c-4cda-9b84-bf81d7bb3d8b"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Mouse1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10cad93c-c83e-4515-bf90-976f4b85ef0a"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Mouse2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""604d38c6-b760-4c56-82c0-7651318de78a"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Mouse3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""9d060489-d2f8-443d-837f-aa2c518b2dca"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""960cb3d6-683c-4dc9-acea-d14b5182801d"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Move2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1e89447a-40bb-4248-b260-df4817794b49"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Move2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""9bd05680-6b8f-4dc8-ad5a-c30a691c0a3c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move3"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b5c0151e-b0bf-4b88-8d37-98fce2f9f6b2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3c39ad24-5ad4-43d8-896f-1821a5d069e5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Move3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e250ffa-0e28-41a6-b9d7-23568385ad00"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Jump2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bfc4c3ce-d9a6-4fac-8179-94f457b6a976"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM (Debug);KBM"",
+                    ""action"": ""Jump3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18f147ef-ba65-4a86-914e-adcd94ef95d0"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5adb0d87-d341-4144-902e-6244d31fe813"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Jump2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba990329-0d24-4d06-ab26-852a82af7b0a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Jump3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4561d339-f419-4422-ba2a-0068f410060b"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f592bc71-f658-408f-bd88-9e3c0c5a1eff"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""765c8fd1-00d3-45c3-b9b6-460a26bd1d4a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c29ee0c-92dc-46b7-b438-dd741fc211bb"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c04d4db-c69d-47a9-9298-43d9c76f28f8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2ed0399-b14a-463e-94f2-cf218ce09376"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba1526cf-b78b-4ab8-ae8b-f51ef4e562be"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Fire3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca855b57-24fa-4e7c-a3fd-1489faf8a7e6"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a6044f7-c6c2-4cfe-a64b-3fde5f3e880c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0a1299a-97b5-44d6-9c35-4bc30fb00904"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Charge3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b0c6105-4463-4be3-8f59-d803e165ca07"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Charge2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""359cbe37-4333-4824-8043-4894eaaa60bf"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.5)"",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Charge1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1168,16 +1492,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -1189,6 +1503,22 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""KBM"",
+            ""bindingGroup"": ""KBM"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -1206,6 +1536,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Aim2 = m_Player.FindAction("Aim2", throwIfNotFound: true);
         m_Player_Aim3 = m_Player.FindAction("Aim3", throwIfNotFound: true);
         m_Player_Aim4 = m_Player.FindAction("Aim4", throwIfNotFound: true);
+        m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
+        m_Player_Mouse2 = m_Player.FindAction("Mouse2", throwIfNotFound: true);
+        m_Player_Mouse3 = m_Player.FindAction("Mouse3", throwIfNotFound: true);
         m_Player_Mouse4 = m_Player.FindAction("Mouse4", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Jump2 = m_Player.FindAction("Jump2", throwIfNotFound: true);
@@ -1295,6 +1628,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Aim2;
     private readonly InputAction m_Player_Aim3;
     private readonly InputAction m_Player_Aim4;
+    private readonly InputAction m_Player_Mouse1;
+    private readonly InputAction m_Player_Mouse2;
+    private readonly InputAction m_Player_Mouse3;
     private readonly InputAction m_Player_Mouse4;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Jump2;
@@ -1324,6 +1660,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         public InputAction @Aim2 => m_Wrapper.m_Player_Aim2;
         public InputAction @Aim3 => m_Wrapper.m_Player_Aim3;
         public InputAction @Aim4 => m_Wrapper.m_Player_Aim4;
+        public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
+        public InputAction @Mouse2 => m_Wrapper.m_Player_Mouse2;
+        public InputAction @Mouse3 => m_Wrapper.m_Player_Mouse3;
         public InputAction @Mouse4 => m_Wrapper.m_Player_Mouse4;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Jump2 => m_Wrapper.m_Player_Jump2;
@@ -1374,6 +1713,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Aim4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim4;
                 @Aim4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim4;
                 @Aim4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim4;
+                @Mouse1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
+                @Mouse1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
+                @Mouse1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
+                @Mouse2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse2;
+                @Mouse2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse2;
+                @Mouse2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse2;
+                @Mouse3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse3;
+                @Mouse3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse3;
+                @Mouse3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse3;
                 @Mouse4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse4;
                 @Mouse4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse4;
                 @Mouse4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse4;
@@ -1453,6 +1801,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Aim4.started += instance.OnAim4;
                 @Aim4.performed += instance.OnAim4;
                 @Aim4.canceled += instance.OnAim4;
+                @Mouse1.started += instance.OnMouse1;
+                @Mouse1.performed += instance.OnMouse1;
+                @Mouse1.canceled += instance.OnMouse1;
+                @Mouse2.started += instance.OnMouse2;
+                @Mouse2.performed += instance.OnMouse2;
+                @Mouse2.canceled += instance.OnMouse2;
+                @Mouse3.started += instance.OnMouse3;
+                @Mouse3.performed += instance.OnMouse3;
+                @Mouse3.canceled += instance.OnMouse3;
                 @Mouse4.started += instance.OnMouse4;
                 @Mouse4.performed += instance.OnMouse4;
                 @Mouse4.canceled += instance.OnMouse4;
@@ -1602,6 +1959,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_ControllerMenuSchemeIndex];
         }
     }
+    private int m_KBMSchemeIndex = -1;
+    public InputControlScheme KBMScheme
+    {
+        get
+        {
+            if (m_KBMSchemeIndex == -1) m_KBMSchemeIndex = asset.FindControlSchemeIndex("KBM");
+            return asset.controlSchemes[m_KBMSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1612,6 +1978,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnAim2(InputAction.CallbackContext context);
         void OnAim3(InputAction.CallbackContext context);
         void OnAim4(InputAction.CallbackContext context);
+        void OnMouse1(InputAction.CallbackContext context);
+        void OnMouse2(InputAction.CallbackContext context);
+        void OnMouse3(InputAction.CallbackContext context);
         void OnMouse4(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnJump2(InputAction.CallbackContext context);

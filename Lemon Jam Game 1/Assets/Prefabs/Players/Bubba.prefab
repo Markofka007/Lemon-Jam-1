@@ -333,6 +333,34 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a98b516d-c1ad-4e99-858f-b4a4468f53d0
     m_ActionName: MenuNav/Up[/XInputControllerWindows/dpad/up,/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 76db9c92-14e2-469c-a97f-2796c19ae3f9
+    m_ActionName: Player/Mouse1[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3163754182076330859}
+        m_TargetAssemblyTypeName: PlayerController2, Assembly-CSharp
+        m_MethodName: mouseAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 920ad09a-94b5-43c9-af44-40f8328f7745
+    m_ActionName: Player/Mouse2[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd1b11d7-7aee-42e9-ad79-7ee72e50e41a
+    m_ActionName: Player/Mouse3[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ddd2731d-9fa4-4d7e-af99-cef12de1cff2
+    m_ActionName: Player/Mouse4[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller2
   m_DefaultActionMap: Player

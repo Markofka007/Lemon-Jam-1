@@ -208,7 +208,7 @@ public class PlayerController4 : MonoBehaviour
 
     public void mouseAim(InputAction.CallbackContext context)
     {
-        rightStick = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()) - transform.position;
+        rightStick = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()) - transform.position;  //Mouse Support
     }
 
     public void Jump(InputAction.CallbackContext context)

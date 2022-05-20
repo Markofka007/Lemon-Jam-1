@@ -1170,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6580469820074345102, guid: ff17213e169896647bc7af3523115467, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff17213e169896647bc7af3523115467, type: 3}
 --- !u!4 &572449299 stripped
@@ -1274,6 +1278,38 @@ PrefabInstance:
     - target: {fileID: 440563335485982626, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionId
+      value: 76db9c92-14e2-469c-a97f-2796c19ae3f9
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[29].m_ActionId
+      value: 920ad09a-94b5-43c9-af44-40f8328f7745
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_ActionId
+      value: bd1b11d7-7aee-42e9-ad79-7ee72e50e41a
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[28].m_ActionName
+      value: Player/Mouse1[/Mouse/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[29].m_ActionName
+      value: Player/Mouse2[/Mouse/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 440563335485982630, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_ActionName
+      value: Player/Mouse3[/Mouse/position]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d9efa3e2867e8b47b43edfe8cd7a1cb, type: 3}
@@ -2174,6 +2210,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3163754182076330773, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3163754182076330857, guid: 72b2584ddbcad4440b491acd6ca74323, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2686,6 +2726,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402077471}
     m_Modifications:
+    - target: {fileID: 5945498609159550170, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5945498609159550174, guid: 03e8a70cf53591e499dc27db5b9a4714, type: 3}
       propertyPath: m_Name
       value: Addie

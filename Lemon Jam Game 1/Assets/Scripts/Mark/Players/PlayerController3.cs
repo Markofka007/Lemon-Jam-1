@@ -199,8 +199,11 @@ public class PlayerController3 : MonoBehaviour
     public void Aim(InputAction.CallbackContext context)
     {
         rightStick = context.ReadValue<Vector2>();
+    }
 
-        //Debug.Log(rightStick);
+    public void mouseAim(InputAction.CallbackContext context)
+    {
+        rightStick = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>()) - transform.position;  //Mouse support
     }
 
     public void Jump(InputAction.CallbackContext context)
