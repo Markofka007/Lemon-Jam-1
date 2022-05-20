@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreens/BonnieWinScreen.unity
     guid: d7b5076146f4ced4d9b4961bb1ba0074
+  - enabled: 1
+    path: Assets/Scenes/MockScrollingScene.unity
+    guid: 98577456938ce2e48b3b9aec26e2584b
   m_configObjects: {}

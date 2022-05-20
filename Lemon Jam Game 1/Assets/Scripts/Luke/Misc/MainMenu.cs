@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     private int maxMenuSelection;
 
     public SceneLoader SL;
+    public int firstIndex = 1;
 
     public GameObject indicator;
     public GameObject[] menuItems;
@@ -76,7 +77,7 @@ public class MainMenu : MonoBehaviour
                 switch (menuSelection)
                 {
                     case 1:
-                        SL.LoadScene(1);
+                        SL.LoadScene(firstIndex);
                         break;
 
                     case 2:
