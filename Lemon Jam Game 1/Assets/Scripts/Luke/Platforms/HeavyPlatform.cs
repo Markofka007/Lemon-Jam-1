@@ -10,6 +10,8 @@ public class HeavyPlatform : MonoBehaviour
     public float lowestY;//the lowest y value the platform can sink down to
     public float weight;//how fast the platform decends
 
+    private Vector2 zero = Vector2.zero;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();//get the rigidbody
@@ -20,18 +22,20 @@ public class HeavyPlatform : MonoBehaviour
     {
         if (transform.position.y > lowestY && numPlayers > 0)//if the platform is above its lowest level and at least one player is on it
         {
-            rb.velocity = Vector2.down * weight;//apply a downward force with the value of weight
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, Vector2.down * weight, ref zero, 0.2f);
+            //rb.velocity = Vector2.down * weight;//apply a downward force with the value of weight
         } 
         else//otherwise stop the platform from moving
         {
-            rb.velocity = Vector2.zero;//stop movement
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, Vector2.zero, ref zero, 0.2f);
+            //rb.velocity = Vector2.zero;//stop movement
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //A player has gone onto the platform
-        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
+        if (collision.gameObject.tag.Contains("Player"))
         {
             numPlayers++;
         }
@@ -40,7 +44,7 @@ public class HeavyPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //A player has left the platform
-        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2") || collision.gameObject.CompareTag("Player3") || collision.gameObject.CompareTag("Player4"))
+        if (collision.gameObject.tag.Contains("Player"))
         {
             numPlayers--;
         }
